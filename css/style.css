@@ -275,3 +275,14 @@ kbd { font: 600 10.5px var(--mono); border: 1px solid var(--line); border-bottom
 .hm-4 { background: var(--accent); }
 .focus { display: grid; gap: 6px; margin-top: 14px; padding: 12px 14px; border-radius: 10px; border: 1px dashed var(--line); font-size: 14.5px; color: var(--ink-2); }
 .focus b { color: var(--ink); }
+
+/* puzzle replay */
+.replay h3 { font-size: 18px; }
+ol.rv { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; max-height: 360px; overflow-y: auto; }
+ol.rv li { display: grid; grid-template-columns: 92px 1fr; gap: 10px; padding: 8px 10px; border-radius: 8px; border: 1px solid transparent; cursor: pointer; font-size: 14px; line-height: 1.4; }
+ol.rv li:hover { background: var(--surface-2); }
+ol.rv li.on { border-color: var(--line); background: var(--bg); }
+ol.rv li .mono { font-weight: 600; color: var(--ink-3); }
+ol.rv li.me .mono { color: var(--good); }
+ol.rv li.on.me { border-left: 3px solid var(--good); }
+ol.rv li.on.opp { border-left: 3px solid var(--bad); }
