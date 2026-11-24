@@ -5,7 +5,7 @@ import { renderReview, renderGame } from './views/review.js';
 import { renderTactics } from './views/tactics.js';
 import { renderJobava, renderBlack } from './views/jobava.js';
 
-const V = '7';
+const V = '8';
 const load = (f, fallback) => fetch(`data/${f}?v=${V}`).then(r => (r.ok ? r.json() : fallback)).catch(() => fallback);
 
 export const data = {};
