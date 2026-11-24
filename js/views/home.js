@@ -28,14 +28,8 @@ export function renderHome({ app, data, store }) {
       <div class="muted">${delta >= 0 ? '+' : ''}${delta} in the last 30 days · started at ${start}${best ? ` · best ${best}` : ''} · ${s.goal - now > 0 ? `${s.goal - now} to go` : 'goal hit!'}</div>
       <div class="progress"><span style="width:${prog * 100}%"></span></div>
       <div class="milestones">${MILESTONES.map(v => `<span class="${now >= v ? 'hit' : ''}">${v}</span>`).join('')}</div>
-      ${review?.headline ? `<p class="muted" style="margin-top:16px">${md(review.headline)}</p>` : ''}
-      ${review?.leaks?.length ? `<div class="grid g2" style="margin-top:12px;gap:12px">
-        <div><div class="eyebrow">What you do wrong</div><ol class="tight">${review.leaks.map(l => `<li>${md(l.title)}</li>`).join('')}</ol></div>
-        <div><div class="eyebrow">What you do well</div><ul class="tight">${(review.strengths || []).slice(0, 4).map(s => `<li>${md(s.split(':')[0])}</li>`).join('')}</ul></div></div>` : ''}
-      ${review?.one_fix ? `<p style="margin-top:8px"><b>The one habit:</b> ${md(review.one_fix)}</p>` : ''}
-      ${review ? `<a href="#/review">Full takeaways with your games →</a>` : ''}
     </div>
-    <div class="card"><div class="spread"><h3>Rapid rating</h3><span class="faint">${rapid.length} games</span></div><div id="rchart"></div></div>
+    <div class="card"><div class="spread"><div class="eyebrow">Rating, every rapid game</div><span class="eyebrow">${rapid.length} games</span></div><div id="rchart"></div></div>
   </section>
 
   <section class="section grid g4">
@@ -45,15 +39,27 @@ export function renderHome({ app, data, store }) {
     ${tile(m.puzzle_rating, 'Site puzzle rating', m.attempts ? `${m.puzzle_accuracy}% of last ${Math.min(100, m.attempts)} · ${m.puzzles_per_week} this week` : 'Solve some puzzles to start it')}
   </section>
 
+  ${review?.leaks?.length ? `<section class="section">
+    <div class="spread"><h2>What your games <em>say</em></h2><a href="#/review">Full write-up with your games →</a></div>
+    ${review.headline ? `<p class="muted" style="max-width:80ch;font-size:16px">${md(review.headline)}</p>` : ''}
+    <div class="takeaways">
+      <div class="card"><div class="eyebrow" style="color:var(--bad)">What you do wrong</div>
+        <ol class="tlist bad">${review.leaks.map((l, i) => `<li><span class="k">${String(i + 1).padStart(2, '0')}</span><span>${md(l.title)}</span></li>`).join('')}</ol></div>
+      <div class="card"><div class="eyebrow" style="color:var(--good)">What you do well</div>
+        <ul class="tlist good">${(review.strengths || []).slice(0, 6).map(x => `<li><span class="k">+</span><span>${md(x.split(':')[0].replace(/\.$/, ''))}</span></li>`).join('')}</ul></div>
+    </div>
+    ${review.one_fix ? `<div class="habit" style="margin-top:16px"><span class="lab">The one habit</span><span>${md(review.one_fix)}</span></div>` : ''}
+  </section>` : ''}
+
   <section class="section">
-    <div class="spread"><h2>Work on next</h2><a href="#/plan">Your plan & queue →</a></div>
+    <div class="spread"><h2>Work on <em>next</em></h2><a href="#/plan">Your plan & queue →</a></div>
     <div class="recs">${recs.map((r, i) => `<div class="rec"><span class="n">${i + 1}</span>
       <div><div class="t">${esc(r.title)}</div><div class="w">${esc(r.why)}</div></div>
       <a class="btn ${i === 0 ? 'primary' : ''}" href="${r.href}">${esc(r.label)}</a></div>`).join('')}</div>
   </section>
 
   <section class="section">
-    <div class="spread"><h2>Recent games</h2><a href="#/review">All games & patterns →</a></div>
+    <div class="spread"><h2>Recent <em>games</em></h2><a href="#/review">All games & patterns →</a></div>
     <div class="card table-wrap">${gameTable(games.slice(-10).reverse(), data)}</div>
   </section>`;
 
@@ -66,15 +72,14 @@ const tile = (v, l, d) => `<div class="card stat"><div class="v">${esc(v)}</div>
 export function gameTable(list, data) {
   if (!list.length) return '<div class="empty">No games yet. Run scripts/update.py.</div>';
   const notes = data.review?.games || {};
-  return `<table><thead><tr><th>Date</th><th>Result</th><th>Opponent</th><th>Opening</th><th class="num">Acc</th><th class="num">Blunders</th><th>Type</th></tr></thead><tbody>
+  return `<table><thead><tr><th>Date</th><th>Result</th><th>Opponent</th><th>Opening</th><th class="num">Acc</th><th class="num">Blunders</th></tr></thead><tbody>
   ${list.map(g => `<tr class="click" data-game="${g.id}" title="${esc(notes[g.id]?.summary || '')}">
     <td>${fmtDate(g.end)}</td>
     <td><span class="res-${g.result}">${g.result}</span> <span class="faint">${g.how !== 'win' && g.result !== 'draw' ? '· ' + esc(g.how) : ''}</span></td>
     <td><span class="pill-dot" style="background:${g.color === 'white' ? '#f1ede4;box-shadow:0 0 0 1px var(--line)' : '#3b3a36'}"></span>${esc(g.opp)} <span class="faint">${g.opp_rating}</span></td>
     <td>${esc(g.opening)}</td>
     <td class="num">${g.acc ?? '–'}</td>
-    <td class="num">${g.blunders ? `<span class="tag-blunder">${g.blunders}</span>` : '0'}</td>
-    <td class="faint">${esc(g.class)}</td></tr>`).join('')}</tbody></table>`;
+    <td class="num">${g.blunders ? `<span class="tag-blunder">${g.blunders}</span>` : '0'}</td></tr>`).join('')}</tbody></table>`;
 }
 
 export function bindGameRows(root) {
@@ -97,7 +102,7 @@ export function renderPlan({ app, data, store }) {
   const weekMins = s.log.filter(l => l.t > Date.now() - 7 * DAY).reduce((a, l) => a + (+l.mins || 0), 0);
 
   app.innerHTML = `
-  <h1>Your plan</h1>
+  <h1>Your <em>plan</em></h1>
   <p class="muted">Roadmap targets check themselves against your last 20 rapid games and your puzzle log here. The queue is yours to edit.</p>
 
   <section class="section grid g2">

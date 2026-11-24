@@ -18,7 +18,7 @@ function renderIndex({ app, data }, J) {
   const mine = data.games.filter(g => g.color === 'white' && /London|Jobava|Zukertort|Queens Pawn/i.test(g.opening));
   const score = mine.length ? Math.round(((mine.filter(g => g.result === 'win').length + mine.filter(g => g.result === 'draw').length / 2) / mine.length) * 100) : null;
   app.innerHTML = `
-  <div class="spread"><div><h1>${esc(J.title)}</h1><p class="muted prose">${md(J.intro)}</p></div>
+  <div class="spread"><div><h1>${esc(J.title).replace(/(\S+)$/, '<em>$1</em>')}</h1><p class="muted prose">${md(J.intro)}</p></div>
     <div class="card stat" style="padding:12px 16px"><div class="v">${clean}/${all.length}</div><div class="l">lessons drilled clean</div></div></div>
   ${mine.length ? `<p class="faint">Your 1.d4 + Bf4 type games as White so far: ${mine.length} games, ${score}% score.</p>` : ''}
   <div class="progress"><span style="width:${(clean / Math.max(1, all.length)) * 100}%"></span></div>

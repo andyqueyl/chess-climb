@@ -43,7 +43,7 @@ function renderHub({ app, data }) {
   const L = data.lessons;
   const counts = { smart: `${P.lich.length} puzzles`, mine: `${mineLeft} of ${P.mine.length} unsolved`, retry: `${due} due now`, london: `${P.lon.length} puzzles` };
   app.innerHTML = `
-  <div class="spread"><div><h1>Tactics</h1><p class="muted">Most games at 1100-1600 are decided by a tactic someone missed. Train the patterns, then the habit.</p></div>
+  <div class="spread"><div><h1>Tactics <em>trainer</em></h1><p class="muted">Most games at 1100-1600 are decided by a tactic someone missed. Train the patterns, then the habit.</p></div>
     <div class="card stat" style="padding:10px 16px"><div class="v">${s.prating}</div><div class="l">Site puzzle rating</div></div></div>
   <section class="grid g4 section" style="margin-top:12px">
     ${Object.entries(MODES).map(([k, mo]) => `<a class="card" href="#/tactics/practice/${k}" style="color:inherit;text-decoration:none">

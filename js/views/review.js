@@ -29,7 +29,7 @@ export function renderReview({ app, data, query }) {
   const medFirst = firstBlunders.sort((a, b) => a - b)[Math.floor(firstBlunders.length / 2)];
 
   app.innerHTML = `
-  <h1>Game review</h1>
+  <h1>Game <em>review</em></h1>
   <p class="muted">Every rapid game since you joined (blitz and bullet are left out), run through Stockfish ${games.length ? `(${games.length} games, last ${fmtDateLong(games.at(-1).end)})` : ''}. Same idea as chess.com's Game Review: big win-chance drops are blunders (≥30%), mistakes (≥20%) and inaccuracies (≥10%). Accuracy here uses Lichess's formula, which runs a few points higher than chess.com's.</p>
 
   ${review ? reviewSummary(review, data) : `<div class="card"><p class="muted">Coach's written review not generated yet. Stats below are live from the engine data.</p></div>`}
@@ -83,7 +83,7 @@ function reviewSummary(r, data) {
     <div class="eyebrow">Takeaways · ${esc(r.games_reviewed)} rapid games read · ${esc(r.generated || '')}</div>
     <p style="font-size:17px">${md(r.headline)}</p>
     ${r.leaks?.length ? `<h3 style="margin-top:16px">What you do wrong</h3>
-    <div class="grid" style="gap:10px">${r.leaks.map((l, i) => `<div class="rec" style="grid-template-columns:34px 1fr"><span class="n">${i + 1}</span><div>
+    <div class="grid" style="gap:10px">${r.leaks.map((l, i) => `<div class="rec top" style="grid-template-columns:40px 1fr"><span class="n">${i + 1}</span><div>
       <div class="t">${md(l.title)}</div><div class="w" style="margin:3px 0 6px">${md(l.detail)}</div>
       <div><b>Fix:</b> ${md(l.fix)}</div>
       ${l.evidence?.length ? `<div class="faint" style="font-size:13px;margin-top:4px">Examples: ${l.evidence.map(link).filter(Boolean).join(', ')}</div>` : ''}
