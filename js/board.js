@@ -33,7 +33,12 @@ export class Board {
   }
 
   setFen(fen, lastMove = null) {
+    const before = lastMove ? this.chess.get(lastMove[0]) : null;
     this.chess.load(fen);
+    if (lastMove && before) {
+      const after = this.chess.get(lastMove[1]);
+      if (after && after.color === before.color && !this.chess.get(lastMove[0])) this._anim = lastMove;
+    }
     this.lastMove = lastMove;
     this.selected = null;
     this.marks = {};
@@ -55,6 +60,7 @@ export class Board {
         : this.chess.move(move);
       this.lastMove = [m.from, m.to];
       this.selected = null;
+      this._anim = this.lastMove;
       this.render();
       return m;
     } catch { return null; }
@@ -82,6 +88,7 @@ export class Board {
     const m = { from, to, promotion };
     this.selected = null;
     if (this.onMove) this.onMove(m);
+    if (this._dragging) this._anim = null; // a dragged piece is already where it landed
     return true;
   }
 
@@ -122,7 +129,10 @@ export class Board {
       d.el.style.transform = '';
       if (!d.moved) return;
       const to = this._squareAt(e.clientX, e.clientY);
-      if (!to || to === d.from || !this._tryMove(d.from, to)) this.render();
+      this._dragging = true;
+      const ok = to && to !== d.from && this._tryMove(d.from, to);
+      this._dragging = false;
+      if (!ok) this.render();
     };
     this.boardEl.addEventListener('pointerup', end);
     this.boardEl.addEventListener('pointercancel', end);
@@ -158,6 +168,23 @@ export class Board {
     }
     this.boardEl.innerHTML = html;
     this._drawArrows();
+    if (this._anim && !this._animQueued) {
+      // Animate after the last synchronous re-render this frame (setMovable/mark re-render right after setFen).
+      this._animQueued = true;
+      requestAnimationFrame(() => {
+        const a = this._anim; this._anim = null; this._animQueued = false;
+        if (!a || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const img = this.boardEl.querySelector(`[data-sq="${a[1]}"] img`);
+        if (!img) return;
+        const [x1, y1] = this._center(a[0]), [x2, y2] = this._center(a[1]);
+        img.style.transition = 'none'; img.style.zIndex = 5;
+        img.style.transform = `translate(${x1 - x2}%, ${y1 - y2}%)`;
+        img.getBoundingClientRect();
+        img.style.transition = 'transform 190ms cubic-bezier(.2,.8,.2,1)';
+        img.style.transform = '';
+        img.addEventListener('transitionend', () => { img.style.zIndex = ''; img.style.transition = ''; }, { once: true });
+      });
+    }
   }
 
   _center(sq) {

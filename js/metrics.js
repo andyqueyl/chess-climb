@@ -65,7 +65,7 @@ const TAG_TO_THEME = { fork: 'fork', mate: 'mateIn2', 'free-piece': 'hangingPiec
 
 /** Ranked "what to work on next" list built from games + puzzle log + course progress. */
 export function recommendations(data) {
-  const { games, myPuzzles, lessons, jobava } = data;
+  const { games, myPuzzles, lessons, jobava, black } = data;
   const recs = [];
   const lessonFor = theme => lessons?.tactics?.find(l => l.theme === theme);
   const recent = recentGames(games, 30);
@@ -121,6 +121,13 @@ export function recommendations(data) {
     const next = all.find(({ l }) => !(s.jobava[l.id]?.clean));
     const done = all.length - all.filter(({ l }) => !(s.jobava[l.id]?.clean)).length;
     if (next) recs.push({ score: 60, title: `Jobava London: ${next.l.title}`, why: `${done}/${all.length} lessons drilled clean. Next up in "${next.c.title}".`, href: `#/jobava/${next.c.id}/${next.l.id}`, label: 'Open' });
+  }
+  if (black) {
+    const all = black.chapters.flatMap(c => c.lessons.map(l => ({ c, l })));
+    const left = all.filter(({ l }) => !(s.jobava[l.id]?.clean)), next = left[0];
+    const asBlack = recent.filter(g => g.color === 'black' && g.plies?.[0]?.san === 'd4');
+    const lost = asBlack.filter(g => g.result !== 'win').length;
+    if (next) recs.push({ score: 58, title: `Black repertoire: ${next.l.title}`, why: `${all.length - left.length}/${all.length} drilled clean.${asBlack.length ? ` You've won ${asBlack.length - lost} of your last ${asBlack.length} games as Black vs 1.d4.` : ''}`, href: `#/black/${next.c.id}/${next.l.id}`, label: 'Open' });
   }
 
   // worst opening (enough games)

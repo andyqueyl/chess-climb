@@ -2,11 +2,16 @@ import { esc, md, $, $$ } from '../ui.js';
 import { Board, Chess } from '../board.js';
 import { store } from '../store.js';
 
-export function renderJobava(ctx) {
-  const J = ctx.data.jobava;
-  if (!J) { ctx.app.innerHTML = '<div class="empty">The Jobava London course is still being written. Check back soon.</div>'; return; }
+// Shared course viewer: the Jobava London (White) and the Black repertoire use the same data shape.
+let BASE = '#/jobava';
+export function renderJobava(ctx) { return renderCourse(ctx, 'jobava', '#/jobava'); }
+export function renderBlack(ctx) { return renderCourse(ctx, 'black', '#/black'); }
+function renderCourse(ctx, key, base) {
+  BASE = base;
+  const J = ctx.data[key];
+  if (!J) { ctx.app.innerHTML = '<div class="empty">This course is still being written. Check back soon.</div>'; return; }
   const [chId, lId] = ctx.params;
-  if (chId && lId === 'quiz') return renderQuiz(ctx, J.chapters.find(c => c.id === chId));
+  if (chId && lId === 'quiz') return renderQuiz(ctx, J.chapters.find(c => c.id === chId), J);
   if (chId && lId) return renderLesson(ctx, J, chId, lId);
   renderIndex(ctx, J);
 }
@@ -15,20 +20,27 @@ function renderIndex({ app, data }, J) {
   const s = store.get();
   const all = J.chapters.flatMap(c => c.lessons);
   const clean = all.filter(l => s.jobava[l.id]?.clean).length;
-  const mine = data.games.filter(g => g.color === 'white' && /London|Jobava|Zukertort|Queens Pawn/i.test(g.opening));
+  const black = BASE === '#/black';
+  const mine = data.games.filter(g => black ? g.color === 'black' : g.color === 'white' && /London|Jobava|Zukertort|Queens Pawn/i.test(g.opening));
   const score = mine.length ? Math.round(((mine.filter(g => g.result === 'win').length + mine.filter(g => g.result === 'draw').length / 2) / mine.length) * 100) : null;
   app.innerHTML = `
   <div class="spread"><div><h1>${esc(J.title).replace(/(\S+)$/, '<em>$1</em>')}</h1><p class="muted prose">${md(J.intro)}</p></div>
     <div class="card stat" style="padding:12px 16px"><div class="v">${clean}/${all.length}</div><div class="l">lessons drilled clean</div></div></div>
-  ${mine.length ? `<p class="faint">Your 1.d4 + Bf4 type games as White so far: ${mine.length} games, ${score}% score.</p>` : ''}
+  ${black ? (() => {
+    const by = mv => mine.filter(g => g.plies?.[0]?.san === mv);
+    const wld = l => `${l.filter(g => g.result === 'win').length}-${l.filter(g => g.result === 'loss').length}-${l.filter(g => g.result === 'draw').length}`;
+    const e4 = by('e4'), d4 = by('d4'), other = mine.filter(g => !['e4', 'd4'].includes(g.plies?.[0]?.san));
+    const tile = (n, l, d) => `<div class="card stat"><div class="v">${n}</div><div class="l">${l}</div><div class="d">${d}</div></div>`;
+    return `<section class="grid g3" style="margin-top:14px">${tile(wld(e4), 'vs 1.e4 (W-L-D)', `${e4.length} rapid games. Keep 1...e5.`)}${tile(wld(d4), 'vs 1.d4 (W-L-D)', `${d4.length} rapid games. Switch to 1...d5.`)}${tile(wld(other), 'vs everything else', `${other.length} rapid games`)}</section>`;
+  })() : mine.length ? `<p class="faint">Your 1.d4 + Bf4 type games as White so far: ${mine.length} games, ${score}% score.</p>` : ''}
   <div class="progress"><span style="width:${(clean / Math.max(1, all.length)) * 100}%"></span></div>
   <section class="section grid g2">${J.chapters.map((c, ci) => `
     <div class="card"><div class="eyebrow">Chapter ${ci + 1}</div><h3>${esc(c.title)}</h3><p class="muted" style="font-size:14px">${md(c.summary)}</p>
       <div class="lesson-list">${c.lessons.map(l => {
         const p = s.jobava[l.id];
-        return `<a class="lesson-item" href="#/jobava/${c.id}/${l.id}"><span>${esc(l.title)}</span>${p?.clean ? '<span class="done">✓ drilled</span>' : p?.seen ? '<span class="faint" style="font-size:13px">seen</span>' : ''}</a>`;
+        return `<a class="lesson-item" href="${BASE}/${c.id}/${l.id}"><span>${esc(l.title)}</span>${p?.clean ? '<span class="done">✓ drilled</span>' : p?.seen ? '<span class="faint" style="font-size:13px">seen</span>' : ''}</a>`;
       }).join('')}
-      ${c.quiz?.length ? `<a class="lesson-item" href="#/jobava/${c.id}/quiz"><span><b>Quiz</b> · ${c.quiz.length} positions</span><span class="faint" style="font-size:13px">${quizScore(c)}</span></a>` : ''}</div>
+      ${c.quiz?.length ? `<a class="lesson-item" href="${BASE}/${c.id}/quiz"><span><b>Quiz</b> · ${c.quiz.length} positions</span><span class="faint" style="font-size:13px">${quizScore(c)}</span></a>` : ''}</div>
     </div>`).join('')}</section>`;
 }
 
@@ -43,7 +55,7 @@ function lineData(lesson) {
 
 function renderLesson({ app, onLeave }, J, chId, lId) {
   const ch = J.chapters.find(c => c.id === chId), lesson = ch?.lessons.find(l => l.id === lId);
-  if (!lesson) { app.innerHTML = '<div class="empty">Lesson not found. <a href="#/jobava">Back</a></div>'; return; }
+  if (!lesson) { app.innerHTML = `<div class="empty">Lesson not found. <a href="${BASE}">Back</a></div>`; return; }
   store.update(s => (s.jobava[lId] = { ...(s.jobava[lId] || {}), seen: Date.now() }));
   const flat = J.chapters.flatMap(c => c.lessons.map(l => ({ c, l })));
   const idx = flat.findIndex(x => x.l.id === lId), nxt = flat[idx + 1];
@@ -51,7 +63,7 @@ function renderLesson({ app, onLeave }, J, chId, lId) {
   try { line = lineData(lesson); } catch (e) { app.innerHTML = `<div class="empty">This line has a bad move in it (${esc(e.message)}).</div>`; return; }
   const side = lesson.train === 'black' ? 'b' : 'w';
   app.innerHTML = `
-  <a href="#/jobava">← ${esc(J.title)}</a> <span class="faint">· ${esc(ch.title)}</span>
+  <a href="${BASE}">← ${esc(J.title)}</a> <span class="faint">· ${esc(ch.title)}</span>
   <h1 style="margin-top:6px">${esc(lesson.title)}</h1>
   <div class="prose">${lesson.intro.map(p => `<p>${md(p)}</p>`).join('')}</div>
   <div class="tabs"><button class="chip on" data-mode="learn">Learn the line</button><button class="chip" data-mode="drill">Drill it (you play ${lesson.train})</button></div>
@@ -63,7 +75,7 @@ function renderLesson({ app, onLeave }, J, chId, lId) {
       <div class="note" id="note"></div>
       <div class="moves" id="moves"></div>
       <div class="card"><h3>Key ideas</h3><ul class="tight">${lesson.key_ideas.map(k => `<li>${md(k)}</li>`).join('')}</ul></div>
-      ${nxt ? `<a href="#/jobava/${nxt.c.id}/${nxt.l.id}">Next: ${esc(nxt.l.title)} →</a>` : ''}
+      ${nxt ? `<a href="${BASE}/${nxt.c.id}/${nxt.l.id}">Next: ${esc(nxt.l.title)} →</a>` : ''}
     </div>
   </section>`;
 
@@ -137,10 +149,10 @@ function renderLesson({ app, onLeave }, J, chId, lId) {
   show(0);
 }
 
-function renderQuiz({ app, onLeave }, ch) {
+function renderQuiz({ app, onLeave }, ch, J) {
   if (!ch?.quiz?.length) { app.innerHTML = '<div class="empty">No quiz here.</div>'; return; }
   let i = 0, tries = 0, timer = null;
-  app.innerHTML = `<a href="#/jobava">← Jobava London</a><h1 style="margin-top:6px">${esc(ch.title)} · quiz</h1>
+  app.innerHTML = `<a href="${BASE}">← ${esc(J.title)}</a><h1 style="margin-top:6px">${esc(ch.title)} · quiz</h1>
   <section class="play"><div><div id="board"></div></div>
     <div class="side"><div class="status" id="st"></div><div class="note" id="exp" style="display:none"></div>
       <div class="row"><button class="btn" id="reveal">Show answer</button><button class="btn primary" id="nx">Next</button></div><span class="faint" id="cnt"></span></div></section>`;

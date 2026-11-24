@@ -1,3 +1,4 @@
+import { store } from '../store.js';
 import { esc, md, bars, evalGraph, evalText, fmtDateLong, $, $$, WHY_NAMES, HOW_NAMES } from '../ui.js';
 import { gameMetrics, blunderBreakdown } from '../metrics.js';
 import { gameTable, bindGameRows } from './home.js';
@@ -101,6 +102,7 @@ export function renderGame({ app, data, params, onLeave }) {
   const g = data.gameById[params[0]];
   if (!g) { app.innerHTML = '<div class="empty">Game not found. <a href="#/review">Back to games</a></div>'; return; }
   const note = data.review?.games?.[g.id];
+  store.update(st => (st.viewed = Date.now()));
   const meWhite = g.color === 'white';
   const isMine = i => (i % 2 === 0) === meWhite;
   // rebuild positions

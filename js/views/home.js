@@ -32,6 +32,8 @@ export function renderHome({ app, data, store }) {
     <div class="card"><div class="spread"><div class="eyebrow">Rating, every rapid game</div><span class="eyebrow">${rapid.length} games</span></div><div id="rchart"></div></div>
   </section>
 
+  ${todayCard(data, s)}
+
   <section class="section grid g4">
     ${tile(m.accuracy ?? '–', 'Accuracy, last 20 rapid', trend(m.accuracy, prev?.accuracy, 'up'))}
     ${tile(m.blunders_per_game ?? '–', 'Blunders per game', trend(m.blunders_per_game, prev?.blunders_per_game, 'down'))}
@@ -65,6 +67,54 @@ export function renderHome({ app, data, store }) {
 
   lineChart($('#rchart', app), ratingSeries(games), { goal: s.goal });
   bindGameRows(app);
+}
+
+/* ---------- today: daily goal, streak, 12-week activity ---------- */
+const dayKey = t => { const d = new Date(t); return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`; };
+function todayCard(data, s) {
+  const today = dayKey(Date.now());
+  const isToday = t => t && dayKey(t) === today;
+  const perDay = {};
+  for (const a of s.attempts) perDay[dayKey(a.t)] = (perDay[dayKey(a.t)] || 0) + 1;
+  const lessonDays = new Set([...Object.values(s.jobava).flatMap(p => [p.seen, p.last, p.clean]), ...Object.values(s.read), s.viewed, ...s.log.map(l => l.t)].filter(Boolean).map(dayKey));
+  const active = k => (perDay[k] || 0) > 0 || lessonDays.has(k);
+  let streak = 0;
+  for (let i = active(today) ? 0 : 1; ; i++) { const k = dayKey(Date.now() - i * DAY); if (active(k)) streak++; else break; }
+  const pz = perDay[today] || 0, GOAL = 15;
+  const lessonToday = Object.values(s.jobava).some(p => isToday(p.seen) || isToday(p.last)) || Object.values(s.read).some(isToday);
+  const courses = [data.jobava, data.black].filter(Boolean);
+  const nextLesson = (() => { for (const [J, base] of [[data.jobava, '#/jobava'], [data.black, '#/black']]) { if (!J) continue;
+    for (const c of J.chapters) for (const l of c.lessons) if (!s.jobava[l.id]?.clean) return { href: `${base}/${c.id}/${l.id}`, title: l.title }; } return null; })();
+  const last = data.games.at(-1);
+  const tasks = [
+    { done: pz >= GOAL, t: `${GOAL} puzzles`, d: `${Math.min(pz, GOAL)}/${GOAL} today`, href: '#/tactics/practice/smart', cta: 'Puzzles' },
+    { done: lessonToday, t: 'One opening lesson', d: nextLesson ? esc(nextLesson.title) : 'Any lesson', href: nextLesson?.href || '#/jobava', cta: 'Open' },
+    { done: isToday(s.viewed), t: 'Review a game', d: last ? `Your last one: vs ${esc(last.opp)}` : 'Pick any game', href: last ? `#/game/${last.id}` : '#/review', cta: 'Review' },
+  ];
+  // 12-week heatmap, columns = weeks (oldest left), rows = Mon..Sun
+  const now = new Date(); now.setHours(0, 0, 0, 0);
+  const dow = (now.getDay() + 6) % 7, startT = now.getTime() - (7 * 11 + dow) * DAY;
+  let cells = '';
+  for (let w = 0; w < 12; w++) for (let d = 0; d < 7; d++) {
+    const t = startT + (w * 7 + d) * DAY; if (t > now.getTime()) { cells += '<i class="hm-x"></i>'; continue; }
+    const k = dayKey(t), n = perDay[k] || 0, lv = n === 0 ? (lessonDays.has(k) ? 1 : 0) : n < 5 ? 1 : n < 15 ? 2 : n < 30 ? 3 : 4;
+    cells += `<i class="hm-${lv}" title="${new Date(t).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}: ${n} puzzle${n === 1 ? '' : 's'}${lessonDays.has(k) ? ' + study' : ''}"></i>`;
+  }
+  const doneN = tasks.filter(x => x.done).length;
+  // Rotate through the coach's leaks, one per week (ISO-ish week number), so the focus changes but stays put for a week.
+  const leaks = data.review?.leaks || [];
+  const focus = leaks.length ? leaks[Math.floor(Date.now() / (7 * DAY)) % Math.min(leaks.length, 4)] : null;
+  return `<section class="section today">
+    <div class="card">
+      <div class="spread"><h2 style="margin:0">Today <em>${doneN}/3</em></h2><span class="eyebrow" style="margin:0">${streak ? `${streak}-day streak` : 'Start a streak today'}</span></div>
+      <div class="tasks">${tasks.map(x => `<a class="task ${x.done ? 'done' : ''}" href="${x.href}"><span class="tick">${x.done ? '✓' : ''}</span>
+        <span><b>${x.t}</b><span class="faint">${x.d}</span></span></a>`).join('')}</div>
+      ${focus ? `<div class="focus"><span class="eyebrow" style="margin:0">This week's focus</span><div><b>${md(focus.title)}.</b> ${md(focus.fix)}</div></div>` : ''}
+    </div>
+    <div class="card"><div class="spread"><div class="eyebrow">Last 12 weeks</div><div class="eyebrow">${(n => `${n} puzzle${n === 1 ? '' : 's'}`)(Object.values(perDay).reduce((a, b) => a + b, 0))}</div></div>
+      <div class="heat">${cells}</div>
+      <div class="hm-key faint">less <i class="hm-0"></i><i class="hm-1"></i><i class="hm-2"></i><i class="hm-3"></i><i class="hm-4"></i> more</div></div>
+  </section>`;
 }
 
 const tile = (v, l, d) => `<div class="card stat"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div><div class="d">${esc(d || '')}</div></div>`;

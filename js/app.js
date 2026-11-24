@@ -3,22 +3,22 @@ import { esc, md, $, $$ } from './ui.js';
 import { renderHome, renderPlan } from './views/home.js';
 import { renderReview, renderGame } from './views/review.js';
 import { renderTactics } from './views/tactics.js';
-import { renderJobava } from './views/jobava.js';
+import { renderJobava, renderBlack } from './views/jobava.js';
 
-const V = '5';
+const V = '6';
 const load = (f, fallback) => fetch(`data/${f}?v=${V}`).then(r => (r.ok ? r.json() : fallback)).catch(() => fallback);
 
 export const data = {};
 
 async function boot() {
-  const [games, profile, myPuzzles, lichess, jobava, lessons, review] = await Promise.all([
+  const [games, profile, myPuzzles, lichess, jobava, lessons, review, black] = await Promise.all([
     load('games.json', []), load('profile.json', null), load('my-puzzles.json', []), load('puzzles-lichess.json', { puzzles: [], london: [] }),
-    load('jobava.json', null), load('lessons.json', null), load('review.json', null),
+    load('jobava.json', null), load('lessons.json', null), load('review.json', null), load('black.json', null),
   ]);
   // Rapid only: blitz and bullet games (and puzzles from them) are left out on purpose.
   const rapidGames = games.filter(g => g.class === 'rapid');
   const rapidPuzzles = myPuzzles.filter(p => p.time_class === 'rapid');
-  Object.assign(data, { games: rapidGames, profile, myPuzzles: rapidPuzzles, lichess, jobava, lessons, review });
+  Object.assign(data, { games: rapidGames, profile, myPuzzles: rapidPuzzles, lichess, jobava, lessons, review, black });
   data.gameById = Object.fromEntries(rapidGames.map(g => [g.id, g]));
   window.addEventListener('hashchange', route);
   route();
@@ -40,6 +40,7 @@ function route() {
       case 'game': return renderGame(ctx);
       case 'tactics': return renderTactics(ctx);
       case 'jobava': return renderJobava(ctx);
+      case 'black': return renderBlack(ctx);
       case 'plan': return renderPlan(ctx);
       default: app.innerHTML = `<div class="empty">Page not found. <a href="#/">Go home</a></div>`;
     }

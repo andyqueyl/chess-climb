@@ -114,7 +114,7 @@ function renderTrainer({ app, data, query, onLeave }, mode) {
     <div><div id="board"></div></div>
     <div class="side">
       <div class="status" id="st">Loading…</div>
-      <div class="row"><button class="btn" id="hint">Hint</button><button class="btn" id="sol">Show solution</button><button class="btn primary" id="next">Next puzzle</button></div>
+      <div class="row"><button class="btn" id="hint">Hint <kbd>H</kbd></button><button class="btn" id="sol">Solution <kbd>S</kbd></button><button class="btn primary" id="next">Next <kbd>N</kbd></button></div>
       <div class="card" id="meta"></div>
       ${lesson ? `<a href="#/tactics/lesson/${lesson.id}">Read the ${esc(lesson.title)} lesson →</a>` : ''}
     </div>
@@ -131,9 +131,11 @@ function renderTrainer({ app, data, query, onLeave }, mode) {
   const drawSess = () => {
     $('#sess', app).innerHTML = `<span class="chip">${sess.ok}/${sess.n} solved</span><span class="chip">streak ${sess.streak}</span><span class="chip">rating ${store.get().prating}</span>`;
   };
+  let ratingBefore = null, recorded = false;
   const record = ok => {
-    if (finished) return;
-    finished = true;
+    if (recorded) return;
+    recorded = true; finished = true;
+    ratingBefore = store.get().prating;
     sess.n++; if (ok) { sess.ok++; sess.streak++; } else sess.streak = 0;
     store.recordPuzzle(pz.key, ok, { rating: pz.src === 'lichess' ? pz.rating : null, themes: pz.themes, src: pz.src });
     drawSess();
@@ -162,7 +164,7 @@ function renderTrainer({ app, data, query, onLeave }, mode) {
     pz = pickNext(mode, P, sessionSeen, query);
     if (!pz) { st.className = 'status info'; st.innerHTML = mode === 'retry' ? 'No retries due. Nice. <a href="#/tactics/practice/smart">Do a smart mix →</a>' : 'Out of puzzles here. <a href="#/tactics">Pick another set →</a>'; meta.innerHTML = ''; board.setMovable(null); return; }
     sessionSeen.add(pz.key);
-    step = 0; failed = false; finished = false;
+    step = 0; failed = false; finished = false; recorded = false;
     chess = new Chess(pz.fen);
     board.setArrows([]); board.clearMarks();
     if (pz.setup) {
@@ -183,7 +185,9 @@ function renderTrainer({ app, data, query, onLeave }, mode) {
     record(ok);
     board.setMovable(null);
     st.className = 'status ' + (ok ? 'good' : 'bad');
-    st.innerHTML = ok ? `<b>Solved!</b> ${failed ? '' : 'Clean.'}` : '<b>Not this time.</b> It\'ll come back in your retry queue.';
+    const d = store.get().prating - (ratingBefore ?? store.get().prating);
+    const delta = pz.src === 'lichess' && d ? ` <span class="mono">${d > 0 ? '+' : ''}${d}</span>` : '';
+    st.innerHTML = ok ? `<b>Solved!</b>${delta} ${sess.streak > 2 ? `${sess.streak} in a row.` : ''} <span class="faint">Press N for the next one.</span>` : '<b>Not this time.</b> It\'ll come back in your retry queue.';
     showMeta(true);
     $('#next', app).classList.add('primary');
     if (pz.src === 'mine' && pz.line.length > 1) playLine(pz.line.slice(1), 0);
@@ -239,6 +243,15 @@ function renderTrainer({ app, data, query, onLeave }, mode) {
     run(0);
   };
   $('#next', app).onclick = () => load();
+  const keys = e => {
+    if (e.target.closest('input, textarea, select') || e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key.toLowerCase();
+    if (k === 'n' || (k === 'enter' && finished)) { e.preventDefault(); load(); }
+    else if (k === 'h') $('#hint', app).click();
+    else if (k === 's') $('#sol', app).click();
+  };
+  document.addEventListener('keydown', keys);
+  onLeave(() => { clearTimeout(timer); document.removeEventListener('keydown', keys); });
   drawSess();
   load();
 }
