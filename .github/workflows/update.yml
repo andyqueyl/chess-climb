@@ -1,0 +1,24 @@
+name: Update games
+on:
+  schedule:
+    - cron: "0 10 * * *"   # daily, 10:00 UTC
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq stockfish
+      - run: pip install -q chess
+      - run: PATH="$PATH:/usr/games" python scripts/update.py
+      - name: Commit new data
+        run: |
+          git config user.name "chess-climb-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Update games $(date -u +%F)" && git push

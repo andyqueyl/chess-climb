@@ -1,0 +1,3178 @@
+{
+ "title": "Jobava London",
+ "intro": "The Jobava London is 1.d4, 2.Nc3 and 3.Bf4: your London setup with the knight on c3 instead of d2. It's aggressive, easy to learn, and full of tricks like the Nb5 jump that hits c7. Every line in this course was checked with Stockfish, so you can play it with confidence.",
+ "chapters": [
+  {
+   "id": "setup-and-big-ideas",
+   "title": "The Setup and the Big Ideas",
+   "summary": "What the Jobava London is, how you get there from your normal London, and the three attacking ideas you will use in every game.",
+   "lessons": [
+    {
+     "id": "from-your-london",
+     "title": "Getting there from your London",
+     "intro": [
+      "The Jobava London is just your London with the queen's knight on **c3** instead of d2. That one change makes it way more aggressive.",
+      "You already play 1.d4 and an early Bf4, so you can reach it with 1.d4 d5 2.Bf4 Nf6 3.Nc3 or 1.d4 d5 2.Nc3 Nf6 3.Bf4. Same position, same plans."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": "Your usual London start."
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": "This is the Jobava move. The knight eyes **b5**, from where it hits c7."
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": "The signature jump. It threatens Nxc7+, forking king and rook."
+      },
+      {
+       "san": "Na6",
+       "note": "The normal defense: the knight guards c7."
+      },
+      {
+       "san": "e3",
+       "note": "Opens the diagonal for your light bishop and supports d4."
+      },
+      {
+       "san": "Be7",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "Bd3",
+       "note": "Bishop aims at h7, right at Black's castled king."
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": "Keeps the d4 pawn solid and gives the b5 knight a retreat square later."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "Knight to **c3** (not d2) is the whole difference from a normal London.",
+      "**Nb5** hits c7. Black usually has to spend a move like ...Na6 or ...c6 to deal with it.",
+      "Pieces go to the same homes every game: e3, Nf3, Bd3, c3."
+     ]
+    },
+    {
+     "id": "nb5-in-action",
+     "title": "Nb5 in action vs an early ...Qb6",
+     "intro": [
+      "At 1100, Black loves to hit b2 with ...Qb6. In the Jobava you have a cool answer: **Nb5**, which blocks the queen's view of b2 and attacks c7 at the same time.",
+      "Then **a4** gives the knight a permanent home and threatens a4-a5 to kick the queen."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": "Simple and solid. Don't rush into tactics yet."
+      },
+      {
+       "san": "Qb6",
+       "note": "Attacking b2."
+      },
+      {
+       "san": "Nb5",
+       "note": "Now the b-file is blocked, and Nc7+ is a threat."
+      },
+      {
+       "san": "Na6",
+       "note": "Only good defense: the knight covers c7."
+      },
+      {
+       "san": "a4",
+       "note": "Supports the knight and gets ready for a5, kicking the queen."
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "Be7",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": "Your knight can always drop back to d4 or a3 if needed."
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": "A Jobava favorite. Even after Black castles, the h-pawn can march and help an attack."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "Answer ...Qb6 with **Nb5**: it blocks the b-file and hits c7.",
+      "**a4** props up the knight and threatens a5 against the queen.",
+      "dxc5 is also a fine answer to ...Qb6 if you prefer simple chess."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "r1bqkb1r/pppnpppp/5n2/3p4/3P1B2/2N5/PPP1PPPP/R2QKBNR w KQkq - 4 4",
+     "prompt": "White to move. Black's knight just went to d7. What's the most annoying move for Black?",
+     "answer": [
+      "c3b5"
+     ],
+     "explain": "**Nb5!** With the knight on d7, nothing guards c7 well. Black has no comfortable way to stop Nxc7+."
+    },
+    {
+     "fen": "rnb1kb1r/pp2pppp/1q3n2/2pp4/3P1B2/2N1P3/PPP2PPP/R2QKBNR w KQkq - 1 5",
+     "prompt": "White to move. Black is attacking b2. Find a good answer.",
+     "answer": [
+      "c3b5",
+      "d4c5"
+     ],
+     "explain": "**Nb5** blocks the b-file and hits c7, or **dxc5** simply takes the pawn. Both are good."
+    }
+   ]
+  },
+  {
+   "id": "vs-e6",
+   "title": "vs ...d5, ...Nf6, ...e6",
+   "summary": "The most common setup you'll face. Learn the Nb5 / ...Na6 main line, what to do when Black kicks your knight, and the ...Bd6 trade.",
+   "lessons": [
+    {
+     "id": "e6-main-line",
+     "title": "Main line: Nb5 and ...Na6",
+     "intro": [
+      "Black plays the classic solid setup with ...e6. You jump **Nb5** right away, and most players defend with ...Na6.",
+      "The knight on a6 is a little offside, which is a small win for you. Then you develop normally and aim your pieces at Black's king."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": "Hits c7 immediately."
+      },
+      {
+       "san": "Na6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Be7",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "Bd3",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": "Holds d4 and gives the queen's bishop a safe home."
+      },
+      {
+       "san": "c4",
+       "note": "Black gains space and kicks your bishop."
+      },
+      {
+       "san": "Bb1",
+       "note": "Keep the bishop on the **b1-h7 diagonal**, pointing at h7."
+      },
+      {
+       "san": "Bd7",
+       "note": "Black wants to trade off your strong knight."
+      },
+      {
+       "san": "a4",
+       "note": "If ...Bxb5 then axb5 opens the a-file for your rook and kicks the a6 knight."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "After ...c4, retreat the bishop to **b1 or c2**, not e2. It belongs on the diagonal toward h7.",
+      "**a4** supports the b5 knight. If Black trades it, axb5 hits the a6 knight.",
+      "Later plans: **Ne5**, **Qc2** (battery at h7), and the e3-e4 break."
+     ]
+    },
+    {
+     "id": "e6-c6-kick",
+     "title": "Black kicks the knight with ...c6",
+     "intro": [
+      "Sometimes Black plays ...Na6 and then ...c6 to kick your knight back. That costs Black time, but it is not a mistake.",
+      "Here is a nice trick: once your knight retreats to c3, the a6 knight is loose. **Bxa6** wrecks Black's pawns."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": ""
+      },
+      {
+       "san": "Na6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "c6",
+       "note": "Kicking the knight."
+      },
+      {
+       "san": "Nc3",
+       "note": "Just go back. Your knight did its job: Black's knight is on a6."
+      },
+      {
+       "san": "Be7",
+       "note": ""
+      },
+      {
+       "san": "Bxa6",
+       "note": "Trade bishop for knight and give Black **doubled a-pawns**."
+      },
+      {
+       "san": "bxa6",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "When Black's knight sits on a6, **Bxa6** gives Black ugly doubled pawns.",
+      "Retreating Nb5-c3 is totally fine. You don't lose anything.",
+      "Later, Black's queenside pawns are weak targets for your queen and rooks."
+     ]
+    },
+    {
+     "id": "e6-bd6-trade",
+     "title": "Black offers ...Bd6",
+     "intro": [
+      "A natural 1100 move is ...Bd6, offering to trade bishops. With the knight on b5, you can just take it: **Nxd6+**.",
+      "You win the **bishop pair** (two bishops vs bishop and knight), and Black gets a clumsy pawn on d6."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": ""
+      },
+      {
+       "san": "Bd6",
+       "note": ""
+      },
+      {
+       "san": "Nxd6+",
+       "note": "Grab the bishop. Your knight was going to be traded anyway."
+      },
+      {
+       "san": "cxd6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": ""
+      },
+      {
+       "san": "Re8",
+       "note": ""
+      },
+      {
+       "san": "Bd3",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": ""
+      },
+      {
+       "san": "Bg3",
+       "note": "Keep the bishop. It pressures the d6 and e5 pawns."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...Bd6, play **Nxd6+** and enjoy the two bishops.",
+      "Black's pawn on d6 can become a target later.",
+      "Keep your dark bishop: drop it back to g3 if it gets hit."
+     ]
+    },
+    {
+     "id": "e6-bb4-check",
+     "title": "Black gives a check on b4",
+     "intro": [
+      "Some players throw in ...Bb4+ after ...Na6. Just block with **c3**. Now the bishop has to move again, so Black wasted time.",
+      "Don't panic about checks. Block with a pawn when it also helps your position."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": ""
+      },
+      {
+       "san": "Na6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Bb4+",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": "Blocks the check and gains time on the bishop."
+      },
+      {
+       "san": "Be7",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "Bd3",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": "Stockfish likes this. With Black's king on g8, the h-pawn can become a battering ram."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "Meet ...Bb4+ with **c3**: it blocks and kicks the bishop.",
+      "c3 was a move you wanted anyway, so Black's check just helped you."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "r1bq1rk1/pp2bppp/n3pn2/1N1p4/2pP1B2/2PBPN2/PP3PPP/R2QK2R w KQ - 0 9",
+     "prompt": "White to move. Your bishop is attacked. Where should it go?",
+     "answer": [
+      "d3b1",
+      "d3c2"
+     ],
+     "explain": "Keep it on the **b1-h7 diagonal**: Bb1 or Bc2. Be2 is passive and lets Black off the hook."
+    },
+    {
+     "fen": "rnbqk2r/ppp2ppp/3bpn2/1N1p4/3P1B2/8/PPP1PPPP/R2QKBNR w KQkq - 2 5",
+     "prompt": "White to move. Black offers a bishop trade. What's the most direct answer?",
+     "answer": [
+      "b5d6",
+      "e2e3"
+     ],
+     "explain": "**Nxd6+** wins the bishop pair and leaves Black with a pawn on d6. Calm e3 is also fine."
+    }
+   ]
+  },
+  {
+   "id": "vs-c5",
+   "title": "vs 3...c5",
+   "summary": "When Black hits back with ...c5, play e3 first. Then watch for Nb5 tricks, especially if Black puts a knight on c6.",
+   "lessons": [
+    {
+     "id": "c5-nc6-punish",
+     "title": "...c5 and ...Nc6? Punish with Nb5!",
+     "intro": [
+      "After 3...c5 4.e3, the most natural move is ...Nc6. But it's actually a mistake: **Nb5!** and Black can't cover c7 well.",
+      "Stockfish says White is clearly better in every line. Black's best try is ...e5, and even then you come out ahead."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": "Always e3 first vs ...c5. Nb5 before e3 is a mistake: ...Qa5+ hits your king and the b5 knight."
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": "Threatens Nc7+. Black has no good defense."
+      },
+      {
+       "san": "e5",
+       "note": "Best try: counterattack."
+      },
+      {
+       "san": "dxe5",
+       "note": ""
+      },
+      {
+       "san": "Qa5+",
+       "note": ""
+      },
+      {
+       "san": "Qd2",
+       "note": ""
+      },
+      {
+       "san": "Qxd2+",
+       "note": ""
+      },
+      {
+       "san": "Kxd2",
+       "note": ""
+      },
+      {
+       "san": "Ne4+",
+       "note": ""
+      },
+      {
+       "san": "Ke1",
+       "note": ""
+      },
+      {
+       "san": "g5",
+       "note": ""
+      },
+      {
+       "san": "f3",
+       "note": "Kick the knight. Don't worry about the bishop yet."
+      },
+      {
+       "san": "gxf4",
+       "note": ""
+      },
+      {
+       "san": "fxe4",
+       "note": ""
+      },
+      {
+       "san": "fxe3",
+       "note": ""
+      },
+      {
+       "san": "Nc7+",
+       "note": "Here comes the fork."
+      },
+      {
+       "san": "Kd8",
+       "note": ""
+      },
+      {
+       "san": "Nxa8",
+       "note": "You win a whole rook."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...c5, play **e3** first, then look for Nb5.",
+      "If Black plays ...Nc6 before dealing with c7, **Nb5** is very strong.",
+      "Stay calm in the tactics. The Nc7+ fork is your goal."
+     ]
+    },
+    {
+     "id": "c5-cxd4-bf5",
+     "title": "...cxd4 exd4 ...Bf5",
+     "intro": [
+      "If Black trades on d4, take back with the **e-pawn**: exd4. Now your light bishop and queen are free.",
+      "If Black then develops ...Bf5, the c7 square is weak again. Jump in with **Nb5**."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "cxd4",
+       "note": ""
+      },
+      {
+       "san": "exd4",
+       "note": "Always recapture with the pawn."
+      },
+      {
+       "san": "Bf5",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": "Threat: Nc7+."
+      },
+      {
+       "san": "Na6",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": "Solid. The knight now has a retreat on a3 if it gets kicked."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "Recapture **exd4** to open lines for your pieces.",
+      "When Black's bishop leaves c8 and the queen can't cover c7, **Nb5** gets stronger.",
+      "Black has an isolated-ish center to deal with. Your pieces are active."
+     ]
+    },
+    {
+     "id": "c5-a6",
+     "title": "...cxd4 and ...a6 (stopping Nb5)",
+     "intro": [
+      "Smart players stop Nb5 with ...a6. That's fine. You just develop normally: Nf3, Be2, O-O.",
+      "Don't force anything here. The position is equal, and you play for good piece placement and Ne5."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "cxd4",
+       "note": ""
+      },
+      {
+       "san": "exd4",
+       "note": ""
+      },
+      {
+       "san": "a6",
+       "note": "Takes away b5 from your knight."
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "Be2",
+       "note": "Simple. From e2 the bishop also guards f3, so ...Bg4 isn't scary."
+      },
+      {
+       "san": "Bg4",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "h3",
+       "note": "Ask the bishop. If it takes on f3, you get the bishop pair."
+      },
+      {
+       "san": "Bxf3",
+       "note": ""
+      },
+      {
+       "san": "Bxf3",
+       "note": ""
+      },
+      {
+       "san": "Bd6",
+       "note": ""
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "...a6 stops Nb5, so switch to normal development.",
+      "**h3** questions the g4 bishop. Getting the two bishops is a small plus.",
+      "Plans: Ne2-c1 or Re1, and the knight jump to e5 when possible."
+     ]
+    },
+    {
+     "id": "c5-e6-solid",
+     "title": "...c5 and ...e6 (the solid way)",
+     "intro": [
+      "Black plays ...c5 and ...e6 together. Nb5 still works. Black defends with ...Na6, just like in chapter 2.",
+      "Then **c3**, Nf3, Bd3 and you get your favorite setup."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": ""
+      },
+      {
+       "san": "Na6",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": ""
+      },
+      {
+       "san": "Be7",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "Bd3",
+       "note": "Bishop to its best diagonal."
+      },
+      {
+       "san": "Bd7",
+       "note": ""
+      },
+      {
+       "san": "a4",
+       "note": "Same idea as before: support the knight, and recapture axb5 if Black trades."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "Same setup as the ...e6 main line: Nb5, c3, Nf3, Bd3.",
+      "**a4** is the standard answer to ...Bd7."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "r1bqkb1r/pp2pppp/2n2n2/2pp4/3P1B2/2N1P3/PPP2PPP/R2QKBNR w KQkq - 1 5",
+     "prompt": "White to move. Black's last move was a mistake. Punish it!",
+     "answer": [
+      "c3b5"
+     ],
+     "explain": "**Nb5!** threatens Nc7+. Black can't defend c7 comfortably, and Stockfish gives White a big edge."
+    },
+    {
+     "fen": "rn1qkb1r/pp2pppp/5n2/3p1b2/3P1B2/2N5/PPP2PPP/R2QKBNR w KQkq - 1 6",
+     "prompt": "White to move. Find the strongest move.",
+     "answer": [
+      "c3b5"
+     ],
+     "explain": "**Nb5** hits c7 now that the c8 bishop has left. Black has to play the awkward ...Na6."
+    },
+    {
+     "fen": "r1bqkb1r/pp3ppp/2n1pn2/1Npp4/3P1B2/4P3/PPP2PPP/R2QKBNR w KQkq - 0 6",
+     "prompt": "White to move. Win material!",
+     "answer": [
+      "b5c7"
+     ],
+     "explain": "**Nc7+** forks the king and the a8 rook."
+    }
+   ]
+  },
+  {
+   "id": "vs-bf5",
+   "title": "vs ...Bf5 setups",
+   "summary": "When Black copies your London with ...Bf5, chase the bishop with f3, g4 and h4. Know the ...c5 counter too.",
+   "lessons": [
+    {
+     "id": "bf5-f3-g4-h4",
+     "title": "Chasing the bishop: f3, g4, h4",
+     "intro": [
+      "When Black develops ...Bf5, you can go after it with **f3 and g4**. The bishop runs to g6, and then **h4-h5** keeps chasing it.",
+      "Stockfish calls these positions about equal, but they are sharp and Black has to be careful. Great for 10-minute games."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "Bf5",
+       "note": ""
+      },
+      {
+       "san": "f3",
+       "note": "Prepares g4 and e4."
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "g4",
+       "note": "Kicks the bishop."
+      },
+      {
+       "san": "Bg6",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": "Threat: h5, trapping the bishop."
+      },
+      {
+       "san": "h5",
+       "note": ""
+      },
+      {
+       "san": "g5",
+       "note": "Kick the f6 knight too."
+      },
+      {
+       "san": "Nfd7",
+       "note": ""
+      },
+      {
+       "san": "e4",
+       "note": "Now you grab the center while Black's pieces are pushed back."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "**f3, g4, h4** chases the f5 bishop.",
+      "If Black stops h5 with ...h5, push **g5** to kick the knight.",
+      "**e4** next, while Black's pieces are passive."
+     ]
+    },
+    {
+     "id": "bf5-h6",
+     "title": "If Black plays ...h6 instead",
+     "intro": [
+      "Black can make room for the bishop with ...h6. Then you push **h5** anyway and the bishop has to hide on h7.",
+      "A bishop on h7 behind its own pawns is out of play for a long time."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "Bf5",
+       "note": ""
+      },
+      {
+       "san": "f3",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "g4",
+       "note": ""
+      },
+      {
+       "san": "Bg6",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": ""
+      },
+      {
+       "san": "h6",
+       "note": ""
+      },
+      {
+       "san": "h5",
+       "note": "Push it all the way."
+      },
+      {
+       "san": "Bh7",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": "Calm. Develop and remember Black's bishop is buried on h7."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...h6, push **h5** and bury the bishop on h7.",
+      "Your kingside pawns take space. Castle queenside later."
+     ]
+    },
+    {
+     "id": "bf5-c5-e4",
+     "title": "Black hits back with ...c5",
+     "intro": [
+      "After 4.f3, Black can counter with ...c5. Play **e4!** and if ...dxe4, push **d5** for a big center.",
+      "Then **Qd2 and O-O-O** to connect your pieces fast."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "Bf5",
+       "note": ""
+      },
+      {
+       "san": "f3",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "e4",
+       "note": "Strike in the center."
+      },
+      {
+       "san": "dxe4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": "Space! Your d-pawn cramps Black."
+      },
+      {
+       "san": "Nbd7",
+       "note": ""
+      },
+      {
+       "san": "Qd2",
+       "note": ""
+      },
+      {
+       "san": "h6",
+       "note": ""
+      },
+      {
+       "san": "O-O-O",
+       "note": "King safe, rook on the d-file behind your pawn."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...c5, play **e4** and then **d5**.",
+      "**Qd2 + O-O-O** gets your rook to the d-file quickly."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "rn1qkb1r/ppp2pp1/4pnb1/3p3p/3P1BPP/2N2P2/PPP1P3/R2QKBNR w KQkq - 0 7",
+     "prompt": "White to move. Black stopped h5. What's the next aggressive push?",
+     "answer": [
+      "g4g5"
+     ],
+     "explain": "**g5** kicks the f6 knight back. Then e4 grabs the center."
+    }
+   ]
+  },
+  {
+   "id": "vs-kings-indian",
+   "title": "vs King's Indian and ...g6",
+   "summary": "When Black fianchettoes, play Qd2, castle long, trade bishops with Bh6 and throw the h-pawn at Black's king.",
+   "lessons": [
+    {
+     "id": "kid-qd2-ooo",
+     "title": "The attack: Qd2, O-O-O, Bh6",
+     "intro": [
+      "Against ...g6 and ...Bg7, grab the center with **e4** first. Then the plan is famous and simple: **Qd2, Bh6** to trade off Black's best defender, **O-O-O**, then **h4-h5**.",
+      "Black usually attacks on the queenside with ...b5. It's a race, and your attack usually lands first."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "g6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "Bg7",
+       "note": ""
+      },
+      {
+       "san": "e4",
+       "note": "Take the center first. Stockfish likes this more than an instant Qd2."
+      },
+      {
+       "san": "d6",
+       "note": ""
+      },
+      {
+       "san": "Qd2",
+       "note": "Queen and bishop team up to play Bh6."
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "O-O-O",
+       "note": "Castle long. Your king goes away from the attack."
+      },
+      {
+       "san": "c6",
+       "note": ""
+      },
+      {
+       "san": "Bh6",
+       "note": "Trade off the g7 bishop, the key defender of Black's king."
+      },
+      {
+       "san": "b5",
+       "note": ""
+      },
+      {
+       "san": "f3",
+       "note": "Solid: protects e4 and supports g4 later."
+      },
+      {
+       "san": "Qa5",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": "The h-pawn storm begins. h5 is next."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "**Qd2 + Bh6** trades off Black's fianchetto bishop.",
+      "Castle **queenside**, then push **h4-h5** to open the h-file.",
+      "f3 keeps e4 safe so you can focus on attacking."
+     ]
+    },
+    {
+     "id": "kid-d5-e5",
+     "title": "Black plays ...d5: push e5",
+     "intro": [
+      "Sometimes Black castles and then hits your center with ...d5. Push **e5** and kick the f6 knight.",
+      "The knight usually goes to h5, where it can get trapped by g4!"
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "g6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "Bg7",
+       "note": ""
+      },
+      {
+       "san": "Qd2",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "e4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": "Kick the knight."
+      },
+      {
+       "san": "Nh5",
+       "note": ""
+      },
+      {
+       "san": "Be3",
+       "note": "Keep the bishop away from the knight."
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "h3",
+       "note": "Threat: g4, trapping the h5 knight."
+      },
+      {
+       "san": "cxd4",
+       "note": ""
+      },
+      {
+       "san": "Bxd4",
+       "note": ""
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...d5, push **e5** to kick the knight.",
+      "A knight on h5 can get trapped by **g4**.",
+      "Your space on the kingside is perfect for an attack."
+     ]
+    },
+    {
+     "id": "g6-h4-h5",
+     "title": "vs ...d5 and ...g6: the h-pawn storm",
+     "intro": [
+      "When Black plays ...d5, ...Nf6 and ...g6, you can attack before Black even finishes developing: **h4-h5**.",
+      "After hxg6, your rook on h1 is already on the open h-file."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "g6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Bg7",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": "Straight at the king."
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "h5",
+       "note": "Pressure on g6."
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "hxg6",
+       "note": "Open the h-file."
+      },
+      {
+       "san": "hxg6",
+       "note": ""
+      },
+      {
+       "san": "Qd2",
+       "note": "Next is Bh6 to trade off the g7 bishop."
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "O-O-O",
+       "note": ""
+      },
+      {
+       "san": "Qa5",
+       "note": ""
+      },
+      {
+       "san": "a3",
+       "note": "Stops ...Nb4 and protects your king's pawn cover."
+      },
+      {
+       "san": "Rd8",
+       "note": ""
+      },
+      {
+       "san": "Bh6",
+       "note": "Trade the defender. Now Qh2 or Qg5 ideas follow."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "Push **h4-h5** early, even if Black has castled.",
+      "**hxg6** opens the h-file for your rook.",
+      "**Bh6** trades off the g7 bishop and weakens Black's king."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "rnbq1rk1/pp2ppbp/2pp1np1/8/3PPB2/2N5/PPPQ1PPP/2KR1BNR w - - 0 7",
+     "prompt": "White to move. Start your attack. Find a good move.",
+     "answer": [
+      "f4h6",
+      "f2f3",
+      "h2h4",
+      "c1b1",
+      "g1f3"
+     ],
+     "explain": "**Bh6** trades the key defender, and f3 or h4 push the attack. Kb1 and Nf3 are fine too, but Bh6 is the most direct."
+    },
+    {
+     "fen": "rnbq1rk1/ppp1ppbp/6p1/3pP2n/3P1B2/2N5/PPPQ1PPP/R3KBNR w KQ - 1 7",
+     "prompt": "White to move. Your bishop is attacked by the h5 knight. Where should it go?",
+     "answer": [
+      "f4e3",
+      "f4h6"
+     ],
+     "explain": "**Be3** keeps the bishop safe and sets up h3 and g4 against the knight. **Bh6** to trade bishops is also good."
+    }
+   ]
+  },
+  {
+   "id": "vs-c6",
+   "title": "vs ...c6 (Slav setups)",
+   "summary": "Slav players put their bishop on f5 or g4. Kick it with f3 and g4, or keep it calm with Bd3.",
+   "lessons": [
+    {
+     "id": "slav-bf5-storm",
+     "title": "...c6 and ...Bf5: the pawn storm",
+     "intro": [
+      "Same plan as the ...Bf5 chapter: **f3, g4, h4**. With ...c6 instead of ...e6, Black has even less play in the center.",
+      "After Black's knight goes to d7, bring your king's knight out via **h3**, heading to f4."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Bf5",
+       "note": ""
+      },
+      {
+       "san": "f3",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "g4",
+       "note": ""
+      },
+      {
+       "san": "Bg6",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": ""
+      },
+      {
+       "san": "h5",
+       "note": ""
+      },
+      {
+       "san": "g5",
+       "note": ""
+      },
+      {
+       "san": "Nfd7",
+       "note": ""
+      },
+      {
+       "san": "Nh3",
+       "note": "The knight heads to f4, where it hits the g6 bishop and the e6 pawn."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "f3, g4, h4, g5: chase both the bishop and the knight.",
+      "**Nh3-f4** is the knight's best route here."
+     ]
+    },
+    {
+     "id": "slav-bg4-chase",
+     "title": "...c6 and ...Bg4",
+     "intro": [
+      "If the bishop goes to g4, kick it with **f3**. After ...Bh5, **g4** and the bishop runs to g6.",
+      "Then h4-h5 or g5 and Black's pieces get pushed around. Stockfish rates White clearly better here."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Bg4",
+       "note": ""
+      },
+      {
+       "san": "f3",
+       "note": "Kick it."
+      },
+      {
+       "san": "Bh5",
+       "note": ""
+      },
+      {
+       "san": "g4",
+       "note": ""
+      },
+      {
+       "san": "Bg6",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": "Threat: h5 trapping the bishop."
+      },
+      {
+       "san": "h5",
+       "note": ""
+      },
+      {
+       "san": "g5",
+       "note": "Now the f6 knight has to go backward."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...Bg4, play **f3** then **g4**.",
+      "Black's pieces get pushed to bad squares. Take space and attack."
+     ]
+    },
+    {
+     "id": "slav-calm-bd3",
+     "title": "The calm option: Bd3",
+     "intro": [
+      "If you don't want a wild pawn storm, just offer a bishop trade with **Bd3**. After Qxd3, your queen and pieces are nicely placed.",
+      "This is equal and simple. Good for when you're low on time."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Bf5",
+       "note": ""
+      },
+      {
+       "san": "Bd3",
+       "note": "Offer the trade."
+      },
+      {
+       "san": "Bxd3",
+       "note": ""
+      },
+      {
+       "san": "Qxd3",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "Nbd7",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "**Bd3** is a safe way to deal with ...Bf5.",
+      "Then simple development and castle short."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "rn1qkb1r/pp3pp1/2p1pnb1/3p3p/3P1BPP/2N1PP2/PPP5/R2QKBNR w KQkq - 0 8",
+     "prompt": "White to move. Black stopped h5. What's the next push?",
+     "answer": [
+      "g4g5"
+     ],
+     "explain": "**g5!** kicks the f6 knight back to d7. Black's pieces keep getting pushed around."
+    }
+   ]
+  },
+  {
+   "id": "odd-stuff",
+   "title": "Weird Stuff at 1100",
+   "summary": "...Nc6, ...e6 with ...Bb4, the Dutch, early ...e5 breaks and ...a6. What to do when Black doesn't play the book.",
+   "lessons": [
+    {
+     "id": "nc6-e5-break",
+     "title": "1...Nc6 and an early ...e5",
+     "intro": [
+      "Some players go 1...Nc6 and 2...d5, then push ...e5 to break your center. Just take with the bishop: **Bxe5**.",
+      "You win a pawn. Stockfish says Black gets enough activity to make it about equal, so just develop and stay safe."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": "A gambit-ish break."
+      },
+      {
+       "san": "Bxe5",
+       "note": "Take with the bishop. dxe5 is worse."
+      },
+      {
+       "san": "Nxe5",
+       "note": ""
+      },
+      {
+       "san": "dxe5",
+       "note": ""
+      },
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "Ne4",
+       "note": "Knight to a central square."
+      },
+      {
+       "san": "Bf5",
+       "note": ""
+      },
+      {
+       "san": "Nd2",
+       "note": "Safe square. Next you develop with Ngf3 and keep the pawn."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs an early ...e5, **Bxe5** wins a pawn.",
+      "Don't get greedy after that. Just develop and keep things safe."
+     ]
+    },
+    {
+     "id": "nc6-e5-d5",
+     "title": "1...Nc6 2.Nc3 e5",
+     "intro": [
+      "If Black plays ...e5 on move 2, the simplest answer is **d5**, kicking the knight.",
+      "The knight has to go backward, and you follow with e4 for a big center."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": "Kick the knight. It has no great square."
+      },
+      {
+       "san": "Nce7",
+       "note": ""
+      },
+      {
+       "san": "e4",
+       "note": "Big center."
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "d6",
+       "note": ""
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs 2...e5, push **d5** and then **e4**.",
+      "dxe5 is also fine, but d5 is easy to play."
+     ]
+    },
+    {
+     "id": "e6-bb4",
+     "title": "1...e6 2.Nc3 Bb4",
+     "intro": [
+      "After 1...e6 2.Nc3, Black might pin your knight with ...Bb4. Ask it right away with **a3**.",
+      "If Black takes on c3, you get the two bishops and a strong pawn center."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Bb4",
+       "note": ""
+      },
+      {
+       "san": "a3",
+       "note": "Ask the question."
+      },
+      {
+       "san": "Bxc3+",
+       "note": ""
+      },
+      {
+       "san": "bxc3",
+       "note": "You get two bishops."
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "c4",
+       "note": "Use your center pawns."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...Bb4, play **a3** and take the bishop pair if offered.",
+      "After bxc3, push **c4** to put your center pawns to work.",
+      "If Black plays 2...d5 instead, just play 3.Bf4 and you're back in chapter 2."
+     ]
+    },
+    {
+     "id": "dutch",
+     "title": "The Dutch: 1...f5",
+     "intro": [
+      "Against 1...f5, the Jobava setup works great. Same moves: Nc3, Bf4, and **Nb5** if Black plays ...e6.",
+      "Black's pawn on f5 weakens the e6 and e5 squares, so your pieces have nice homes."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "f5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": "Same trick: hitting c7."
+      },
+      {
+       "san": "Na6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Be7",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "Be2",
+       "note": "Simple development."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs the Dutch, keep the same setup: **Nc3, Bf4, Nb5**.",
+      "The **e5** square is a great spot for your knight later."
+     ]
+    },
+    {
+     "id": "d6-e5-break",
+     "title": "1...Nf6 2.Nc3 d6 3.Bf4 e5",
+     "intro": [
+      "Black plays ...d6 and then ...e5. Take it: **dxe5**. The most common reply is ...Ng4, hitting e5, but you still come out a pawn up.",
+      "If Black takes back with ...dxe5, see the traps chapter: you trade queens and win the e5 pawn."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "d6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": "A mistake, but a common one."
+      },
+      {
+       "san": "dxe5",
+       "note": "Take!"
+      },
+      {
+       "san": "Ng4",
+       "note": "Hits e5. Stockfish slightly prefers ...Nh5, but White is better either way."
+      },
+      {
+       "san": "exd6",
+       "note": ""
+      },
+      {
+       "san": "Bxd6",
+       "note": ""
+      },
+      {
+       "san": "Bxd6",
+       "note": ""
+      },
+      {
+       "san": "cxd6",
+       "note": ""
+      },
+      {
+       "san": "Qd2",
+       "note": "Develop and keep the extra pawn."
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "f3",
+       "note": "Kick the knight."
+      },
+      {
+       "san": "Nge5",
+       "note": ""
+      },
+      {
+       "san": "e4",
+       "note": ""
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...d6 + ...e5, play **dxe5**.",
+      "After ...Ng4, trade on d6 and keep your extra pawn.",
+      "**f3** kicks the g4 knight."
+     ]
+    },
+    {
+     "id": "a6-anti-nb5",
+     "title": "Black plays ...a6 early",
+     "intro": [
+      "...a6 stops Nb5. Smart, but it costs a move. Just develop normally: e3, Nf3, Be2, O-O.",
+      "Later the **Ne5** jump is a good plan."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "a6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "Be2",
+       "note": ""
+      },
+      {
+       "san": "b5",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "c4",
+       "note": ""
+      },
+      {
+       "san": "Ne5",
+       "note": "A strong central knight."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "If Black stops Nb5 with ...a6, don't force it. Just develop.",
+      "**Ne5** is your best knight square in quiet lines."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "r1bqkbnr/ppp2ppp/2n5/3pp3/3P1B2/2N5/PPP1PPPP/R2QKBNR w KQkq - 0 4",
+     "prompt": "White to move. Black pushed ...e5. Take it, but with what?",
+     "answer": [
+      "f4e5"
+     ],
+     "explain": "**Bxe5!** wins a pawn. After dxe5, Black plays ...d4, kicks your knight and is fine."
+    },
+    {
+     "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/3P4/2N5/PPP1PPPP/R1BQKBNR w KQkq - 0 3",
+     "prompt": "White to move. Black hit your center. Find a good reply.",
+     "answer": [
+      "d4e5",
+      "d4d5",
+      "g1f3",
+      "e2e3"
+     ],
+     "explain": "**d5** kicks the knight, or **dxe5** grabs the pawn. Calm moves like Nf3 or e3 are fine too."
+    }
+   ]
+  },
+  {
+   "id": "englund-gambit",
+   "title": "The Englund Gambit (1.d4 e5)",
+   "summary": "Take the pawn, then know the one big trap: after ...Qb4+ Bd2 ...Qxb2, play Nc3, never Bc3.",
+   "lessons": [
+    {
+     "id": "englund-main-trap",
+     "title": "...Qe7, ...Qb4+ and the b2 grab",
+     "intro": [
+      "The Englund trap: 1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 and now the natural **6.Bc3??** loses to **...Bb4!** If 7.Qd2, then ...Bxc3 8.Qxc3 Qc1# is checkmate.",
+      "The right move is **6.Nc3!** It defends everything, and Black's queen is the one in trouble."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": ""
+      },
+      {
+       "san": "dxe5",
+       "note": "Take the pawn."
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": "Protect e5."
+      },
+      {
+       "san": "Qe7",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": "Protect e5 again."
+      },
+      {
+       "san": "Qb4+",
+       "note": ""
+      },
+      {
+       "san": "Bd2",
+       "note": "Block with the bishop."
+      },
+      {
+       "san": "Qxb2",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": "The key move, NOT Bc3. Rb1 is coming next to hit the queen."
+      },
+      {
+       "san": "Bb4",
+       "note": ""
+      },
+      {
+       "san": "Rb1",
+       "note": "Hit the queen."
+      },
+      {
+       "san": "Qa3",
+       "note": ""
+      },
+      {
+       "san": "Nd5",
+       "note": "Threat: Nxc7+, and Black's bishop on b4 is loose."
+      },
+      {
+       "san": "Ba5",
+       "note": ""
+      },
+      {
+       "san": "e4",
+       "note": ""
+      },
+      {
+       "san": "Nge7",
+       "note": ""
+      },
+      {
+       "san": "Be2",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": "You're up material with a huge lead in development."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "After ...Qxb2, play **Nc3!**, never Bc3.",
+      "**Rb1** chases the queen. **Nd5** threatens Nxc7+.",
+      "The mate pattern to remember: ...Bb4 pins, then ...Qc1#."
+     ]
+    },
+    {
+     "id": "englund-simple",
+     "title": "The simple way: 4.Nc3",
+     "intro": [
+      "If you don't want any ...Qb4+ stuff, play **4.Nc3** instead of Bf4. Black takes back the pawn, but you get a big center with e4.",
+      "Stockfish rates this clearly better for White, and it's easy to play."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": ""
+      },
+      {
+       "san": "dxe5",
+       "note": ""
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "Qe7",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": "Develop and protect against ...Qb4+ ideas."
+      },
+      {
+       "san": "Nxe5",
+       "note": ""
+      },
+      {
+       "san": "e4",
+       "note": "Big center. Black's queen blocks the f8 bishop."
+      },
+      {
+       "san": "d6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c6",
+       "note": ""
+      },
+      {
+       "san": "Qd2",
+       "note": "Get ready to castle long."
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "O-O-O",
+       "note": ""
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "**4.Nc3** avoids the trap completely.",
+      "Black's queen on e7 blocks their own bishop. Take the center with **e4**.",
+      "Castle **queenside** and attack."
+     ]
+    },
+    {
+     "id": "englund-d6",
+     "title": "Englund with ...d6",
+     "intro": [
+      "Some players offer a second pawn with ...d6. Just take it: **exd6**. Black's bishop recaptures, and you're simply a pawn up.",
+      "Then **Nc3** and Nb5 ideas, hitting the d6 bishop and c7. Feels like home, right?"
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": ""
+      },
+      {
+       "san": "dxe5",
+       "note": ""
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "d6",
+       "note": ""
+      },
+      {
+       "san": "exd6",
+       "note": "Take it. You're a pawn up."
+      },
+      {
+       "san": "Bxd6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": "Jobava style: hitting the bishop and c7."
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": ""
+      },
+      {
+       "san": "a5",
+       "note": ""
+      },
+      {
+       "san": "Nxd6",
+       "note": "Grab the bishop pair."
+      },
+      {
+       "san": "cxd6",
+       "note": ""
+      },
+      {
+       "san": "Bg5",
+       "note": ""
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...d6, just **exd6**. You're a clean pawn up.",
+      "**Nb5** hits the d6 bishop and c7. Trade it off for the bishop pair."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "r1b1kbnr/pppp1ppp/2n5/4P3/8/5N2/PqPBPPPP/RN1QKB1R w KQkq - 0 6",
+     "prompt": "White to move. Black just grabbed b2. There is only one good move. Find it!",
+     "answer": [
+      "b1c3"
+     ],
+     "explain": "**Nc3!** Every other move is bad. 6.Bc3?? runs into ...Bb4! and Qd2 allows ...Bxc3 Qxc3 Qc1#."
+    },
+    {
+     "fen": "r1b1k1nr/pppp1ppp/2n5/4P3/1b6/q1N2N2/P1PBPPPP/1R1QKB1R w Kkq - 4 8",
+     "prompt": "White to move. Black's queen and bishop are on the queenside. Find the strongest move.",
+     "answer": [
+      "c3d5"
+     ],
+     "explain": "**Nd5!** threatens Nxc7+ and attacks the b4 bishop. Black's pieces are way out of position."
+    },
+    {
+     "fen": "r1b1kbnr/ppppqppp/2n5/4P3/8/5N2/PPP1PPPP/RNBQKB1R w KQkq - 3 4",
+     "prompt": "White to move. How do you protect your extra e5 pawn?",
+     "answer": [
+      "c1f4",
+      "c1g5",
+      "b1c3"
+     ],
+     "explain": "**Bf4** protects e5, **Bg5** hits the queen, and **Nc3** develops safely. All are good."
+    }
+   ]
+  },
+  {
+   "id": "traps-and-tricks",
+   "title": "Traps and Tricks",
+   "summary": "Short lines where Black's natural move loses material. Each mistake here is confirmed by Stockfish.",
+   "lessons": [
+    {
+     "id": "trap-nbd7-fork",
+     "title": "...Nbd7? and the Nc7+ fork",
+     "intro": [
+      "After 3.Bf4, ...Nbd7 looks normal, but it blocks the queen's protection of c7. **Nb5!** and c7 is in big trouble.",
+      "If Black plays the natural ...e6, **Nxc7+** wins the rook."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "Nbd7",
+       "note": "A mistake: now the queen on d8 can't easily help c7."
+      },
+      {
+       "san": "Nb5",
+       "note": "Threat: Nxc7+."
+      },
+      {
+       "san": "e6",
+       "note": "Black doesn't see it."
+      },
+      {
+       "san": "Nxc7+",
+       "note": "Fork!"
+      },
+      {
+       "san": "Ke7",
+       "note": ""
+      },
+      {
+       "san": "Nxa8",
+       "note": "You won a rook."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "When Black's knight goes to **d7**, always check **Nb5**.",
+      "Nxc7+ forks the king and the a8 rook."
+     ]
+    },
+    {
+     "id": "trap-nc6-e6-fork",
+     "title": "...Nc6 and ...e6? Nc7+",
+     "intro": [
+      "This is the line from chapter 3 where Black doesn't find ...e5. After **Nb5**, the natural ...e6 drops the rook."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": "Natural, but it loses."
+      },
+      {
+       "san": "Nc7+",
+       "note": ""
+      },
+      {
+       "san": "Ke7",
+       "note": ""
+      },
+      {
+       "san": "Nxa8",
+       "note": ""
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "After ...Nc6, **Nb5** threatens Nc7+.",
+      "Black needs a real answer. ...e6 isn't one."
+     ]
+    },
+    {
+     "id": "trap-qb6-e5",
+     "title": "...Qb6, Nb5, ...e5?",
+     "intro": [
+      "After ...Qb6 Nb5, some players push ...e5 to hit your bishop. But **dxe5** and now if ...Ne4, **Qxd5** wins big.",
+      "The d5 pawn was only guarded by the f6 knight. Once it moves, the pawn falls with tempo."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Qb6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": "Looks active but it's a mistake."
+      },
+      {
+       "san": "dxe5",
+       "note": "Hits the knight."
+      },
+      {
+       "san": "Ne4",
+       "note": ""
+      },
+      {
+       "san": "Qxd5",
+       "note": "Grab the pawn and hit the e4 knight."
+      },
+      {
+       "san": "a6",
+       "note": ""
+      },
+      {
+       "san": "Nc7+",
+       "note": "Fork!"
+      },
+      {
+       "san": "Qxc7",
+       "note": ""
+      },
+      {
+       "san": "Qxe4",
+       "note": "You win material."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...e5 here, **dxe5** is strong.",
+      "Watch for **Qxd5** when the d5 pawn loses its defender."
+     ]
+    },
+    {
+     "id": "trap-qa5-bf5-bc7",
+     "title": "...Qa5+ c3 ...Bf5? Bc7!",
+     "intro": [
+      "After ...Nc6 Nb5, Black might check with ...Qa5+. Block with **c3**. If Black then develops ...Bf5, **Bc7!** hits the queen, and Black can't untangle without losing material.",
+      "Stockfish says White is completely winning after Bc7."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Nc6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": ""
+      },
+      {
+       "san": "Qa5+",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": "Block with a pawn."
+      },
+      {
+       "san": "Bf5",
+       "note": "Natural, but a blunder."
+      },
+      {
+       "san": "Bc7",
+       "note": "Attacks the queen. Black is in big trouble."
+      },
+      {
+       "san": "b6",
+       "note": ""
+      },
+      {
+       "san": "dxc5",
+       "note": "Black's queenside falls apart."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "**Bc7** can trap a queen on a5. Look for it!",
+      "After ...Qa5+, always block with **c3**."
+     ]
+    },
+    {
+     "id": "trap-d6-e5-queen-trade",
+     "title": "...d6, ...e5, ...dxe5? Qxd8+",
+     "intro": [
+      "After 1.d4 Nf6 2.Nc3 d6 3.Bf4 e5 4.dxe5, taking back with ...dxe5 is a mistake. **Qxd8+** and then you grab e5.",
+      "After the queen trade Black can't castle, and you're a pawn up."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "d6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "e5",
+       "note": ""
+      },
+      {
+       "san": "dxe5",
+       "note": ""
+      },
+      {
+       "san": "dxe5",
+       "note": "Natural, but it drops a pawn."
+      },
+      {
+       "san": "Qxd8+",
+       "note": "Trade queens with check."
+      },
+      {
+       "san": "Kxd8",
+       "note": ""
+      },
+      {
+       "san": "O-O-O+",
+       "note": "Check, and your rook takes the d-file."
+      },
+      {
+       "san": "Nbd7",
+       "note": ""
+      },
+      {
+       "san": "Bxe5",
+       "note": "Pawn up."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "vs ...dxe5, play **Qxd8+** and then win e5.",
+      "Castle long with check to grab the d-file."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "r1bqkb1r/pppn1ppp/4pn2/1N1p4/3P1B2/8/PPP1PPPP/R2QKBNR w KQkq - 0 5",
+     "prompt": "White to move. Black missed something. Win material!",
+     "answer": [
+      "b5c7"
+     ],
+     "explain": "**Nxc7+** forks the king and rook."
+    },
+    {
+     "fen": "rnb1kb1r/pp3ppp/1q3n2/1Nppp3/3P1B2/4P3/PPP2PPP/R2QKBNR w KQkq - 0 6",
+     "prompt": "White to move. Black attacked your bishop. What's best?",
+     "answer": [
+      "d4e5",
+      "f4e5"
+     ],
+     "explain": "**dxe5** (or Bxe5) wins a pawn. After dxe5, ...Ne4? loses to Qxd5."
+    },
+    {
+     "fen": "rnbqkb1r/ppp2ppp/5n2/4p3/5B2/2N5/PPP1PPPP/R2QKBNR w KQkq - 0 5",
+     "prompt": "White to move. Win a pawn.",
+     "answer": [
+      "d1d8"
+     ],
+     "explain": "**Qxd8+** Kxd8 and then O-O-O+ or Bxe5 wins the e5 pawn."
+    },
+    {
+     "fen": "r3kb1r/pp2pppp/2n2n2/qNpp1b2/3P1B2/2P1P3/PP3PPP/R2QKBNR w KQkq - 1 7",
+     "prompt": "White to move. Black just developed the bishop. Find the strongest move.",
+     "answer": [
+      "f4c7"
+     ],
+     "explain": "**Bc7!** hits the queen and Black can't untangle. Nc7+ also wins material, but Bc7 is even stronger."
+    }
+   ]
+  },
+  {
+   "id": "middlegame-plans",
+   "title": "Middlegame Plans",
+   "summary": "What to do after the opening: the queenside squeeze, the kingside pawn storm, and quiz positions to test your plans.",
+   "lessons": [
+    {
+     "id": "plan-a4-then-kingside",
+     "title": "Plan: a4, then g4 on the kingside",
+     "intro": [
+      "From the main line in chapter 2. Black closes the queenside with ...c4. Your plan: **a4** to keep the knight on b5, then a **kingside pawn storm** with h4 and g4.",
+      "When the center is locked, attack where your pieces point. Your bishops point at Black's king."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "d5",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "e6",
+       "note": ""
+      },
+      {
+       "san": "Nb5",
+       "note": ""
+      },
+      {
+       "san": "Na6",
+       "note": ""
+      },
+      {
+       "san": "e3",
+       "note": ""
+      },
+      {
+       "san": "Be7",
+       "note": ""
+      },
+      {
+       "san": "Nf3",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "Bd3",
+       "note": ""
+      },
+      {
+       "san": "c5",
+       "note": ""
+      },
+      {
+       "san": "c3",
+       "note": ""
+      },
+      {
+       "san": "c4",
+       "note": ""
+      },
+      {
+       "san": "Bb1",
+       "note": ""
+      },
+      {
+       "san": "Bd7",
+       "note": ""
+      },
+      {
+       "san": "a4",
+       "note": ""
+      },
+      {
+       "san": "Bxb5",
+       "note": ""
+      },
+      {
+       "san": "axb5",
+       "note": "The a-file opens and the a6 knight is attacked."
+      },
+      {
+       "san": "Nb8",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": "Center is locked, so attack on the kingside."
+      },
+      {
+       "san": "Nbd7",
+       "note": ""
+      },
+      {
+       "san": "g4",
+       "note": "Pawns go forward to open lines at Black's king."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "When the center is locked (...c4), attack with **h4 and g4**.",
+      "**axb5** opens the a-file for your rook.",
+      "Your king can stay in the middle a while because the center is closed."
+     ]
+    },
+    {
+     "id": "plan-kid-race",
+     "title": "Plan: winning the opposite-castling race",
+     "intro": [
+      "From the King's Indian chapter. Kings on opposite sides means a **race**. Whoever opens lines first usually wins.",
+      "Trade Black's fianchetto bishop and push your h-pawn. Don't waste time defending unless you have to."
+     ],
+     "start": null,
+     "moves": [
+      {
+       "san": "d4",
+       "note": ""
+      },
+      {
+       "san": "Nf6",
+       "note": ""
+      },
+      {
+       "san": "Nc3",
+       "note": ""
+      },
+      {
+       "san": "g6",
+       "note": ""
+      },
+      {
+       "san": "Bf4",
+       "note": ""
+      },
+      {
+       "san": "Bg7",
+       "note": ""
+      },
+      {
+       "san": "e4",
+       "note": ""
+      },
+      {
+       "san": "d6",
+       "note": ""
+      },
+      {
+       "san": "Qd2",
+       "note": ""
+      },
+      {
+       "san": "O-O",
+       "note": ""
+      },
+      {
+       "san": "O-O-O",
+       "note": ""
+      },
+      {
+       "san": "c6",
+       "note": ""
+      },
+      {
+       "san": "Bh6",
+       "note": ""
+      },
+      {
+       "san": "b5",
+       "note": ""
+      },
+      {
+       "san": "f3",
+       "note": ""
+      },
+      {
+       "san": "Qa5",
+       "note": ""
+      },
+      {
+       "san": "h4",
+       "note": ""
+      },
+      {
+       "san": "b4",
+       "note": ""
+      },
+      {
+       "san": "Nb1",
+       "note": "The knight steps back, but it guards a3 and c3."
+      },
+      {
+       "san": "Ba6",
+       "note": ""
+      },
+      {
+       "san": "Bxa6",
+       "note": ""
+      },
+      {
+       "san": "Nxa6",
+       "note": ""
+      },
+      {
+       "san": "Bxg7",
+       "note": ""
+      },
+      {
+       "san": "Kxg7",
+       "note": ""
+      },
+      {
+       "san": "h5",
+       "note": "Rip open the h-file."
+      }
+     ],
+     "train": "white",
+     "key_ideas": [
+      "In opposite-side castling, **speed** matters most.",
+      "**Bxg7** removes Black's best defender, then **h5** opens the h-file."
+     ]
+    }
+   ],
+   "quiz": [
+    {
+     "fen": "r2q1rk1/pp1bbppp/n3pn2/1N1p4/2pP1B2/2P1PN2/PP3PPP/RB1QK2R w KQ - 2 10",
+     "prompt": "White to move. Black wants to trade your b5 knight. What's the plan?",
+     "answer": [
+      "a2a4"
+     ],
+     "explain": "**a4** supports the knight. If ...Bxb5 axb5, your rook gets the a-file and the a6 knight is hit."
+    },
+    {
+     "fen": "rnb2rk1/p3ppbp/2pp1npB/q7/1p1PP2P/2N2P2/PPPQ2P1/2KR1BNR w - - 0 10",
+     "prompt": "White to move. Your knight is attacked. Where does it go?",
+     "answer": [
+      "c3b1"
+     ],
+     "explain": "**Nb1!** It looks ugly, but it guards a3 and c3 and keeps your king safe. Every other knight move loses material."
+    }
+   ]
+  }
+ ]
+}

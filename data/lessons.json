@@ -1,0 +1,1008 @@
+{
+ "tactics": [
+  {
+   "id": "hanging-pieces",
+   "title": "Hanging Pieces & Counting",
+   "theme": "hangingPiece",
+   "summary": "Most games at 1100 are decided by a piece that nobody was guarding, so learn to see loose pieces and count attackers and defenders.",
+   "body": [
+    "A piece is **hanging** when it can be taken for free. Sometimes nothing defends it at all. Sometimes it has defenders, but more attackers than defenders.",
+    "**Counting** is how you check. List every piece attacking a square, then every piece defending it. If attackers outnumber defenders, the piece usually falls. Also look at the values: a pawn attacking a knight wins even if the knight is defended.",
+    "The trick is that pieces become loose when something moves. A queen that was guarding a knight goes off to grab a pawn, and suddenly the knight hangs. So after every move, ask what that piece **stopped** guarding."
+   ],
+   "spot_it": [
+    "After their move: is anything of theirs now undefended?",
+    "Did a piece that was defending something just leave?",
+    "For each capture you consider: count attackers vs defenders on that square.",
+    "Check the long diagonals and open files. Bishops and rooks hit loose pieces from far away.",
+    "Before you move: will this move leave one of **your** pieces unguarded?"
+   ],
+   "pitfalls": [
+    "Taking a 'free' piece that is actually defended once more than you counted.",
+    "Forgetting that a pinned piece is not a real defender.",
+    "Only counting pieces near the action and missing a bishop or rook from across the board.",
+    "Grabbing material with your queen and leaving your own piece loose behind it."
+   ],
+   "examples": [
+    {
+     "puzzle": "4gk0x",
+     "fen": "r1bqkb1r/ppp2ppp/4pn2/8/3nN3/3P2P1/PPPQ1P1P/R1B1KBNR b KQkq - 2 7",
+     "moves": "d4f3 g1f3 f6e4 d3e4",
+     "caption": "7...Nf3+ is check, but the knight on f3 has zero defenders. 8.Nxf3 just takes it. Black grabs back with 8...Nxe4, but the e4 knight was guarded by the d3 pawn: 9.dxe4 and White is a full knight up."
+    },
+    {
+     "puzzle": "3LYmc",
+     "fen": "5rk1/1p2qrp1/p4n1p/2pQp3/4N3/2P5/PP3PPP/R4RK1 w - - 4 22",
+     "moves": "d5c5 f6e4 c5e7 f7e7",
+     "caption": "White's queen left d5 to grab a pawn with 22.Qxc5. On d5 it was guarding the e4 knight. Now 22...Nxe4 wins the knight and hits the queen too. After 23.Qxe7 Rxe7 Black is simply a piece up."
+    },
+    {
+     "puzzle": "2dcMU",
+     "fen": "r3kbnr/1b3ppp/p3p3/2p5/4NB2/8/PPP1BPPP/R2R2K1 w kq - 0 12",
+     "moves": "f4d6 b7e4 d6f8 e8f8",
+     "caption": "Look down the long diagonal: the b7 bishop hits e4, and the knight there has no defender. 12...Bxe4 wins it. White's 13.Bxf8 Kxf8 is only a bishop trade, so Black stays a knight up."
+    }
+   ]
+  },
+  {
+   "id": "fork",
+   "title": "Forks",
+   "theme": "fork",
+   "summary": "One piece attacks two targets at once, and the opponent can only save one.",
+   "body": [
+    "A **fork** is one move that creates two threats. The best forks include a check, because the opponent must deal with the king first and then loses the other piece.",
+    "Knights are the kings of forks. They jump, they can't be blocked, and they attack pieces that can't attack them back. But queens, pawns and even kings fork too.",
+    "Classic knight fork squares are near the enemy king: c7 and f7 (or c2 and f2), plus any square that hits the king and the queen together."
+   ],
+   "spot_it": [
+    "Are two of their valuable pieces (king, queen, rooks) a knight's jump apart from one square?",
+    "Is any of their pieces loose? A check that also attacks a loose piece wins it.",
+    "Look at captures that land with check. Often the capture is the fork.",
+    "Can a pawn push hit two pieces side by side?"
+   ],
+   "pitfalls": [
+    "Leaving your king and queen a knight's jump apart from the same square.",
+    "Forking two pieces when one of them can move away with a threat of its own.",
+    "Forgetting the fork square is defended, so your knight just gets taken."
+   ],
+   "examples": [
+    {
+     "puzzle": "1rEuT",
+     "fen": "8/2q3k1/p2N1b2/3Q1pp1/1p2p3/4P1P1/5PK1/8 b - - 1 50",
+     "moves": "c7e7 d6f5 g7f8 f5e7",
+     "caption": "51.Nxf5+ grabs a pawn with check and lands on a square that also hits the queen on e7. The king has to move (51...Kf8), and 52.Nxe7 picks up the queen."
+    },
+    {
+     "puzzle": "3jskf",
+     "fen": "8/8/R5p1/1p1p1pP1/1P1kp2P/P2n4/1P2K3/8 w - - 0 45",
+     "moves": "a6g6 d3f4 e2e1 f4g6",
+     "caption": "White's rook just took on g6. 45...Nf4+ checks the king on e2 and hits the rook on g6 at the same time. After 46.Ke1, 46...Nxg6 wins the rook."
+    },
+    {
+     "puzzle": "03r1E",
+     "fen": "r3kb1r/ppp1qp1p/2n4p/4p3/8/4PN1P/PPP2PP1/R2QKB1R w KQkq - 0 10",
+     "moves": "f1b5 e7b4 f3d2 b4b5",
+     "caption": "Forks are not only for knights. 10...Qb4+ checks the king on e1 and attacks the loose bishop on b5. White blocks with 11.Nd2, and 11...Qxb5 collects the bishop."
+    }
+   ]
+  },
+  {
+   "id": "pin",
+   "title": "Pins (Absolute vs Relative)",
+   "theme": "pin",
+   "summary": "A pinned piece can't move (or shouldn't) because something more valuable sits behind it.",
+   "body": [
+    "A **pin** happens when a bishop, rook or queen attacks a piece, and behind that piece on the same line is something bigger.",
+    "**Absolute pin:** the piece behind is the king. The pinned piece is not allowed to move off the line at all. **Relative pin:** the piece behind is a queen or rook. The pinned piece can move, but you lose the thing behind it.",
+    "Two ways to cash in: attack the pinned piece again (it can't run), or remember that a pinned piece is a fake defender. If a pinned knight 'guards' something, that something is really loose."
+   ],
+   "spot_it": [
+    "Is their king or queen on the same line as one of their pieces, with nothing else between?",
+    "Can a bishop or rook land on that line?",
+    "Is one of their pieces already pinned? Attack it again, especially with a pawn.",
+    "Before counting defenders, cross out any defender that is pinned."
+   ],
+   "pitfalls": [
+    "Moving a pinned piece in a relative pin and losing the queen behind it.",
+    "Putting your queen on the same diagonal or file as your king when an enemy bishop or rook can reach that line.",
+    "Pinning a piece that is well defended and then having nothing to follow up with."
+   ],
+   "examples": [
+    {
+     "puzzle": "0C8kD",
+     "fen": "r3kbnr/p4ppp/1qp1p3/3pP3/3P4/5Q1P/PP3PP1/RNB1K2R w KQkq - 0 11",
+     "moves": "f3c3 f8b4 e1g1 b4c3",
+     "caption": "11...Bb4 pins White's queen to the king on e1, an absolute pin. The queen can't step off the diagonal, and taking the bishop just loses the queen to ...Qxb4+. White castles, but the queen is still attacked: 12...Bxc3."
+    },
+    {
+     "puzzle": "3JWY8",
+     "fen": "2r1k2r/pbq1bp1p/1p2p1p1/8/P2P4/2PB3R/3B1PPP/R2Q2K1 b k - 2 18",
+     "moves": "c7c6 d3b5 e8g8 b5c6",
+     "caption": "19.Bb5 pins the queen on c6 to the king on e8. Black breaks the pin with 19...O-O, but now it is White's move and the queen is still attacked: 20.Bxc6 wins the queen for a bishop."
+    },
+    {
+     "puzzle": "5JpRJ",
+     "fen": "8/8/5p1k/p4Kp1/1b1R3p/1P6/P7/8 w - - 0 47",
+     "moves": "f5f6 b4c3 f6f5 c3d4",
+     "caption": "47...Bc3 attacks the rook on d4, and the White king on f6 sits behind it on the same diagonal. The rook is pinned and has no defender. 48.Kf5 gets the king off the line one move too late: 48...Bxd4."
+    }
+   ]
+  },
+  {
+   "id": "skewer",
+   "title": "Skewers",
+   "theme": "skewer",
+   "summary": "A reverse pin: you attack a big piece, it moves, and you take what was behind it.",
+   "body": [
+    "A **skewer** is a pin turned around. The more valuable piece is in front. When it moves out of the attack, the piece behind it is exposed.",
+    "The most common version is a check: the king is in front, the king must move, and the queen or rook behind it falls.",
+    "Skewers show up a lot in endgames, where kings walk into the open and rooks and bishops have long lines."
+   ],
+   "spot_it": [
+    "Are their king and another piece on the same rank, file or diagonal?",
+    "Can you check the king along that line with a piece that is protected (or safe from the king)?",
+    "In endgames, check if their king and rook line up."
+   ],
+   "pitfalls": [
+    "Skewering with an undefended piece right next to the king, so the king just takes it.",
+    "Lining up your own king and queen on an open file or diagonal.",
+    "Missing that the piece behind is defended, so the skewer only trades."
+   ],
+   "examples": [
+    {
+     "puzzle": "2UVB8",
+     "fen": "7R/8/N6k/8/p1B2n2/P4p1p/KPn4P/6q1 b - - 1 47",
+     "moves": "h6g7 h8g8 g7f6 g8g1",
+     "caption": "The king on g7 and queen on g1 sit on the same file. 48.Rg8+ (protected by the c4 bishop) checks the king, it has to step aside with 48...Kf6, and 49.Rxg1 takes the queen behind it."
+    },
+    {
+     "puzzle": "3P4fO",
+     "fen": "8/7p/1b1p2p1/2kPpp2/1p2P3/1P3KPP/5P2/2B5 b - - 5 38",
+     "moves": "c5d4 c1e3 d4d3 e3b6",
+     "caption": "Black's king on d4 and bishop on b6 share a diagonal. 39.Be3+ checks the king (the bishop is protected by the king on f3), 39...Kd3 steps off the line, and 40.Bxb6 wins the bishop."
+    },
+    {
+     "puzzle": "0F2mf",
+     "fen": "6k1/p2nQp1p/1pq3p1/2n5/7P/BP6/P4PK1/R7 w - - 1 25",
+     "moves": "g2f1 c6h1 f1e2 h1a1",
+     "caption": "White's king on f1 and rook on a1 share the first rank. 25...Qh1+ checks, 26.Ke2 is the only move, and 26...Qxa1 wins the rook."
+    }
+   ]
+  },
+  {
+   "id": "discovered-attack",
+   "title": "Discovered Attacks & Discovered Check",
+   "theme": "discoveredAttack",
+   "summary": "Move one piece out of the way and the piece behind it attacks; the piece you moved gets to make its own threat too.",
+   "body": [
+    "A **discovered attack** uses two pieces lined up. The front piece moves away, and the back piece (usually a bishop, rook or queen) suddenly attacks something.",
+    "It is strong because you make two threats with one move: whatever the moving piece does, plus the newly opened line.",
+    "A **discovered check** is the deadliest version. The opponent must answer the check, so the piece you moved can grab almost anything for free."
+   ],
+   "spot_it": [
+    "Do you have a bishop, rook or queen aimed at their king or queen, with one of your own pieces in the way?",
+    "If so, where can that blocking piece go with a threat of its own (a check, a capture, an attack on the queen)?",
+    "Watch the same pattern against you: is their piece blocking a line toward your king or queen?"
+   ],
+   "pitfalls": [
+    "Not noticing that your opponent's piece is the only thing blocking their queen from your queen.",
+    "Moving the front piece to a quiet square and wasting the discovery.",
+    "Ignoring discovered checks against your own king when your king sits on an open line."
+   ],
+   "examples": [
+    {
+     "puzzle": "2OOGc",
+     "fen": "1r4k1/p4ppp/4p3/2Pb4/1q6/8/prBN1PPP/R1QK2R1 b - - 0 27",
+     "moves": "b4c5 c2h7 g8h7 c1c5",
+     "caption": "White's bishop on c2 is the only thing between White's queen on c1 and Black's queen on c5. 28.Bxh7+ moves it with check, so Black has no time to save the queen: 28...Kxh7 29.Qxc5."
+    },
+    {
+     "puzzle": "55XFM",
+     "fen": "8/4k3/p3q1p1/4pp1p/1P5P/P2Q2PK/5P2/8 w - - 14 44",
+     "moves": "d3e3 f5f4 h3g2 f4e3",
+     "caption": "Black's f5 pawn blocks the line from the queen on e6 to the king on h3. 44...f4+ is a discovered check, and the pawn also attacks White's queen on e3. After 45.Kg2, 45...fxe3 wins the queen."
+    },
+    {
+     "puzzle": "5JDB8",
+     "fen": "6k1/1b3ppp/1p6/p2pp3/P1rN1P1q/3Q4/4B2P/2R2R1K w - - 0 32",
+     "moves": "c1c4 d5c4 d3f3 b7f3",
+     "caption": "32...dxc4+ takes back the rook and opens the long diagonal, so the b7 bishop gives discovered check to the king on h1. The new c4 pawn also attacks the queen on d3. White blocks with 33.Qf3, and 33...Bxf3+ wins the queen."
+    }
+   ]
+  },
+  {
+   "id": "double-check",
+   "title": "Double Check",
+   "theme": "doubleCheck",
+   "summary": "Two pieces give check at once, so the king must move.",
+   "body": [
+    "A **double check** happens when a discovered check also has the moving piece giving check. Now two pieces attack the king.",
+    "You can't block two lines with one piece, and you can't capture two checkers at once. The only legal answer is a king move.",
+    "That makes double check a mating weapon. If the king has no safe square, it is mate, even if the checking pieces are hanging."
+   ],
+   "spot_it": [
+    "Look for a discovered check first. Then ask: can the moving piece also give check?",
+    "Count the king's escape squares. If both checks plus your other pieces cover them all, it's mate.",
+    "Don't worry if the checking piece can be captured. In double check, it can't be."
+   ],
+   "pitfalls": [
+    "Answering a double check by capturing one checker (illegal) and panicking when the app won't allow it.",
+    "Leaving your king on the same line as an enemy rook or bishop with just one enemy piece in between."
+   ],
+   "examples": [
+    {
+     "puzzle": "4ZgMv",
+     "fen": "rnbk1b1r/1q2pBpp/1p3n2/1pP1N3/8/8/PPPB1PPP/R2Q1RK1 b - - 0 13",
+     "moves": "b6c5 d2a5",
+     "caption": "14.Ba5# checks with the bishop and also opens the d-file for the queen on d1. Two checks at once means the king must move, and c7, d7 and e8 are all covered."
+    },
+    {
+     "puzzle": "0FyRc",
+     "fen": "r3kb1r/ppq2ppp/2p2n2/8/4B1b1/5N2/PPP2PPP/R1BQR1K1 b kq - 0 12",
+     "moves": "a8d8 e4c6",
+     "caption": "13.Bxc6# checks from the bishop and from the e1 rook, which the bishop was blocking. ...bxc6 would only stop one check. The king can't run: d7 is covered by the bishop and e7 by the rook."
+    },
+    {
+     "puzzle": "01z4c",
+     "fen": "3QN1k1/1p3pb1/2r1p1p1/3pP3/3P3p/1B5P/PP3KP1/2r2n2 b - - 5 31",
+     "moves": "c6c8 e8f6",
+     "caption": "32.Nf6# checks with the knight and unmasks the queen on d8 along the back rank. The king has nowhere to go: h7 is covered by the knight, and f8 and h8 by the queen."
+    }
+   ]
+  },
+  {
+   "id": "back-rank",
+   "title": "Back-Rank Mates",
+   "theme": "backRankMate",
+   "summary": "A king stuck behind its own pawns can be mated by a rook or queen on the back rank.",
+   "body": [
+    "After castling, the king often sits behind three pawns (like f2, g2, h2). That is safe until the back rank is empty. Then one rook or queen check on that rank is mate.",
+    "At 1100 this is one of the most common ways to win or lose a game that was going fine.",
+    "The fix is cheap: make **luft** (an escape square) with a quiet pawn move like h3 or h6 when you have a spare tempo, and keep a rook or queen guarding your back rank."
+   ],
+   "spot_it": [
+    "Is their king on the back rank with all three pawns in front of it unmoved?",
+    "Is the back rank guarded only by one piece? Can you deflect or trade it off?",
+    "Do you have an open file leading straight to their back rank?",
+    "Check your own king: if a rook landed on your back rank right now, could anything block or take it?"
+   ],
+   "pitfalls": [
+    "Sending your last back-rank defender off to grab a pawn.",
+    "Thinking a rook on the back rank is protected when the guard is pinned or blocked by your own piece.",
+    "Never making luft, even in quiet positions where h3 costs nothing."
+   ],
+   "examples": [
+    {
+     "puzzle": "3EeJo",
+     "fen": "r2q1r1k/ppp3pB/3p3n/4p1N1/6Q1/8/PPP3PP/R1B4K w - - 1 18",
+     "moves": "g4h4 f8f1",
+     "caption": "White's queen went to h4 and nobody guards the first rank. 18...Rf1# comes down the open f-file. The king is stuck behind its own pawns on g2 and h2, and the a1 rook can't help because the c1 bishop is in the way."
+    },
+    {
+     "puzzle": "1jp8s",
+     "fen": "2k1r3/ppr2p1p/2N3p1/2b3B1/2bn4/P1N5/1P3PPP/2RB1K1R w - - 0 19",
+     "moves": "f1g1 e8e1",
+     "caption": "19...Re1# on the open e-file. The king on g1 has no air: f2, g2 and h2 are its own pawns and its own rook sits on h1. The c1 rook can't take on e1 because the d1 bishop blocks it."
+    },
+    {
+     "puzzle": "2kvyK",
+     "fen": "r2qnr1k/pp4pp/3pQ1b1/2pP2B1/2Pb4/1P4NP/1P4PN/R4R1K b - - 10 23",
+     "moves": "d8g5 f1f8",
+     "caption": "Black just grabbed a piece on g5 with the queen and forgot about f8. 24.Rxf8# takes the rook with check along the back rank, and the king can't escape because g7 and h7 hold its own pawns."
+    }
+   ]
+  },
+  {
+   "id": "mating-patterns",
+   "title": "Mate in 1 and 2 Patterns",
+   "theme": "mateIn2",
+   "summary": "A handful of mating pictures show up again and again; learn to recognize them on sight.",
+   "body": [
+    "Most quick mates are the same few patterns: the back-rank mate, the queen supported next to the king, the queen and rook on the 7th rank, and the smothered mate with a knight.",
+    "A **mate in 2** is usually a forcing first move (a check or a capture) that drags the king to a square where a known pattern finishes it.",
+    "Always look at checks first. Even if a check doesn't mate, it can force the king onto a worse square."
+   ],
+   "spot_it": [
+    "List every check you have, even the ones that look silly (like a queen sacrifice).",
+    "For each check, count the king's escape squares after it.",
+    "Look for a queen landing next to the king with protection (a pawn, a rook, a bishop or the king).",
+    "If their king is boxed in by its own pieces, look for a knight check."
+   ],
+   "pitfalls": [
+    "Only looking at checks that don't lose material. Many mates start with a sacrifice.",
+    "Giving a check that lets the king escape to the center.",
+    "Missing that the mating square is covered by one of their pieces you forgot about."
+   ],
+   "examples": [
+    {
+     "puzzle": "0B1BX",
+     "fen": "2r1r1k1/R2Q1ppp/8/2q5/8/7P/5PP1/3R2K1 b - - 2 26",
+     "moves": "c5c6 d7f7 g8h8 f7g7",
+     "caption": "Queen and rook team up on the 7th rank. 27.Qxf7+ (the a7 rook protects the queen) 27...Kh8 28.Qxg7#, and again the a7 rook guards the queen so the king can't take it."
+    },
+    {
+     "puzzle": "3v84D",
+     "fen": "r5r1/ppp1q3/3bp2k/3p3p/3N1Pp1/1P1BP3/PBPPNQ1K/6R1 w - - 0 25",
+     "moves": "e2g3 e7h4 h2g2 h4h3",
+     "caption": "Queen plus a pawn near the king. 25...Qh4+ 26.Kg2 Qh3#. The g4 pawn protects the queen on h3 and also covers f3, and the queen covers f1 through the king."
+    },
+    {
+     "puzzle": "3NxeQ",
+     "fen": "5b2/1b3Bkp/p2pQ1p1/8/1p3PP1/8/Pq3B1P/6K1 b - - 0 32",
+     "moves": "h7h6 e6g6 g7h8 g6g8",
+     "caption": "Queen plus bishop. 33.Qxg6+ is protected by the f7 bishop, so the king can't take: 33...Kh8. Then 34.Qg8#, again protected by the bishop, and the queen also covers h7 and g7."
+    }
+   ]
+  },
+  {
+   "id": "removing-defender",
+   "title": "Removing the Defender",
+   "theme": "capturingDefender",
+   "summary": "If a piece is only safe because something defends it, capture or trade off the defender first.",
+   "body": [
+    "Lots of pieces are only safe because one other piece guards them. Take away that guard and the piece hangs.",
+    "The simplest version is a capture or a trade: you take the defender, they recapture with something, and now the target is loose.",
+    "This is counting again. If the target has one defender and you can remove it, the count flips in your favor."
+   ],
+   "spot_it": [
+    "Find their pieces you are already attacking. What is defending each one?",
+    "Can you capture that defender, or trade it off?",
+    "When they recapture, does the recapturing piece leave a square or line it was guarding?",
+    "A piece defending two things is overloaded. Hit one, then take the other."
+   ],
+   "pitfalls": [
+    "Trading pieces without checking what the traded piece was guarding.",
+    "Recapturing automatically when the recapture pulls your piece off guard duty."
+   ],
+   "examples": [
+    {
+     "puzzle": "1KSd0",
+     "fen": "r5k1/pp1b1pp1/2p1n3/2qnP2P/7Q/P5B1/1P3PP1/3RR1K1 b - - 6 33",
+     "moves": "c5e7 h4e7 d5e7 d1d7",
+     "caption": "The bishop on d7 is guarded only by the queen on e7, and the d5 knight blocks White's rook. 34.Qxe7 removes the defender. After 34...Nxe7 the knight has also left d5, so 35.Rxd7 wins the bishop."
+    },
+    {
+     "puzzle": "0z2fz",
+     "fen": "rn1q1rk1/4bppp/p4n2/1p1P3b/2p5/P1N1QN1P/BPP2PP1/R1B2RK1 b - - 0 14",
+     "moves": "f6d5 c3d5 d8d5 e3e7",
+     "caption": "The bishop on e7 is attacked by White's queen and guarded by the d5 knight and the d8 queen. 15.Nxd5 removes one guard. When Black recaptures with 15...Qxd5, the queen has left d8, and 16.Qxe7 wins the bishop."
+    },
+    {
+     "puzzle": "4TQL4",
+     "fen": "r3k1r1/pp1nbp1p/8/1q1p4/3B2b1/2P2NP1/PP3P1P/RN1QR1K1 w q - 1 15",
+     "moves": "d1e2 b5e2 e1e2 g4f3",
+     "caption": "White's knight on f3 is attacked by the g4 bishop and guarded only by the queen on e2. 15...Qxe2 trades that guard off. After 16.Rxe2, 16...Bxf3 wins the knight."
+    }
+   ]
+  },
+  {
+   "id": "deflection",
+   "title": "Deflection",
+   "theme": "deflection",
+   "summary": "Force a defending piece to leave its post, then take what it was guarding.",
+   "body": [
+    "**Deflection** means forcing a defender away. Usually you offer it something it must take, or give a check it must answer by moving.",
+    "It is like removing the defender, but you don't capture the guard. You lure it somewhere else.",
+    "Look for pieces with one job. If a rook is the only guard of the queen, any check that forces that rook to move wins the queen."
+   ],
+   "spot_it": [
+    "Which of their pieces is doing an important guard job (protecting the queen, the back rank, a key square)?",
+    "Can you give a check or make a capture that forces that piece to move?",
+    "If you sacrifice something, is the reward (the thing left unguarded) worth more?"
+   ],
+   "pitfalls": [
+    "Grabbing a deflection sacrifice yourself without checking what your piece was guarding.",
+    "Deflecting a piece when the target has a second defender you missed."
+   ],
+   "examples": [
+    {
+     "puzzle": "1CVPX",
+     "fen": "r5k1/4pp1p/4b1p1/q1p5/1p2P3/1P3P2/PQ2B1PP/3R2K1 b - - 1 22",
+     "moves": "a5a2 d1d8 a8d8 b2a2",
+     "caption": "The queens attack each other, and Black's queen on a2 is guarded only by the rook on a8. 23.Rd8+ deflects that rook: after 23...Rxd8 24.Qxa2, White wins the queen for a rook."
+    },
+    {
+     "puzzle": "5pKfj",
+     "fen": "3r1k1r/p4p1p/2p2qp1/5p2/P1N5/2pQ2P1/5P1P/R1R3K1 w - - 2 23",
+     "moves": "d3c3 d8d1 c1d1 f6c3",
+     "caption": "The queens attack each other, and White's queen on c3 is guarded only by the rook on c1. 23...Rd1+ forces 24.Rxd1, pulling the rook away. Now 24...Qxc3 wins the queen for a rook."
+    },
+    {
+     "puzzle": "2QBCn",
+     "fen": "4kq2/5p2/4pnp1/4N3/7Q/6PP/5P1K/8 b - - 9 41",
+     "moves": "f8e7 h4h8 e7f8 h8f6",
+     "caption": "The knight on f6 is guarded only by the queen on e7. 42.Qh8+ forces a block, and 42...Qf8 pulls the queen off its guard duty. 43.Qxf6 wins the knight."
+    }
+   ]
+  },
+  {
+   "id": "attraction",
+   "title": "Attraction (Decoy)",
+   "theme": "attraction",
+   "summary": "Sacrifice to drag the king (or another piece) onto a square where it gets mated or forked.",
+   "body": [
+    "**Attraction** is the opposite of deflection. Instead of pushing a piece away, you pull it toward a bad square, usually with a sacrifice it must take.",
+    "The most common target is the king. A rook sacrifice with check pulls the king onto a square where a queen check mates or forks.",
+    "Ask yourself: where would I love their king to stand? Then see if a capture or check can force it there."
+   ],
+   "spot_it": [
+    "Is there a square where, if their king stood there, you'd have mate or a fork?",
+    "Can a check or capture force the king (or queen) onto that square?",
+    "Count what you give up vs what the follow-up wins."
+   ],
+   "pitfalls": [
+    "Taking a sacrifice with your king on reflex without checking the follow-up check.",
+    "Sacrificing when the follow-up doesn't actually win more than you gave."
+   ],
+   "examples": [
+    {
+     "puzzle": "4BGpn",
+     "fen": "r1bk1R2/pppp4/6pp/4r3/7q/QP5P/P1P3P1/5R1K b - - 1 22",
+     "moves": "e5e8 f8e8 d8e8 a3f8",
+     "caption": "23.Rxe8+ forces 23...Kxe8, dragging the king to e8. Then 24.Qf8# lands on the long a3-f8 diagonal, protected by the f1 rook, and the king has no escape squares."
+    },
+    {
+     "puzzle": "06fev",
+     "fen": "7k/ppp3p1/5pQp/8/8/1P6/PB1q1PPP/4rRK1 w - - 4 27",
+     "moves": "b2f6 e1f1 g1f1 d2d1",
+     "caption": "27...Rxf1+ forces 28.Kxf1, pulling the king onto f1. Now 28...Qd1# because the queen covers e1, e2 and g1, and f2 and g2 hold White's own pawns."
+    },
+    {
+     "puzzle": "5ad7n",
+     "fen": "r1qr3k/1p1Rb2p/1pp2pp1/4p2N/8/2P3Q1/PPP2PPP/2KR4 w - - 2 19",
+     "moves": "d7e7 d8d1 c1d1 c8d8",
+     "caption": "19...Rxd1+ 20.Kxd1 pulls the king to d1. Then 20...Qd8+ checks the king and hits the rook on e7 at the same time, a fork you set up by luring the king."
+    }
+   ]
+  },
+  {
+   "id": "trapped-piece",
+   "title": "Trapped Pieces",
+   "theme": "trappedPiece",
+   "summary": "A piece with no safe squares can be won just by attacking it.",
+   "body": [
+    "A piece is **trapped** when you attack it and every square it can go to is covered (or blocked by its own pieces).",
+    "Queens get trapped when they go hunting early. Bishops get trapped on the edge (a classic: a bishop grabbing a pawn on a7 or h7). Knights get trapped on the rim.",
+    "When you attack a piece, don't just count. Look at its escape squares one by one."
+   ],
+   "spot_it": [
+    "Is one of their pieces deep in your territory or on the edge?",
+    "List its escape squares. Can one move (often a pawn push) cover the last ones and attack it?",
+    "Is their queen surrounded by its own pieces with nowhere to go?"
+   ],
+   "pitfalls": [
+    "Sending your queen pawn-grabbing in the opening.",
+    "Grabbing an edge pawn with a bishop (Bxa7, Bxh7) and getting it shut in by a pawn.",
+    "Attacking a piece without checking that it really has no escape."
+   ],
+   "examples": [
+    {
+     "puzzle": "132Ke",
+     "fen": "1rb2rk1/3p1pp1/p3pq1p/2b4P/Nn2P3/3B1N2/1PPQ1PP1/1K1R3R b - - 3 17",
+     "moves": "c5e7 e4e5 f6f5 d3f5",
+     "caption": "18.e5 attacks the queen on f6, and it has no safe square: g5 and h4 are covered by the f3 knight, f5 by the d3 bishop, f4 by the d2 queen, g6 by the h5 pawn, and the e5 pawn is guarded by the knight. Black gives it up with 18...Qf5 19.Bxf5."
+    },
+    {
+     "puzzle": "5BDDo",
+     "fen": "r1b1k2r/ppp2ppp/2nbpq2/8/3P4/3BBN2/PPP2PPP/R2QK2R b KQkq - 5 8",
+     "moves": "c8d7 e3g5 f6d4 f3d4",
+     "caption": "9.Bg5 hits the queen on f6. Every escape is covered: e7 and f4 by the g5 bishop, f5 and g6 by the d3 bishop, e5 by the d4 pawn, and ...Qxf3 runs into gxf3. Black gives the queen for a pawn with 9...Qxd4 10.Nxd4."
+    },
+    {
+     "puzzle": "15049",
+     "fen": "rnbqk2r/pp1pbppp/2p5/4P3/3PP1n1/2N2NP1/PPP1B2P/R1BQK2R w KQkq - 1 9",
+     "moves": "f3d2 g4e3 d2f3 e3d1",
+     "caption": "9...Ne3 attacks the queen on d1, and the queen has zero legal moves: its own king, bishops, knight and c2 pawn box it in. 10.Nf3 opens the c1 bishop's line to e3, but it's too late: 10...Nxd1."
+    }
+   ]
+  },
+  {
+   "id": "intermezzo",
+   "title": "Intermezzo (Zwischenzug)",
+   "theme": "intermezzo",
+   "summary": "Before you make the obvious recapture, look for an in-between move that improves the trade.",
+   "body": [
+    "An **intermezzo** (German: zwischenzug, 'in-between move') is a forcing move you play instead of the expected one. Usually it's a check or a bigger threat, and then you make the recapture next move.",
+    "At 1100, most players recapture instantly. Stopping for one second to ask 'is there a check first?' wins a lot of material.",
+    "It works against you too. When you start a trade, check whether they have a forcing move instead of recapturing."
+   ],
+   "spot_it": [
+    "Before every recapture: do I have a check, or a capture of something bigger?",
+    "Can the in-between move remove the piece that would defend my recapture?",
+    "When you start a trade, ask what checks they have before they take back."
+   ],
+   "pitfalls": [
+    "Recapturing on autopilot.",
+    "Starting a trade and assuming they must take back, when they have a check first.",
+    "Playing an in-between move that isn't forcing, which just gives them a free move."
+   ],
+   "examples": [
+    {
+     "puzzle": "281cI",
+     "fen": "r2qkbnr/ppp2pp1/2n1p2p/4P3/2pP1PPP/8/PP4B1/1RBQK1NR b Kkq - 0 10",
+     "moves": "d8d4 g2c6 b7c6 d1d4",
+     "caption": "Black's queen grabbed the d4 pawn, trusting the c6 knight to defend it. 11.Bxc6+ comes first, an in-between check that removes the knight. After 11...bxc6 12.Qxd4, Black has lost the queen for a bishop."
+    },
+    {
+     "puzzle": "5se3e",
+     "fen": "rn1qk2r/pp3ppp/5b2/2Pp4/6b1/2N2N2/PPP1BPPP/R2QK2R w KQkq - 0 10",
+     "moves": "d1d5 f6c3 b2c3 d8d5",
+     "caption": "White's queen took on d5, expecting ...Qxd5 Nxd5. Black first plays 10...Bxc3+, removing the knight with check. After 11.bxc3, 11...Qxd5 wins the queen and nothing can take back."
+    },
+    {
+     "puzzle": "2dvtQ",
+     "fen": "4r1k1/1p1N1pp1/p3pq1p/3pR3/8/P4rQP/1PP5/2K3R1 b - - 2 31",
+     "moves": "f3g3 d7f6 g7f6 g1g3",
+     "caption": "Black just took White's queen on g3. Don't recapture yet: 32.Nxf6+ takes Black's queen with check first. After 32...gxf6, 33.Rxg3+ takes back the rook, and White comes out a rook for a knight ahead in the trade."
+    }
+   ]
+  },
+  {
+   "id": "x-ray",
+   "title": "X-Ray Attacks",
+   "theme": "xRayAttack",
+   "summary": "A piece can attack or defend through another piece on the same line.",
+   "body": [
+    "An **x-ray** is when a rook, bishop or queen 'sees through' a piece standing in its way. Once that piece moves or is captured, the line opens.",
+    "Most common use: you place a piece on a square that looks unprotected, but your queen or rook behind the enemy piece will defend it as soon as they capture.",
+    "Also watch for two heavy pieces facing each other with a third in between. Trades on that line often go your way if your piece is behind."
+   ],
+   "spot_it": [
+    "Are your queen or rook and their queen or rook on the same line, with one piece in between?",
+    "If they capture on a square, will one of your pieces 'see through' to recapture?",
+    "When queens attack each other, look for a check that forces their queen off the line first."
+   ],
+   "pitfalls": [
+    "Counting defenders and forgetting the hidden one behind another piece.",
+    "Trading on a line where their piece is the one x-raying yours."
+   ],
+   "examples": [
+    {
+     "puzzle": "40tyY",
+     "fen": "6k1/4r1p1/3qP2p/r2p1Q2/2R4P/6P1/5P2/3R2K1 b - - 0 34",
+     "moves": "d6e6 c4c8 e6c8 f5c8",
+     "caption": "The queens attack each other. Instead of trading, 35.Rc8+ forces 35...Qxc8, and White's queen x-rays through the now empty e6 square to take back with check: 36.Qxc8+. White wins queen for rook."
+    },
+    {
+     "puzzle": "4iuFf",
+     "fen": "2k5/pp3p1p/2prp3/5p2/2R5/q1R2bQ1/P4PKP/8 w - - 0 31",
+     "moves": "g2f3 d6d3 c3d3 a3d3",
+     "caption": "Black's queen on a3 lines up with d3 through the rook on c3. 31...Rd3+ checks the king on f3. After 32.Rxd3, the queen takes back through the empty c3 square: 32...Qxd3+, which also hits the rook on c4."
+    },
+    {
+     "puzzle": "2ZBS5",
+     "fen": "5b2/1R1R2pk/p4r1p/2q5/2p5/2P2QPP/2P2P1K/8 w - - 1 42",
+     "moves": "f3e3 f6f2 e3f2 c5f2",
+     "caption": "Black's queen on c5 looks through White's queen on e3 toward f2. 42...Rxf2+ takes the pawn with check. After 43.Qxf2, the e3 square is empty and 43...Qxf2+ takes back. Black has traded a rook for a queen and a pawn."
+    }
+   ]
+  },
+  {
+   "id": "defensive-awareness",
+   "title": "Defensive Awareness",
+   "theme": "defensiveMove",
+   "summary": "Every opponent move is a message; ask what it threatens before you think about your own plans.",
+   "body": [
+    "Most blunders at 1100 aren't bad calculation. They're not looking at what the opponent just did.",
+    "After every opponent move ask: **what does this move attack, and what did it stop guarding?** If it's a check, list every way to answer it (move, block, capture), not just the first one.",
+    "Often the best defense also attacks. A block that hits their queen or a king move that attacks a piece turns their threat into your gain."
+   ],
+   "spot_it": [
+    "What new squares does their moved piece attack?",
+    "What line did their move open (a bishop or rook behind it)?",
+    "If it's a check: list all king moves, blocks and captures before choosing.",
+    "Prefer the defense that also creates a threat."
+   ],
+   "pitfalls": [
+    "Answering checks with the first king move you see.",
+    "Continuing your own plan while their threat sits on the board.",
+    "Panicking at a scary check that has a simple, strong answer."
+   ],
+   "examples": [
+    {
+     "puzzle": "2RjON",
+     "fen": "r4rk1/pb1p1ppp/1p2p3/4Bn2/2P4q/2N2P2/PP1K2B1/R2Q2R1 b - - 4 19",
+     "moves": "h4g5 f3f4 g5g2 g1g2",
+     "caption": "Black's 19...Qg5+ is check. 20.f4 blocks it, attacks the queen with a pawn, and opens the long diagonal so the g2 bishop now hits b7. Black can't cover everything, and in the puzzle line gives up the queen with 20...Qxg2+ 21.Rxg2."
+    },
+    {
+     "puzzle": "3V9Wj",
+     "fen": "7k/Qp4pp/2pb4/7q/1P2rP2/P1P3P1/1B3K1P/7R w - - 1 31",
+     "moves": "a7a8 e4e8 a8e8 h5e8",
+     "caption": "31.Qa8+ is a back-rank check. Look at every block before panicking: 31...Re8 blocks and also attacks White's queen, and e8 is covered by Black's queen on h5. After 32.Qxe8+ Qxe8 Black has won a queen for a rook."
+    },
+    {
+     "puzzle": "4ghGf",
+     "fen": "r2q1b1r/1ppkp1p1/p4pQp/3pB3/3P4/2P1PP2/PP4PP/R3K2R w KQ - 2 14",
+     "moves": "g6f5 e7e6 f5c2 f6e5",
+     "caption": "14.Qf5+ checks the king on d7. 14...e6 blocks with a pawn that also attacks the queen. The queen leaves with 15.Qc2, so it no longer guards the e5 bishop, and 15...fxe5 wins a piece for a pawn."
+    }
+   ]
+  },
+  {
+   "id": "passed-pawns",
+   "title": "Endgame Tactics: Passed Pawns & Promotion",
+   "theme": "advancedPawn",
+   "summary": "An advanced passed pawn is worth a lot; trade into races you win and find the move that lets it through.",
+   "body": [
+    "A **passed pawn** has no enemy pawns in front of it or on the next files. Every step forward makes it more dangerous, and on the 6th or 7th rank it often ties down a whole piece.",
+    "Common tricks: trade queens or rooks so nothing can stop the pawn, promote with check, or promote on a square the enemy piece can't reach (a bishop on the wrong color, a rook cut off).",
+    "Before promoting, check: who controls the queening square, and can they take the new queen right away?"
+   ],
+   "spot_it": [
+    "Count: how many moves until the pawn queens, and how many until their pieces can stop it?",
+    "Does a trade (especially of queens) remove the only piece that can stop the pawn?",
+    "Is the queening square the wrong color for their bishop?",
+    "Can you promote with check or with a mate threat?"
+   ],
+   "pitfalls": [
+    "Ignoring the opponent's passed pawn until it's too late.",
+    "Promoting on a square where the new queen gets taken for free.",
+    "Trading pieces without checking whose passed pawn becomes stronger."
+   ],
+   "examples": [
+    {
+     "puzzle": "4vbs3",
+     "fen": "Q4b2/5pkp/P3p1p1/8/7P/3q2P1/5PK1/8 b - - 2 35",
+     "moves": "d3d5 a8d5 e6d5 a6a7",
+     "caption": "Trade queens with 36.Qxd5 exd5, and then the a-pawn runs: 37.a7. Black's bishop moves on dark squares and can't cover a8, a light square, so nothing stops the pawn."
+    },
+    {
+     "puzzle": "3JqdF",
+     "fen": "6k1/5pp1/1p1BP2p/p4P2/5r2/5P2/5K1P/8 b - - 0 32",
+     "moves": "f4f5 e6e7 f5f6 e7e8q",
+     "caption": "33.e7 and the pawn can't be stopped: the d6 bishop guards it and covers f8 and e5, so Black's rook can't get to the e-file in time. After 33...Rf6, 34.e8=Q+ promotes with check."
+    },
+    {
+     "puzzle": "43col",
+     "fen": "7k/3P3p/p3Np2/4b3/8/P7/1rQ2PPP/6K1 b - - 0 39",
+     "moves": "b2c2 d7d8q",
+     "caption": "Black's rook just took on c2, but the back rank is empty. 40.d8=Q# promotes with mate: the new queen checks along the 8th rank, the e6 knight covers g7, and h7 holds Black's own pawn."
+    }
+   ]
+  }
+ ],
+ "process": {
+  "title": "How to Think Every Move",
+  "body": [
+   "At 1100 to 1600, games are mostly lost to one-move oversights, not deep strategy. A short routine on every move catches most of them.",
+   "You won't do the full routine on every move in a 10-minute game. Do the fast version on quiet moves and the full version whenever something changes: a capture, a check, a new piece aiming at your king, or a move you didn't expect.",
+   "The single most important habit: **look at the opponent's move before you look at your plan.**"
+  ],
+  "checklist": [
+   "**What changed?** What does their last move attack? What did the moved piece stop guarding? Did it open a line for a bishop, rook or queen behind it?",
+   "**Their threats:** if it were their move again, what checks, captures and attacks would they have?",
+   "**My checks, captures and threats:** list them all, even the ones that look silly. This is where tactics come from.",
+   "**Loose pieces:** which of their pieces are undefended or under-defended? Which of mine are?",
+   "**Pick a candidate move** and imagine it on the board.",
+   "**Blunder check before you click:** after this move, what are their checks, captures and threats? Does my move leave anything hanging or step into a pin, fork or back-rank mate?",
+   "**If the move feels obvious (especially a recapture), take one extra second** for an in-between check."
+  ],
+  "time_plan": [
+   "**Moves 1 to 10 (aim to use about 1.5 minutes):** play your usual opening setup quickly, but still do 'what changed?' on every opponent move. Opening traps are just tactics.",
+   "**Middlegame (most of your time):** a quiet move can take 5 to 15 seconds. Spend 30 seconds to 2 minutes on critical moments: when captures or checks are possible, when the position opens, or when you're about to commit (sacrifice, trade queens, push pawns near your king).",
+   "**Keep at least 2 minutes for the endgame.** If you're under 3 minutes with a lot of pieces left, simplify and play safe moves.",
+   "**Under 1 minute:** play solid, safe moves fast. Still do one blunder check on captures and checks. Don't premove unless it's a forced recapture.",
+   "**Never spend more than 2 to 3 minutes on one move.** If you can't decide, pick the safest candidate and move on.",
+   "**After the game:** look at the first big blunder (yours and theirs) for one minute. Ask which checklist step would have caught it."
+  ]
+ },
+ "roadmap": [
+  {
+   "band": "1100-1250",
+   "title": "Stop Giving Pieces Away",
+   "focus": [
+    "Hanging pieces and counting: the biggest source of lost games at this level.",
+    "Forks, pins and back-rank mates: the three tactics you'll see most.",
+    "The 'what changed?' question on every opponent move.",
+    "These targets are rough checkpoints, not research-backed numbers. Progress is uneven and nobody can promise how long a stage takes."
+   ],
+   "routine": [
+    "Daily (about 30 min): 15 min of puzzles on the themes below, then one 10-minute rapid game played slowly with the checklist.",
+    "After each game: 5 min to find your first blunder and name the motif.",
+    "Weekly: read one lesson here and do its three examples without moving pieces first.",
+    "On busy days, 10 min of puzzles beats skipping completely."
+   ],
+   "targets": [
+    {
+     "metric": "blunders_per_game",
+     "max": 1.5,
+     "label": "Under 1.5 blunders per rapid game"
+    },
+    {
+     "metric": "puzzles_per_week",
+     "min": 50,
+     "label": "At least 50 puzzles a week"
+    },
+    {
+     "metric": "puzzle_accuracy",
+     "min": 60,
+     "label": "60%+ puzzle accuracy"
+    },
+    {
+     "metric": "rating",
+     "min": 1250,
+     "label": "Rapid rating 1250"
+    }
+   ],
+   "lessons": [
+    "hanging-pieces",
+    "fork",
+    "pin",
+    "back-rank",
+    "defensive-awareness"
+   ]
+  },
+  {
+   "band": "1250-1400",
+   "title": "Punish Their Mistakes",
+   "focus": [
+    "Spot the tactics your opponents leave you: skewers, discovered attacks, double checks.",
+    "Basic mating patterns so you finish games instead of letting them drag on.",
+    "Use your clock: slow down at critical moments, speed up in quiet ones.",
+    "Basic mates (K+Q and K+R vs K) so you never fail to convert a won game.",
+    "These targets are rough checkpoints, not research-backed numbers. Progress is uneven and nobody can promise how long a stage takes."
+   ],
+   "routine": [
+    "Daily (30 to 40 min): 15 to 20 min of themed puzzles, one rapid game.",
+    "Two or three times a week: replace the game with 10 min of mate-in-2 puzzles plus one game review.",
+    "After each loss: write one line: 'I lost because ___'. Look for repeats after a week."
+   ],
+   "targets": [
+    {
+     "metric": "blunders_per_game",
+     "max": 1.0,
+     "label": "Under 1 blunder per rapid game"
+    },
+    {
+     "metric": "mistakes_per_game",
+     "max": 2.0,
+     "label": "Under 2 mistakes per game"
+    },
+    {
+     "metric": "puzzle_accuracy",
+     "min": 65,
+     "label": "65%+ puzzle accuracy"
+    },
+    {
+     "metric": "rating",
+     "min": 1400,
+     "label": "Rapid rating 1400"
+    }
+   ],
+   "lessons": [
+    "skewer",
+    "discovered-attack",
+    "double-check",
+    "mating-patterns",
+    "basic-mates"
+   ]
+  },
+  {
+   "band": "1400-1500",
+   "title": "Combinations and Calculation",
+   "focus": [
+    "Two-step tactics: removing the defender, deflection, attraction. These are combos where move one sets up move two.",
+    "Calculating short forcing lines (checks and captures) 2 to 3 moves deep before you play them.",
+    "King and pawn endgames: opposition and the square of the pawn.",
+    "These targets are rough checkpoints, not research-backed numbers. Progress is uneven and nobody can promise how long a stage takes."
+   ],
+   "routine": [
+    "Daily (30 to 45 min): 20 min of puzzles (try solving fully before moving a piece), one rapid game.",
+    "Once a week: one endgame lesson here, then play it out against a friend or engine from the example position.",
+    "Review: for each game, find one moment where you had a tactic and missed it."
+   ],
+   "targets": [
+    {
+     "metric": "blunders_per_game",
+     "max": 0.8,
+     "label": "Under 0.8 blunders per game"
+    },
+    {
+     "metric": "puzzle_accuracy",
+     "min": 70,
+     "label": "70%+ puzzle accuracy"
+    },
+    {
+     "metric": "puzzles_per_week",
+     "min": 70,
+     "label": "At least 70 puzzles a week"
+    },
+    {
+     "metric": "rating",
+     "min": 1500,
+     "label": "Rapid rating 1500"
+    }
+   ],
+   "lessons": [
+    "removing-defender",
+    "deflection",
+    "attraction",
+    "opposition",
+    "square-of-pawn"
+   ]
+  },
+  {
+   "band": "1500-1600",
+   "title": "Convert, Defend, Don't Slip",
+   "focus": [
+    "Subtle tactics: intermezzo, x-ray, trapped pieces.",
+    "Defense: finding the best answer to threats instead of the first one.",
+    "Converting endgames: passed pawns, rook endgame basics (rook behind the passer, Lucena, Philidor).",
+    "These targets are rough checkpoints, not research-backed numbers. Progress is uneven and nobody can promise how long a stage takes."
+   ],
+   "routine": [
+    "Daily (30 to 45 min): 15 min of mixed puzzles, 10 min of a weak theme from your stats, one rapid game.",
+    "Weekly: one longer game review where you check every capture and check you skipped.",
+    "Keep the blunder check on every move, even when winning. Most points lost here come from relaxing in good positions."
+   ],
+   "targets": [
+    {
+     "metric": "blunders_per_game",
+     "max": 0.6,
+     "label": "Under 0.6 blunders per game"
+    },
+    {
+     "metric": "mistakes_per_game",
+     "max": 1.5,
+     "label": "Under 1.5 mistakes per game"
+    },
+    {
+     "metric": "puzzle_accuracy",
+     "min": 72,
+     "label": "72%+ puzzle accuracy"
+    },
+    {
+     "metric": "rating",
+     "min": 1600,
+     "label": "Rapid rating 1600"
+    }
+   ],
+   "lessons": [
+    "intermezzo",
+    "x-ray",
+    "trapped-piece",
+    "defensive-awareness",
+    "passed-pawns",
+    "rook-behind-passer",
+    "lucena",
+    "philidor"
+   ]
+  }
+ ],
+ "endgames": [
+  {
+   "id": "opposition",
+   "title": "King & Pawn: The Opposition",
+   "summary": "When kings face each other with one square between them, the side NOT to move has the opposition, and that often decides K+P endings.",
+   "body": [
+    "The **opposition**: kings on the same file (or rank) with one square between them. Whoever has to move must give way.",
+    "With king and pawn vs king, the attacker wants to get his king **in front of** the pawn and take the opposition. The defender wants to stand in front of the pawn and keep the opposition.",
+    "Rule of thumb: if your king reaches the 6th rank in front of your pawn (not a rook pawn), you win no matter who is to move."
+   ],
+   "examples": [
+    {
+     "fen": "4k3/8/3K4/4P3/8/8/8/8 w - - 0 1",
+     "moves": "d6e6 e8d8 e6f7 d8d7 e5e6 d7d6 e6e7 d6d5 e7e8q",
+     "caption": "1.Ke6! takes the opposition. Black has to step aside (1...Kd8), White's king goes to f7 to guard e7 and e8, and the pawn walks in: 2.Kf7 Kd7 3.e6+ Kd6 4.e7 Kd5 5.e8=Q. Stockfish rates 1.Ke6 as winning."
+    },
+    {
+     "fen": "8/8/4k3/8/4K3/4P3/8/8 b - - 0 1",
+     "moves": "e6f6 e4d5 f6e7 d5e5 e7d7 e5f6 d7c6 f6e6 c6b6 e3e4 b6c5 e4e5",
+     "caption": "Black to move, and White has the opposition. Black must give way, so White's king walks forward: 1...Kf6 2.Kd5 Ke7 3.Ke5 Kd7 4.Kf6 and the king gets in front of the pawn. Stockfish: White wins."
+    },
+    {
+     "fen": "8/8/4k3/8/4K3/4P3/8/8 w - - 0 1",
+     "moves": "e4f4 e6f6 f4e4 f6e6 e4d4 e6d6",
+     "caption": "Same position but White to move, so now Black has the opposition. Black just mirrors White's king (1.Kf4 Kf6 2.Ke4 Ke6 3.Kd4 Kd6) and White can't get through. Stockfish: draw."
+    }
+   ]
+  },
+  {
+   "id": "square-of-pawn",
+   "title": "The Square of the Pawn",
+   "summary": "A quick way to know if a king can catch a passed pawn without counting every move.",
+   "body": [
+    "Draw a square from the pawn to its queening square, with the same length on the side. If the defending king can step inside that square on its move, it catches the pawn.",
+    "Example: a black pawn on a5 has 4 moves to a1. Its square runs a5, e5, e1, a1. If it's White's move and the king can step into that square, the pawn is caught.",
+    "Remember the square shrinks every time the pawn moves. A pawn on its starting square can jump two, so draw the square from one step further."
+   ],
+   "examples": [
+    {
+     "fen": "7k/8/8/p7/5K2/8/8/8 w - - 0 1",
+     "moves": "f4e4 a5a4 e4d3 a4a3 d3c3 h8g7 c3b3 g7f6 b3a3",
+     "caption": "White to move. The square of the a5 pawn is a5-e5-e1-a1, and 1.Ke4 steps into it. The king follows the pawn down: 1...a4 2.Kd3 a3 3.Kc3 and 5.Kxa3. Stockfish: draw."
+    },
+    {
+     "fen": "7k/8/8/p7/5K2/8/8/8 b - - 0 1",
+     "moves": "a5a4 f4e3 a4a3 e3d4 a3a2 d4c3 a2a1q",
+     "caption": "Same position, Black to move. 1...a4 shrinks the square to a4-d4-d1-a1, and the king on f4 is outside it. White is one step too slow: 2.Ke3 a3 3.Kd4 a2 4.Kc3 a1=Q. Stockfish: Black wins."
+    }
+   ]
+  },
+  {
+   "id": "rook-behind-passer",
+   "title": "Rooks Belong Behind Passed Pawns",
+   "summary": "Put your rook behind a passed pawn (yours or theirs), not in front of it.",
+   "body": [
+    "A rook **behind** its own passed pawn gets more active with every pawn step. A rook **in front** of the pawn is stuck guarding the queening square.",
+    "Against an enemy passed pawn, the same rule applies: get your rook behind it, so it keeps the pawn on a leash from far away.",
+    "This is one of the most useful rules in rook endgames, which are the most common endgames you'll play."
+   ],
+   "examples": [
+    {
+     "fen": "r7/5pk1/6p1/P6p/7P/6P1/5PK1/R7 w - - 0 1",
+     "moves": "a5a6 g7f6 a6a7 f6e5 g2f3 f7f6 a1a5 e5d6 a5a6 d6e7 f3f4",
+     "caption": "White's rook is behind the a-pawn and Black's rook is in front. After 1.a6 and 2.a7, Black's rook is stuck guarding a8 and Black's king has to stay near. White's king is free to walk in (3.Kf3, 6.Kf4). Stockfish: White is winning (about +6)."
+    },
+    {
+     "fen": "R7/5pk1/6p1/P6p/7P/6P1/r4PK1/8 b - - 0 1",
+     "moves": "g7f6 a8a6 f6e5 a6a7 a2a3 g2g1 e5e6 a5a6 a3a2",
+     "caption": "Same pawns, but the rooks have swapped roles: White's rook is in front of its pawn, Black's rook is behind it. Black's rook watches the pawn from a2 and a3 while the king stays active. Stockfish: a draw (about 0.0)."
+    }
+   ]
+  },
+  {
+   "id": "lucena",
+   "title": "Lucena Position: Build a Bridge",
+   "summary": "The standard way to win rook + pawn vs rook when your pawn is on the 7th and your king is in front of it.",
+   "body": [
+    "In the **Lucena** position your pawn is on the 7th rank, your king is in front of it on the queening square, and the enemy king is cut off by your rook. The problem: your king can't get out without being checked forever.",
+    "The fix is **building a bridge**: first push their king one more file away with a rook check, then put your rook on the 4th rank. When the checks come, your rook blocks them.",
+    "Steps: 1) check to push their king away, 2) rook to the 4th rank, 3) king walks out, 4) block the last check with the rook."
+   ],
+   "examples": [
+    {
+     "fen": "1K6/1P1k4/8/8/8/8/r7/2R5 w - - 0 1",
+     "moves": "c1d1 d7e7 d1d4 a2a1 b8c7 a1c1 c7b6 c1b1 b6c6 b1c1 c6b5 c1b1 d4b4",
+     "caption": "1.Rd1+ pushes the king away (1...Ke7), then 2.Rd4! builds the bridge. The king comes out: 3.Kc7 Rc1+ 4.Kb6 Rb1+ 5.Kc6 Rc1+ 6.Kb5 Rb1+ 7.Rb4, and the rook blocks the last check. The pawn queens. Stockfish confirms White is winning at every step."
+    }
+   ]
+  },
+  {
+   "id": "philidor",
+   "title": "Philidor Position: The Third-Rank Defense",
+   "summary": "The standard way to draw rook vs rook + pawn when your king is in front of the pawn.",
+   "body": [
+    "When you're defending with your king in front of the pawn, keep your rook on your **third rank** (the 6th rank for Black). That stops the enemy king from coming forward.",
+    "Wait there until the pawn moves up to that rank. Then the enemy king has no shelter from behind, so drop your rook all the way back and **check from behind**.",
+    "Two steps: rook on the 3rd rank until the pawn advances, then rook to the far end and check, check, check."
+   ],
+   "examples": [
+    {
+     "fen": "4k3/8/r7/4PK2/8/8/8/1R6 w - - 0 1",
+     "moves": "b1b7 a6c6 e5e6 c6c1 f5f6 c1f1 f6e5 f1e1 e5d6 e1d1 d6e5 d1e1",
+     "caption": "Black's rook sits on the 6th rank and waits (1.Rb7 Rc6). When White pushes 2.e6, the rook drops back and checks from behind: 2...Rc1 3.Kf6 Rf1+ 4.Ke5 Re1+ 5.Kd6 Rd1+. The king can't hide. Stockfish: draw throughout."
+    }
+   ]
+  },
+  {
+   "id": "basic-mates",
+   "title": "Basic Mates: K+Q vs K and K+R vs K",
+   "summary": "You must be able to mate with a queen or a rook, quickly and without stalemating.",
+   "body": [
+    "**Queen:** use the queen to shrink the box the enemy king lives in. A handy trick is to put the queen a knight's move away from the enemy king. Once the king is on the edge, bring your own king next to it and mate.",
+    "**Watch for stalemate.** If the enemy king has no legal moves and isn't in check, it's a draw. Before every queen move near the edge, check that the king still has a square.",
+    "**Rook:** the rook cuts the king off along a rank or file, and your king pushes it toward the edge. The final mate comes when the kings face each other (opposition) and the rook checks along the edge.",
+    "With 10-minute games you have plenty of time for both, but practice them so you can do them fast."
+   ],
+   "examples": [
+    {
+     "fen": "8/8/8/4k3/8/8/8/K6Q w - - 0 1",
+     "moves": "a1b2 e5f5 b2c3 f5e5 c3c4 e5f4 c4d5 f4e3 h1e4 e3f2 d5d4 f2g3 d4e3 g3h2 e3f3 h2g1 e4e2 g1h1 e2g2",
+     "caption": "Stockfish's fastest line (mate in 10). Watch the pattern: the queen keeps the king boxed in while White's king walks up, and it ends with 10.Qg2#, the queen protected by its own king on f3."
+    },
+    {
+     "fen": "k7/8/1K6/8/8/8/8/2Q5 w - - 0 1",
+     "moves": "c1c8",
+     "caption": "Stalemate trap: Qc7?? would leave Black's king with no moves and no check, which is a draw. The right move is 1.Qc8#, which checks along the back rank while the White king covers a7 and b7."
+    },
+    {
+     "fen": "4k3/8/3K4/8/8/8/8/7R w - - 0 1",
+     "moves": "h1f1 e8d8 f1f8",
+     "caption": "Rook mate on the edge. 1.Rf1 cuts the king off from the f-file, so 1...Kd8 is its only move. Now the kings face each other and 2.Rf8# mates along the back rank."
+    }
+   ]
+  }
+ ]
+}

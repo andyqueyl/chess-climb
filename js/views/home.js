@@ -1,0 +1,187 @@
+import { esc, md, lineChart, fmtDate, $, $$ } from '../ui.js';
+import { allMetrics, ratingSeries, recommendations, recentGames, gameMetrics, MAIN_CLASS } from '../metrics.js';
+import { DAY } from '../store.js';
+
+
+export function renderHome({ app, data, store }) {
+  const { games, profile, review } = data;
+  const s = store.get();
+  const rapid = games.filter(g => g.class === MAIN_CLASS);
+  const now = profile?.ratings?.[MAIN_CLASS]?.now ?? rapid.at(-1)?.rating ?? s.start;
+  const best = profile?.ratings?.[MAIN_CLASS]?.best;
+  const monthAgo = rapid.filter(g => g.end * 1000 < Date.now() - 30 * DAY).at(-1)?.rating ?? rapid[0]?.rating;
+  const delta = monthAgo ? now - monthAgo : 0;
+  const start = Math.min(s.start, rapid[0]?.rating ?? s.start);
+  const prog = Math.max(0, Math.min(1, (now - start) / (s.goal - start)));
+  const MILESTONES = [start, ...[1000, 1100, 1200, 1300, 1400, 1500].filter(v => v > start + 50), s.goal];
+  const m = allMetrics(games);
+  const prev = gameMetrics(recentGames(games, 40).slice(0, -20));
+  const recs = recommendations(data).slice(0, 5);
+  const trend = (cur, old, better) => (old == null || cur == null ? '' : cur === old ? 'same as the 20 before' :
+    `${(better === 'up' ? cur > old : cur < old) ? '▲ better' : '▼ worse'} than the 20 before (${old})`);
+
+  app.innerHTML = `
+  <section class="hero">
+    <div class="card">
+      <div class="eyebrow">Rapid rating · chess.com/${esc(profile?.user || '')}</div>
+      <div class="big">${now} <small>/ ${s.goal}</small></div>
+      <div class="muted">${delta >= 0 ? '+' : ''}${delta} in the last 30 days · started at ${start}${best ? ` · best ${best}` : ''} · ${s.goal - now > 0 ? `${s.goal - now} to go` : 'goal hit!'}</div>
+      <div class="progress"><span style="width:${prog * 100}%"></span></div>
+      <div class="milestones">${MILESTONES.map(v => `<span class="${now >= v ? 'hit' : ''}">${v}</span>`).join('')}</div>
+      ${review?.headline ? `<p class="muted" style="margin-top:16px">${md(review.headline)}</p>` : ''}
+      ${review?.leaks?.length ? `<div class="grid g2" style="margin-top:12px;gap:12px">
+        <div><div class="eyebrow">What you do wrong</div><ol class="tight">${review.leaks.map(l => `<li>${md(l.title)}</li>`).join('')}</ol></div>
+        <div><div class="eyebrow">What you do well</div><ul class="tight">${(review.strengths || []).slice(0, 4).map(s => `<li>${md(s.split(':')[0])}</li>`).join('')}</ul></div></div>` : ''}
+      ${review?.one_fix ? `<p style="margin-top:8px"><b>The one habit:</b> ${md(review.one_fix)}</p>` : ''}
+      ${review ? `<a href="#/review">Full takeaways with your games →</a>` : ''}
+    </div>
+    <div class="card"><div class="spread"><h3>Rapid rating</h3><span class="faint">${rapid.length} games</span></div><div id="rchart"></div></div>
+  </section>
+
+  <section class="section grid g4">
+    ${tile(m.accuracy ?? '–', 'Accuracy, last 20 rapid', trend(m.accuracy, prev?.accuracy, 'up'))}
+    ${tile(m.blunders_per_game ?? '–', 'Blunders per game', trend(m.blunders_per_game, prev?.blunders_per_game, 'down'))}
+    ${tile(m.n ? `${m.wins}-${m.losses}${m.draws ? '-' + m.draws : ''}` : '–', 'W-L last 20 rapid', m.n ? `${m.score}% score` : '')}
+    ${tile(m.puzzle_rating, 'Site puzzle rating', m.attempts ? `${m.puzzle_accuracy}% of last ${Math.min(100, m.attempts)} · ${m.puzzles_per_week} this week` : 'Solve some puzzles to start it')}
+  </section>
+
+  <section class="section">
+    <div class="spread"><h2>Work on next</h2><a href="#/plan">Your plan & queue →</a></div>
+    <div class="recs">${recs.map((r, i) => `<div class="rec"><span class="n">${i + 1}</span>
+      <div><div class="t">${esc(r.title)}</div><div class="w">${esc(r.why)}</div></div>
+      <a class="btn ${i === 0 ? 'primary' : ''}" href="${r.href}">${esc(r.label)}</a></div>`).join('')}</div>
+  </section>
+
+  <section class="section">
+    <div class="spread"><h2>Recent games</h2><a href="#/review">All games & patterns →</a></div>
+    <div class="card table-wrap">${gameTable(games.slice(-10).reverse(), data)}</div>
+  </section>`;
+
+  lineChart($('#rchart', app), ratingSeries(games), { goal: s.goal });
+  bindGameRows(app);
+}
+
+const tile = (v, l, d) => `<div class="card stat"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div><div class="d">${esc(d || '')}</div></div>`;
+
+export function gameTable(list, data) {
+  if (!list.length) return '<div class="empty">No games yet. Run scripts/update.py.</div>';
+  const notes = data.review?.games || {};
+  return `<table><thead><tr><th>Date</th><th>Result</th><th>Opponent</th><th>Opening</th><th class="num">Acc</th><th class="num">Blunders</th><th>Type</th></tr></thead><tbody>
+  ${list.map(g => `<tr class="click" data-game="${g.id}" title="${esc(notes[g.id]?.summary || '')}">
+    <td>${fmtDate(g.end)}</td>
+    <td><span class="res-${g.result}">${g.result}</span> <span class="faint">${g.how !== 'win' && g.result !== 'draw' ? '· ' + esc(g.how) : ''}</span></td>
+    <td><span class="pill-dot" style="background:${g.color === 'white' ? '#f1ede4;box-shadow:0 0 0 1px var(--line)' : '#3b3a36'}"></span>${esc(g.opp)} <span class="faint">${g.opp_rating}</span></td>
+    <td>${esc(g.opening)}</td>
+    <td class="num">${g.acc ?? '–'}</td>
+    <td class="num">${g.blunders ? `<span class="tag-blunder">${g.blunders}</span>` : '0'}</td>
+    <td class="faint">${esc(g.class)}</td></tr>`).join('')}</tbody></table>`;
+}
+
+export function bindGameRows(root) {
+  $$('tr[data-game]', root).forEach(tr => (tr.onclick = () => (location.hash = `#/game/${tr.dataset.game}`)));
+}
+
+/* ---------------- Plan page ---------------- */
+
+export function renderPlan({ app, data, store }) {
+  const s = store.get();
+  const m = allMetrics(data.games);
+  const roadmap = data.lessons?.roadmap || [];
+  if (s.queue === null) {
+    store.update(st => (st.queue = recommendations(data).slice(0, 4).map((r, i) => ({ id: Date.now() + i, text: r.title, href: r.href, done: false, auto: true }))));
+  }
+  const now = m.rating ?? s.start;
+  const stageIdx = roadmap.findIndex(st => { const [lo, hi] = st.band.split('-').map(Number); return now >= lo && now < hi; });
+  const lessonTitle = id => data.lessons?.tactics?.find(l => l.id === id)?.title || data.lessons?.endgames?.find(l => l.id === id)?.title || id;
+  const lessonHref = id => data.lessons?.endgames?.find(l => l.id === id) ? `#/tactics/endgame/${id}` : id === 'process' ? '#/tactics/lesson/process' : `#/tactics/lesson/${id}`;
+  const weekMins = s.log.filter(l => l.t > Date.now() - 7 * DAY).reduce((a, l) => a + (+l.mins || 0), 0);
+
+  app.innerHTML = `
+  <h1>Your plan</h1>
+  <p class="muted">Roadmap targets check themselves against your last 20 rapid games and your puzzle log here. The queue is yours to edit.</p>
+
+  <section class="section grid g2">
+    <div class="card">
+      <h3>Up next (your queue)</h3>
+      <div class="queue" id="queue"></div>
+      <form class="row" id="qadd" style="margin-top:10px"><input type="text" id="qtext" placeholder="Add something to work on…" style="flex:1"><button class="btn">Add</button></form>
+      <div class="row" style="margin-top:8px"><button class="btn small" id="qrefill">Add today's suggestions</button><button class="btn small" id="qclear">Clear finished</button></div>
+    </div>
+    <div class="card">
+      <div class="spread"><h3>Training log</h3><span class="faint">${weekMins} min this week</span></div>
+      <form id="logf" class="grid" style="gap:8px">
+        <div class="row"><input type="number" id="lmins" min="1" max="600" value="30" style="width:90px"> <span class="muted">min of</span>
+          <select id="lkind"><option>Tactics</option><option>Played games</option><option>Game review</option><option>Opening study</option><option>Endgames</option><option>Video / book</option></select></div>
+        <input type="text" id="lnote" placeholder="What did you notice? (optional)">
+        <button class="btn primary" style="justify-self:start">Log it</button>
+      </form>
+      <div id="loglist" style="margin-top:12px"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Roadmap: 1100 → 1600</h2>
+    ${roadmap.length ? `<div class="grid" style="gap:12px">${roadmap.map((st, i) => `
+      <div class="card stage ${i === stageIdx ? 'current' : i < stageIdx ? 'done' : ''}">
+        <div class="spread"><h3>${esc(st.band)} · ${esc(st.title)}</h3>${i === stageIdx ? '<span class="chip on">You are here</span>' : ''}</div>
+        <div class="grid g3" style="margin-top:6px">
+          <div><div class="eyebrow">Focus</div><ul class="tight">${st.focus.map(f => `<li>${md(f)}</li>`).join('')}</ul></div>
+          <div><div class="eyebrow">Weekly routine</div><ul class="tight">${st.routine.map(f => `<li>${md(f)}</li>`).join('')}</ul></div>
+          <div><div class="eyebrow">Targets</div>${st.targets.map(t => target(t, m)).join('')}
+            <div class="eyebrow" style="margin-top:10px">Lessons</div>
+            <div class="row">${st.lessons.map(id => `<a class="chip" href="${lessonHref(id)}">${esc(lessonTitle(id))}</a>`).join('')}</div></div>
+        </div>
+      </div>`).join('')}</div>` : '<div class="empty">Roadmap content is still being written.</div>'}
+  </section>
+
+  <section class="section card">
+    <h3>Your data</h3>
+    <p class="muted">Puzzle history, course progress, queue and log live in this browser. Export to back it up or move it to another device.</p>
+    <div class="row"><button class="btn" id="exp">Export</button><label class="btn">Import<input type="file" id="imp" accept=".json" hidden></label><button class="btn" id="rst">Reset everything</button></div>
+  </section>`;
+
+  const drawQueue = () => {
+    $('#queue').innerHTML = s.queue.length ? s.queue.map(q => `<div class="qi ${q.done ? 'done' : ''}" data-id="${q.id}">
+      <input type="checkbox" ${q.done ? 'checked' : ''}><span class="tx">${q.href ? `<a href="${q.href}">${esc(q.text)}</a>` : esc(q.text)}</span><button class="x" title="Remove">×</button></div>`).join('')
+      : '<div class="empty">Nothing queued.</div>';
+    $$('#queue .qi').forEach(el => {
+      const id = +el.dataset.id;
+      el.querySelector('input').onchange = e => { store.update(st => (st.queue.find(q => q.id === id).done = e.target.checked)); drawQueue(); };
+      el.querySelector('.x').onclick = () => { store.update(st => (st.queue = st.queue.filter(q => q.id !== id))); drawQueue(); };
+    });
+  };
+  const drawLog = () => {
+    $('#loglist').innerHTML = s.log.slice(-8).reverse().map(l => `<div class="spread" style="padding:5px 0;border-bottom:1px solid var(--line)">
+      <span>${esc(l.kind)} · ${l.mins} min${l.note ? ` <span class="muted">· ${esc(l.note)}</span>` : ''}</span><span class="faint">${new Date(l.t).toLocaleDateString()}</span></div>`).join('') || '<div class="faint">No sessions logged yet.</div>';
+  };
+  drawQueue(); drawLog();
+  $('#qadd').onsubmit = e => { e.preventDefault(); const t = $('#qtext').value.trim(); if (!t) return; store.update(st => st.queue.push({ id: Date.now(), text: t, done: false })); $('#qtext').value = ''; drawQueue(); };
+  $('#qrefill').onclick = () => {
+    const have = new Set(s.queue.map(q => q.text));
+    store.update(st => recommendations(data).slice(0, 4).forEach((r, i) => !have.has(r.title) && st.queue.push({ id: Date.now() + i, text: r.title, href: r.href, done: false, auto: true })));
+    drawQueue();
+  };
+  $('#qclear').onclick = () => { store.update(st => (st.queue = st.queue.filter(q => !q.done))); drawQueue(); };
+  $('#logf').onsubmit = e => {
+    e.preventDefault();
+    store.update(st => st.log.push({ t: Date.now(), mins: +$('#lmins').value || 0, kind: $('#lkind').value, note: $('#lnote').value.trim() }));
+    $('#lnote').value = ''; drawLog();
+  };
+  $('#exp').onclick = () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([store.export()], { type: 'application/json' }));
+    a.download = `chess-climb-${new Date().toISOString().slice(0, 10)}.json`; a.click();
+  };
+  $('#imp').onchange = async e => { const f = e.target.files[0]; if (!f) return; try { store.import(await f.text()); location.reload(); } catch { $('#imp').closest('.card').insertAdjacentHTML('beforeend', '<p class="tag-blunder">That file did not look like a Chess Climb export.</p>'); } };
+  let armed = false;
+  $('#rst').onclick = e => {
+    if (!armed) { armed = true; e.target.textContent = 'Click again to wipe all progress'; return; }
+    store.reset(); location.reload();
+  };
+}
+
+function target(t, m) {
+  const metric = t.metric, v = m[metric];
+  const ok = v != null && (t.max != null ? v <= t.max : v >= t.min);
+  return `<div class="target"><span class="${ok ? 'ok' : 'no'}">${ok ? '✓' : '○'}</span><span>${esc(t.label)} <span class="faint">(now ${v ?? '–'})</span></span></div>`;
+}

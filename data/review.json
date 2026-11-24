@@ -1,0 +1,844 @@
+{
+ "generated": "Nov 23, 2026",
+ "games_reviewed": 72,
+ "headline": "Rapid only: 72 games, 45 wins, 23 losses, 4 draws. You're climbing fast (800 to 1085 since September), but the wins flatter you a bit: in **21 of your 45 wins** you were losing at some point. The big leak isn't openings, it's one-move blunders: in **19 of your 27 losses and draws you were +3 or better at some point.** Cut those and the rating follows.",
+ "leaks": [
+  {
+   "title": "Throwing away winning positions",
+   "detail": "19 of your 27 rapid losses and draws had you at +3 or better at some point. Almost every giveaway was a one-move tactic, not a slow squeeze. Examples: missing 19.Nxc3 (a free queen) at +9, and running out of time with K+Q vs K for a draw.",
+   "fix": "When you're winning, switch to safety mode: before every move ask what their last move threatens, and what your move leaves hanging. Trade pieces, don't hunt for more.",
+   "evidence": [
+    "6b01b893",
+    "394efc96",
+    "ade1612d",
+    "524a0063",
+    "95a10daf"
+   ],
+   "href": "#/tactics/lesson/process",
+   "cta": "The every-move checklist"
+  },
+  {
+   "title": "Hanging pieces in one move",
+   "detail": "35 of your 83 rapid blunders left a piece to a single capture, and you lost your queen that way in 4 recent games. It's usually moving onto an attacked square, or moving the piece that was the guard.",
+   "fix": "Before you let go of the piece: is the square it lands on attacked? What was it defending?",
+   "evidence": [
+    "524a0063",
+    "c1947c24",
+    "95a10daf",
+    "4f73082f"
+   ],
+   "href": "#/tactics/lesson/hanging-pieces",
+   "cta": "Hanging pieces lesson"
+  },
+  {
+   "title": "Not asking what their last move threatens",
+   "detail": "14 rapid games turned on a threat you didn't see, often a pawn move that attacks a piece or opens a line (b4 hitting your Bc5 twice, ...Nxb2 hitting your queen). Walking into forking checks is the same habit: the Nd5-Nc7+ fork got you twice.",
+   "fix": "First thing every move: what changed, and what does that move attack now?",
+   "evidence": [
+    "70865e58",
+    "93af37b8",
+    "4f73082f",
+    "8c70314f",
+    "d6c73a3b",
+    "60c09bed"
+   ],
+   "href": "#/tactics/lesson/defensive-awareness",
+   "cta": "Defensive awareness lesson"
+  },
+  {
+   "title": "Missing your own winning tactics",
+   "detail": "15 games where a winning shot was there and you played something else (10.Qf7#, 11.Bxa5 winning the queen, 19.Nxc3, 27.Qxe5). After an opponent's big mistake, your next move was a mistake too about 28% of the time.",
+   "fix": "When they blunder, slow down. Checks, captures, threats for YOU before anything else. The 'From my games' puzzle set is exactly these moments.",
+   "evidence": [
+    "6b01b893",
+    "ade1612d",
+    "a1e0001b",
+    "a394124d"
+   ],
+   "href": "#/tactics/practice/mine",
+   "cta": "Solve your missed moments"
+  },
+  {
+   "title": "Clock management",
+   "detail": "You were behind on the clock at move 20 in 19 of 24 longer games, and 6 of your last 14 losses ended with you under 30 seconds or flagged, including a time loss in a dead-equal ending.",
+   "fix": "Play the London setup fast (you know it), spend the saved time on the moments where pieces start touching.",
+   "evidence": [
+    "95a10daf",
+    "e265df59",
+    "69d7c4b1",
+    "394efc96"
+   ],
+   "href": "#/tactics/lesson/process",
+   "cta": "10-minute time plan"
+  },
+  {
+   "title": "Opening holes",
+   "detail": "London: vs ...Nc6/...Bg4/...f6, 5.Bd3? is a blunder: ...e5 wins a piece because your Nf3 is pinned to the queen. Play 5.Be2 (this cost you twice). As Black, the Englund is 1-1-3 in rapid. Vs the Scotch you're 2-2, and one loss was over by move 12 after an early ...Qf6.",
+   "fix": "Learn the Jobava London lines here. As Black, either learn the Englund properly or switch, and skip the early ...Qf6 vs the Scotch.",
+   "evidence": [
+    "12e5013f",
+    "37437303",
+    "d6c73a3b",
+    "c1947c24"
+   ],
+   "href": "#/jobava",
+   "cta": "Jobava London course"
+  }
+ ],
+ "strengths": [
+  "You finish attacks: 18 of your 45 wins were by checkmate, including a Greek gift 12.Bxh7+ into Qh8# and an 11.Nxc7+ royal fork.",
+  "You find real tactics when they're there: forks, discovered attacks, a skewer, an exchange sac and a Nxf2 sac.",
+  "You don't quit: 21 of your wins came back from losing positions.",
+  "Your 1.d4 setups are your best weapon: 17-7-1 with the London and Queen's Pawn as White, with h-file attacks producing mates.",
+  "The Giuoco Piano as Black is 6-1.",
+  "Big material leads usually get converted cleanly."
+ ],
+ "openings": "As White, keep the London and learn the Jobava: it's scoring and it gives you attacking games. As Black vs 1.e4, 1...e5 is fine (the Giuoco Piano is 6-1); just skip the early ...Qf6 vs the Scotch. The Englund as Black is 1-1-3 in rapid, so learn it properly or replace it.",
+ "games": {
+  "774b4d59": {
+   "summary": "Bird with an early 8.g4 left the e1-h4 diagonal wide open; after 14.Be2 Black got 14...Qh4+ and 15...Nf2+ forked your king and Rh1, so you were dead lost. Then your opponent just gave you the queen with 21...Qxe2+?? 22.Kxe2 and you cleaned up.",
+   "key_moment": 41,
+   "lesson": "Pushing g4 in the Bird weakens h4 and e1. Before any kingside pawn push, ask 'can a queen check me on h4 now?'",
+   "tags": [
+    "king-safety",
+    "fork",
+    "opening-trouble",
+    "comeback",
+    "opponent-blundered"
+   ]
+  },
+  "9233ecc1": {
+   "summary": "You were drifting badly in the Scotch (about -5 by move 9 after 5...Nf6 and 8...Nb6), and 14...Bxa2?? grabbed a pawn that lost to 15.Qa4+ forking king and bishop, which your opponent missed. Later he went wrong with 31.b4? in the king and pawn ending and you won it cleanly.",
+   "key_moment": 60,
+   "lesson": "Pawn grabs near your uncastled king: check every enemy check first. Qa4+ hitting a loose bishop was one move away.",
+   "tags": [
+    "opening-trouble",
+    "fork",
+    "opponent-blundered",
+    "endgame-technique",
+    "converted-well"
+   ]
+  },
+  "109444fc": {
+   "summary": "Opponent dropped a piece with 8.Nxd5? and you collected it, then went 10...Qxg2 and finished with 12...Qxf1#. Clean, no errors.",
+   "key_moment": 14,
+   "lesson": "This is the template: take what's free, then go straight at the king.",
+   "tags": [
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "6b01b893": {
+   "summary": "Opponent dropped a knight with 6...Ne4?? and you were +8, but 17.Qd4?? put your queen right where 17...Nxd4 takes it. He handed it back with 18...Qc3+?? into your Nd5, and you missed 19.Nxc3, playing 19.Rd2?? instead and losing the bishop on c4 too.",
+   "key_moment": 36,
+   "lesson": "When the opponent gives a check, first ask 'can I just take the checking piece?' 19.Nxc3 was a free queen.",
+   "tags": [
+    "hung-piece",
+    "missed-tactic",
+    "threw-winning-position"
+   ]
+  },
+  "482053fb": {
+   "summary": "5.Bf4?? was a London autopilot move straight into Black's queen on f6 (5...Qxf4 was free; he missed it). You later got up to around +8, but 30.Ne4?? left your rook on f6 to 30...Nxf6, the position turned lost, and you abandoned the endgame.",
+   "key_moment": 58,
+   "lesson": "The London is not 'Bf4 no matter what'. Check whether anything already aims at f4 before you put the bishop there.",
+   "tags": [
+    "hung-piece",
+    "opening-trouble",
+    "threw-winning-position"
+   ]
+  },
+  "ad478733": {
+   "summary": "Nice 6.Qa4+ forked the king and the bishop on b4 and you were a full piece up (+7.7) on move 8. Then the game ended as a loss by abandonment.",
+   "key_moment": 15,
+   "lesson": "If this was a disconnect, fine. If you left on purpose, never walk away from a position where you're up a piece.",
+   "tags": [
+    "good-tactic",
+    "fork",
+    "resigned-early",
+    "threw-winning-position"
+   ]
+  },
+  "4ad2cb7f": {
+   "summary": "Vs a 1889 you were already worse by move 10 (9...Qa5, 10...Bd7). After 12.e5 dxe5 13.dxe5 the d-file was open onto your Bd7, and 13...Ne8 saved the knight but left the bishop to 14.Qxd7. Draw agreed while you were -8, which was a gift.",
+   "key_moment": 25,
+   "lesson": "When a pawn trade opens a file, look down it. A piece that was safe behind a pawn may be loose once that pawn is gone.",
+   "tags": [
+    "missed-threat",
+    "hung-piece",
+    "discovered-attack",
+    "opening-trouble"
+   ]
+  },
+  "a3ab167d": {
+   "summary": "16.Nce5?? dropped a knight because your Nf3 was pinned to the Qe2 by Bg4 (he missed it). Later, at 27, you had 27.Qxe5 winning the bishop outright on the e-file, but played 27.Reg1+?? and his attack mated you.",
+   "key_moment": 52,
+   "lesson": "Before a check, look at simple captures first. Also: a knight pinned to your queen does not really defend anything.",
+   "tags": [
+    "pin",
+    "missed-tactic",
+    "threw-winning-position",
+    "allowed-mate"
+   ]
+  },
+  "87ea9ce1": {
+   "summary": "Very messy opening (60.9% accuracy). 7...Nxd5?? put a knight on a square hit twice (Ba2 and Qf3) and defended once, then 8...Nd4?? let 9.Qxd5 happen. 10...Nc2+ forked king and rook and your opponent resigned in a position that was still better for him.",
+   "key_moment": 19,
+   "lesson": "Count attackers and defenders before you capture into the center: 2 attackers vs 1 defender means you lose the piece.",
+   "tags": [
+    "hung-piece",
+    "fork",
+    "opponent-blundered"
+   ]
+  },
+  "d3af488f": {
+   "summary": "11.c4 opened the d1-a4 diagonal onto your rook on a4, and 11...h6?? ignored it, so 12.Qxa4 won a full rook. You were lost from there and eventually flagged with 4 seconds left.",
+   "key_moment": 21,
+   "lesson": "After every opponent pawn move, ask what lines it just opened. A pawn move can be a discovered attack.",
+   "tags": [
+    "missed-threat",
+    "hung-piece",
+    "discovered-attack",
+    "time-trouble"
+   ]
+  },
+  "d3910387": {
+   "summary": "Englund-style game (1.d4 e5 2.e3). After 16...Bxc2 17.Qxc2 his queen no longer guarded f3, and 17...Qxf3 won a knight. You kept attacking and mated with 21...Ne2#.",
+   "key_moment": 33,
+   "lesson": "Good eye: when a defender recaptures somewhere else, check what it stopped defending.",
+   "tags": [
+    "good-tactic",
+    "converted-well"
+   ]
+  },
+  "e3caa638": {
+   "summary": "After 7...Qd6? you found 8.Nxg4 Nxg4 9.Bxc6+ (in-between check) Qxc6 10.Qxg4, netting a piece. Then you ate pawns and won with no real mistakes.",
+   "key_moment": 14,
+   "lesson": "In-between checks are how you win 'even' trade sequences. Keep looking for them.",
+   "tags": [
+    "good-tactic",
+    "converted-well"
+   ]
+  },
+  "11dd1920": {
+   "summary": "9...Nxe4? grabbed a pawn but the knight got stranded after 10.c3 Bxf3 11.gxf3 and you lost it, sitting at -6 to -8 for 15 moves. You kept fighting and after 26.Ne2?? you found 26...Rh4+, mate next.",
+   "key_moment": 51,
+   "lesson": "Don't grab a center pawn with a knight unless it has a retreat square. The fight-back was good though.",
+   "tags": [
+    "opening-trouble",
+    "comeback",
+    "opponent-blundered"
+   ]
+  },
+  "e336a48d": {
+   "summary": "Opponent's 18...Qc7?? let you win material with 19.Rxb4 and you were better, but 22.Qxb4?? walked into 22...Nc2+ forking your king on e1 and queen on b4. Lost the queen and got mated soon after.",
+   "key_moment": 42,
+   "lesson": "Knight on d4 next to your king on e1: c2 is a fork square. Check every knight check before you move.",
+   "tags": [
+    "fork",
+    "hung-piece",
+    "threw-winning-position"
+   ]
+  },
+  "587d8833": {
+   "summary": "Your queen on a4 sat on the a4-e8 diagonal behind Black's Nc6/Bd7. After 10.Nc4?, 10...Ne5 was a discovered attack on the queen, and 11.dxe5?? took the knight instead of saving the queen. You were lost for the rest of the game and won only because he ran out of time.",
+   "key_moment": 20,
+   "lesson": "When a piece moves out of a line pointing at your queen, move the queen first, then worry about the piece.",
+   "tags": [
+    "discovered-attack",
+    "missed-threat",
+    "hung-piece",
+    "opponent-blundered"
+   ]
+  },
+  "57e3f4e0": {
+   "summary": "Level, long game until 29.Be7?? just hung a bishop to 29...Nxe7. You converted the rook and knight vs rook ending without letting him back in.",
+   "key_moment": 56,
+   "lesson": "Solid conversion. Keep trading down and pushing passers when a piece up, like here.",
+   "tags": [
+    "opponent-blundered",
+    "converted-well",
+    "endgame-technique"
+   ]
+  },
+  "394efc96": {
+   "summary": "9.Nxg6 sac was dubious and 15.Qe5?? hung your Rh1 to the f2 knight. You ground back to a won ending after 48...Na7?, queened on move 65, and reached K+Q vs K, but you burned 110 seconds on moves 25-28 and flagged on move 88 with mate on the board. Draw instead of a win.",
+   "key_moment": 174,
+   "lesson": "Budget your clock: under 60 seconds in a won ending, make fast safe moves. And practice K+Q vs K mate until it takes 10 seconds.",
+   "tags": [
+    "hung-piece",
+    "time-trouble",
+    "threw-winning-position",
+    "comeback"
+   ]
+  },
+  "4258bc45": {
+   "summary": "You were a pawn down in a Berlin but built pressure on the g-file, and when 15.Nd2?? blocked his defense you hit 15...Nxf2! and followed with Qxh4, Rxg3+ and 19...Qxf2#.",
+   "key_moment": 29,
+   "lesson": "Great example of a sac backed by calculation. Pieces aimed at the king plus an open file equals look for sacs.",
+   "tags": [
+    "good-tactic",
+    "converted-well"
+   ]
+  },
+  "8063f4e7": {
+   "summary": "You played 1...c6 here and 8...Bxd6? let 9.Bxb7 and 10.Bxa8 grab your rook. You kept fighting, and after 19.Qb3?? the knight fork 19...Nd4+ won his queen and you went on to win.",
+   "key_moment": 37,
+   "lesson": "Long diagonals: when you open one (d6/b7), check if a bishop can run down it and grab a rook in the corner.",
+   "tags": [
+    "opening-trouble",
+    "fork",
+    "good-tactic",
+    "comeback"
+   ]
+  },
+  "3e339bef": {
+   "summary": "2.Kd2 and 3.Qe1 put you -5 by move 3, which is self-inflicted. You found the 19.Ncd6+ fork, walked into 25...Nc2+ forking king and rook, and at 34.Bc4?? allowed 34...Bd3+ winning a rook, which he missed. You won the pawn race and he flagged while you had 34 seconds.",
+   "key_moment": 67,
+   "lesson": "Meme openings cost you real points. And the Nc2+ fork again: check knight jumps near your king.",
+   "tags": [
+    "opening-trouble",
+    "fork",
+    "good-tactic",
+    "time-trouble",
+    "opponent-blundered",
+    "comeback"
+   ]
+  },
+  "3c996fab": {
+   "summary": "Textbook London. 12...Nxd4?? 13.Nxd4 Qxd4 14.Bb5+! was a discovered attack from Rd1 onto the queen, and 15.Rxd4 won it. 96% accuracy.",
+   "key_moment": 26,
+   "lesson": "Discovered checks with a rook behind are your best weapon after O-O-O. You saw it fast.",
+   "tags": [
+    "good-tactic",
+    "discovered-attack",
+    "converted-well"
+   ]
+  },
+  "a0d4504e": {
+   "summary": "Messy. Your Rh1 sat on the long diagonal for ages, 30.Qxa5?? allowed 30...Bxc4+ winning the queen (he missed it), and 33.Be3?? missed 33.Nxc4 winning a free rook. He finally went wrong with 36...Rb1+? and you converted.",
+   "key_moment": 71,
+   "lesson": "Look for free captures first every move. 33.Nxc4 was a whole rook sitting there.",
+   "tags": [
+    "hung-piece",
+    "missed-tactic",
+    "comeback",
+    "opponent-blundered"
+   ]
+  },
+  "70865e58": {
+   "summary": "7.a4 8.b4 attacked your Bc5 and 8...Nd4?? counterattacked the queen but left the bishop hanging to a simple 9.Nxd4. Opponent played 9.bxc5?? and let you take his queen with 9...Nxe2. Lucky win.",
+   "key_moment": 16,
+   "lesson": "When a pawn attacks your piece, deal with it. Counterattacks only work if the opponent cannot answer both threats with one move.",
+   "tags": [
+    "missed-threat",
+    "hung-piece",
+    "opponent-blundered"
+   ]
+  },
+  "11a1f5dd": {
+   "summary": "Englund: 4...Bc5?? lost the bishop to 5.Qh5+ g6 6.Qxc5. You fought back, missed 22...Rb1+ (winning the g1 rook, you played Nxg3 instead), then in a winning rook ending played 47...Kf7? (47...Kf5 keeps the g-pawn) and it fizzled into a repetition draw.",
+   "key_moment": 93,
+   "lesson": "In rook endings, your king's job is to protect your passed pawn. And in the Englund, any loose piece can be hit by Qh5+ or Qa4+.",
+   "tags": [
+    "opening-trouble",
+    "fork",
+    "missed-tactic",
+    "threw-winning-position",
+    "endgame-technique",
+    "comeback"
+   ]
+  },
+  "8088bcf7": {
+   "summary": "Solid London, 94% accuracy. When 27...Kd7?? lined his king up with the Rg7 on the 7th rank, you found 28.Rc7+ Kd8 29.Rxg7 (skewer) and converted.",
+   "key_moment": 54,
+   "lesson": "Skewers come from kings and rooks on the same line. You spotted it, keep that habit.",
+   "tags": [
+    "good-tactic",
+    "skewer",
+    "converted-well"
+   ]
+  },
+  "af788141": {
+   "summary": "London with Na3, and 9.b3?? removed the b2 pawn guarding a3, so 9...Bxa3 won a knight. At 13 you missed 13.Qxg4 picking up his loose knight, played 13.h3? instead, and his pieces flooded your king down the open h-file. Mated on move 21.",
+   "key_moment": 16,
+   "lesson": "Before pushing a pawn, check what it was defending. b2 was the only guard of your knight on a3.",
+   "tags": [
+    "hung-piece",
+    "missed-tactic",
+    "king-safety",
+    "allowed-mate"
+   ]
+  },
+  "b70b2cc1": {
+   "summary": "17...Bf5?? lost the exchange and missed 17...Rxf4 winning a free bishop. Then 21...Qh4?? hung the a8 rook to 22.Qxa8+. Down a lot, you kept the attack going and he blundered into 29...Qxg3# after 29.Kh2??.",
+   "key_moment": 56,
+   "lesson": "When your rook is attacked, look for captures with it before defending it. Rxf4 took a piece and fixed the problem.",
+   "tags": [
+    "hung-piece",
+    "missed-tactic",
+    "comeback",
+    "opponent-blundered"
+   ]
+  },
+  "e645d389": {
+   "summary": "Vs the Englund as White you got a big lead early and finished it with 23.Qxd6+ Qxd6 24.Bxd6+, using the Bg3 x-ray behind d6 to net a piece. Opponent abandoned.",
+   "key_moment": 44,
+   "lesson": "Nice use of a piece behind another on the same line (x-ray). Clean conversion.",
+   "tags": [
+    "good-tactic",
+    "converted-well"
+   ]
+  },
+  "f388cb10": {
+   "summary": "You were worse (about -4) for a long stretch after 13...Re8, but stayed alert and when 26.Qf6? put his queen on a knight square, 26...Ne4+ forked king and queen.",
+   "key_moment": 51,
+   "lesson": "Kings and queens on knight-fork squares: always check. You did here.",
+   "tags": [
+    "good-tactic",
+    "fork",
+    "comeback"
+   ]
+  },
+  "e325c77a": {
+   "summary": "Big swings both ways. 29.Qf4? allowed 29...Qc1+ and his queen got loose; 31.Kh2? passed on 31.Rxg6+ and you dropped to -5. Then 36...Qxg3+?? traded queens into a lost ending for him and you converted rook vs pawns, queened, and mated with 58.Qc8#.",
+   "key_moment": 71,
+   "lesson": "When the opponent's queen is near your king, every check matters. The ending technique was good.",
+   "tags": [
+    "missed-threat",
+    "comeback",
+    "opponent-blundered",
+    "endgame-technique"
+   ]
+  },
+  "7fa9355f": {
+   "summary": "96.5% accuracy. You won a pawn and wrecked his structure out of the Italian, then 22...Bg2+ 23.Kg1 Bxf3+ was a discovered check from Rg6 that won the d1 rook. You converted down to queen vs king.",
+   "key_moment": 43,
+   "lesson": "Rook behind bishop on the king's file is a discovered-check battery. Great find.",
+   "tags": [
+    "good-tactic",
+    "discovered-attack",
+    "converted-well",
+    "endgame-technique"
+   ]
+  },
+  "f22945f4": {
+   "summary": "Equal London, opponent abandoned on move 10. Nothing to learn.",
+   "key_moment": 18,
+   "lesson": "Nothing to learn here.",
+   "tags": []
+  },
+  "93af37b8": {
+   "summary": "10...O-O-O? passed on 10...Nxd5 winning material, then 16...h5?? ignored 16.b4 hitting your Bc5, and 17.bxc5 won it. Your king on c8 with pawns on a7/b7/c7 got mated on the back rank by 27.Qe8#.",
+   "key_moment": 31,
+   "lesson": "Same as 70865e58: b4 against Bc5 is a real threat. Also, after O-O-O give your king an escape square.",
+   "tags": [
+    "missed-threat",
+    "hung-piece",
+    "back-rank",
+    "allowed-mate",
+    "threw-winning-position"
+   ]
+  },
+  "c389dd35": {
+   "summary": "London with a Bxa6 sacrifice on his queenside castle. You missed 19.Nxb6 (+5.4) and played 19.Na5?, but 19...c6? opened the b-file and you mated with 25.Rxb7#.",
+   "key_moment": 37,
+   "lesson": "Good attacking instinct. When attacking, check captures that remove defenders first (Nxb6).",
+   "tags": [
+    "missed-tactic",
+    "good-tactic",
+    "converted-well"
+   ]
+  },
+  "268e2863": {
+   "summary": "Even position until 18...Re8?? With your queen on f6 in front of his Rf1, 19.fxe5 was a discovered attack on the queen, and 19...Rxe5 20.Rxf6 lost it for a rook.",
+   "key_moment": 35,
+   "lesson": "Queen on the same file as an enemy rook with only a pawn between is a loaded gun. Get the queen off that file.",
+   "tags": [
+    "discovered-attack",
+    "missed-threat",
+    "hung-piece"
+   ]
+  },
+  "f92bb36e": {
+   "summary": "Vs 1.Nf3/d4 you played a Chigorin setup; 13.Nh4? hung a knight to 13...Bxh4 and you took it. Some loose moves after (18...Rfd8, 20...Bxg2), but 21...Nh3+ and 23...Nxf4 won more and you converted.",
+   "key_moment": 24,
+   "lesson": "Good. Take free pieces, then keep it simple.",
+   "tags": [
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "ade1612d": {
+   "summary": "Won a rook and a knight by move 13 (+8.7) after missing 10.Qf7# (played 10.Qh5+). Then 16.Be6+? ignored that the Qg8 was hit by the Rd8 (queen-for-rook trade, back to 0.00), and 17.Qg7?? walked into 17...Qd3+ 18.Kg1 Qd1+ 19.Rxd1 Rxd1# back-rank mate.",
+   "key_moment": 32,
+   "lesson": "When you're up a ton, look at checks against your own king first. Kf1/Kg1 with the h1 rook stuck and no luft is a back-rank mate waiting to happen; 17.g3 fixed it.",
+   "tags": [
+    "missed-mate",
+    "missed-threat",
+    "back-rank",
+    "allowed-mate",
+    "threw-winning-position"
+   ]
+  },
+  "589ea82a": {
+   "summary": "Drifted from +3 to -3.5 with 17.Rf4? and 21.Qb5? while Black's queen sat on a2 next to your long-castled king. Opponent blundered back with 22...Rb8 and 24...Ng4, and 25.Qd5 plus 26.Rxf7 got the resignation.",
+   "key_moment": 47,
+   "lesson": "With an enemy queen already inside your king's position, every move has to start with 'what checks does she have?'",
+   "tags": [
+    "king-safety",
+    "opponent-blundered",
+    "comeback"
+   ]
+  },
+  "bdd8482b": {
+   "summary": "Clean attacking game: 12.Bxh7+ Nxh7 13.Qh5, then 15.Nxh7 and 16.Nf6+ gxf6 17.Qh8#. 94.8% accuracy, zero mistakes.",
+   "key_moment": 22,
+   "lesson": "This is your best pattern: Bxh7+ / Ng5 / Qh5 when Black castles short and the f6 knight can be removed. Keep it.",
+   "tags": [
+    "good-tactic",
+    "converted-well"
+   ]
+  },
+  "d6c73a3b": {
+   "summary": "Englund: 5...Nc4? let 6.Nd5 hit the Qe7 and c7 at once, and 7.Nxc7+ forked king and Ra8. Down the exchange from move 8 and resigned at -13 on move 20.",
+   "key_moment": 9,
+   "lesson": "In the Englund, c7 is your soft spot once the queen leaves d8. If a white knight can reach d5 or b5, cover c7 first (5...d6 was the move).",
+   "tags": [
+    "opening-trouble",
+    "fork"
+   ]
+  },
+  "932a4cab": {
+   "summary": "16...Nxh3+? was an unsound knight sac that left you -3 to -4 for ten moves, but 26.Ne5?? let 26...Qxe4+ win a piece. You then ground it out over 40 moves to 67...Qb7# with 40s left.",
+   "key_moment": 50,
+   "lesson": "Don't sac a piece for a pawn and one check unless you can see the follow-up; 16...Bd7 kept a normal game.",
+   "tags": [
+    "opponent-blundered",
+    "comeback",
+    "converted-well"
+   ]
+  },
+  "b242b68a": {
+   "summary": "Opponent's queen wandered (7...Qc6, 8...Qa6) and you punished it: 10.Nxd5 and 11.Nxc7+ forked king and Qa6. Up a queen, you finished with 20.Ra5#.",
+   "key_moment": 22,
+   "lesson": "Good eye: a queen on a6 and a king on e8 are both knight-fork targets from c7. Keep looking for that square.",
+   "tags": [
+    "good-tactic",
+    "fork",
+    "converted-well"
+   ]
+  },
+  "8c70314f": {
+   "summary": "+7 after 8.c3?, then 9...Ng3+? just gave a knight away (10.hxg3) and it went to equal. +6.7 again by move 22, but 22...Rg6? ignored 23.Rxg3 (the Bg3 was the only guard of the Rf2), and 33...b5?? allowed 34.Ne5+ forking king and Rf3. Opponent's errors let you scrape a draw.",
+   "key_moment": 65,
+   "lesson": "When you're winning, the only job is 'what does his last move threaten?'. All three drops here were one-move threats.",
+   "tags": [
+    "threw-winning-position",
+    "hung-piece",
+    "fork",
+    "missed-threat",
+    "opponent-blundered"
+   ]
+  },
+  "2eff555f": {
+   "summary": "Wild London: 10.g4 sac led to a king hunt, but 13...Nxc2+ forked your king and Ra1, and 16.Qxf4+? should have lost (-5.4; 16.Qf5 held). The opponent gave it back with 16...Ke7 and 17...Kd6??, and 18.Qc5# ended it.",
+   "key_moment": 33,
+   "lesson": "Before launching g4 ideas, check c2. The Nb4 had been eyeing the Nxc2+ fork since move 7.",
+   "tags": [
+    "fork",
+    "king-safety",
+    "opponent-blundered"
+   ]
+  },
+  "524a0063": {
+   "summary": "Englund vs 2.Nc3 went well and you were +5 after 16...Nf4, then 17...Qg5?? put the queen on a square the Nf3 covers (18.Nxg5). You fought on for 30 moves but got mated with 27s left.",
+   "key_moment": 33,
+   "lesson": "Blunder-check every queen move: 'which enemy pieces hit this square?' The knight was right next to it.",
+   "tags": [
+    "hung-piece",
+    "threw-winning-position",
+    "time-trouble"
+   ]
+  },
+  "d731ebfa": {
+   "summary": "After 5...Nf5? you missed 6.Bg5! and again 7.Bg5! (hit the Qf6, then g4 wins the Nf5) and drifted to +0.5. 11...c6? gave you +6.6 and you converted cleanly to 26.Rh8#.",
+   "key_moment": 21,
+   "lesson": "When the enemy queen and a knight are lined up on f6/f5, look for the bishop hit plus a pawn push that forks or traps.",
+   "tags": [
+    "missed-tactic",
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "ec8168c5": {
+   "summary": "8.g4?? opened the long diagonal and you saw it: 8...Qd5! hit the Rh1, 9...Qxh1+ won the rook, and 30...Rh4# finished. Only 66s left at the end though, versus 345s.",
+   "key_moment": 15,
+   "lesson": "Nice spot. A pawn leaving g2 opens the a8-h1 diagonal to the rook on h1; always check what a queen on d5 hits.",
+   "tags": [
+    "good-tactic",
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "a1e0001b": {
+   "summary": "Opponent played the Englund against you. 11.Bxa2? grabbed a knight when 11.Bxa5 won the queen (the Bd2 was staring at a5 down an open diagonal). 11...Qxa2? gave it back anyway and you won easily.",
+   "key_moment": 21,
+   "lesson": "Before recapturing, ask 'is there something bigger hanging?' Queen first, always.",
+   "tags": [
+    "missed-tactic",
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "95a10daf": {
+   "summary": "8...Re8? took the rook off f7 (9.Nxf7 was strong) and 13...Nf6? missed 13...Qxe4+ winning material. After 29.b3? it was level again, but with 28s left 30...Qa5+?? put the queen on the d2-a5 diagonal: 31.Bxa5, then 31...Bd4 dropped more.",
+   "key_moment": 59,
+   "lesson": "You had 24s vs 4+ minutes. Spend clock early on simple moves and you won't be forced to play queen checks blind.",
+   "tags": [
+    "time-trouble",
+    "hung-piece",
+    "missed-tactic"
+   ]
+  },
+  "12e5013f": {
+   "summary": "5.Bd3? vs ...Nc6/...Bg4/...f6 ran into 5...e5: the Bf4 is hit and 6.dxe5 Bxf3 7.Qxf3 Nxe5 forks Qf3 and Bd3, so you lost the bishop for a pawn (-3). 13.Qd1? kept you -3.5, but 14...Nf5? gave a piece back and you converted to resignation.",
+   "key_moment": 27,
+   "lesson": "In this Chigorin setup, play 5.Be2 (not Bd3). With the Nf3 pinned by Bg4, ...e5 is a real threat.",
+   "tags": [
+    "opening-trouble",
+    "comeback",
+    "opponent-blundered"
+   ]
+  },
+  "f6511be8": {
+   "summary": "12...Nxc4?? allowed 13.Re1, pinning the Qe7 to your king and winning it. Opponent played 13.Qf3? instead and you ran them over (mate in 4 on the board when they resigned).",
+   "key_moment": 24,
+   "lesson": "Uncastled king + queen on the e-file + open e-file = pin. Castle or get the queen off e7 before trading on c4.",
+   "tags": [
+    "pin",
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "4f73082f": {
+   "summary": "10.f3? opened the e1-h4 diagonal (10...Qh4+ was crushing; they missed it twice). Then 14...Nxb2 grabbed a pawn and hit your Qd3, and 15.e4?? ignored it: 15...Nxd3+. Resigned on move 16.",
+   "key_moment": 28,
+   "lesson": "After every enemy capture, ask what the capturing piece now attacks. The b2 knight did nothing fancy; it just hit your queen.",
+   "tags": [
+    "hung-piece",
+    "missed-threat",
+    "king-safety"
+   ]
+  },
+  "ba99fed5": {
+   "summary": "10...e5? and 11...g4 opened lines; 13.Qxb7 and 14.Qxc6+ won material and you converted to resignation with no mistakes (90%).",
+   "key_moment": 19,
+   "lesson": "Good: you took the free material and traded down instead of getting fancy.",
+   "tags": [
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "e265df59": {
+   "summary": "15...Be6? let 16.Bxe6 win your Ng4 (opponent gave it back with 17.g6). The R+N vs R+N ending was 0.00 for 30 moves until, with 30s left, 50...Kc5?? stepped away from the Ne6 and 51.Rxe6 won it. Mated three moves later.",
+   "key_moment": 99,
+   "lesson": "In endgames, the king is often the only defender of a piece. Before a king move, check what it stops guarding.",
+   "tags": [
+    "time-trouble",
+    "hung-piece",
+    "endgame-technique"
+   ]
+  },
+  "b40a033f": {
+   "summary": "14.Qa5? let 14...Nd5 hit your Bf4, and 15.e4?? didn't address it (15...Nxf4). You kept playing at -8.5 and 20...Qb5?? walked into 21.Qd7#.",
+   "key_moment": 39,
+   "lesson": "A pawn push that 'attacks' the attacker doesn't save your piece if the attacker can just take first.",
+   "tags": [
+    "hung-piece",
+    "missed-threat",
+    "comeback",
+    "opponent-blundered"
+   ]
+  },
+  "40bf2c1d": {
+   "summary": "8...Qh4? left the Bc5 hanging to 9.Nxc5 (-6.8), but your Qh4/Bh3 battery stayed aimed at g2, and 11.Nb7? and 12.d3?? let 12...Qxg2#.",
+   "key_moment": 22,
+   "lesson": "Attack ideas are fine, but check what you leave behind: the Bc5 had no defender once the queen left d8.",
+   "tags": [
+    "hung-piece",
+    "opponent-blundered",
+    "comeback"
+   ]
+  },
+  "3640eb23": {
+   "summary": "8...Ng4? ignored 9.Bg5! (hits the queen, then h3 traps the knight). 9.d5? let you off, you picked up material with ...Ncxe5 and ...Bxf2+, and converted to +11 and resignation.",
+   "key_moment": 16,
+   "lesson": "A knight on g4 with h3 coming is a trap candidate; ask if it has a retreat before going there.",
+   "tags": [
+    "missed-threat",
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "a394124d": {
+   "summary": "18...f5? opened the a2-g8 diagonal and 19.Qb3+ Kh8 20.Nf7+ won the exchange with attack; you played 19.e5 and it was back to equal. 21...Bxg2? opened Black's king and 24.Qg7# finished.",
+   "key_moment": 41,
+   "lesson": "When the enemy king's pawn cover moves (...f5), check every check right away: Qb3+ was the first thing to look at.",
+   "tags": [
+    "missed-tactic",
+    "opponent-blundered"
+   ]
+  },
+  "60c09bed": {
+   "summary": "Scotch: 10...Qg6? allowed 11.Nc7+ forking king and Ra8 (-7.7). Opponent gave it back, and at move 30 30...Qxb2+! (31.Kc4 Qxc3+ 32.Kb5 Bd3+) was winning, but 30...Qxd1? only drew. With 7s left 48...Qxd3+?? traded into a lost king-and-pawn ending and you flagged.",
+   "key_moment": 59,
+   "lesson": "With the enemy king in the open, look at every check before trading queens. Captures with check that keep the queen on are usually the winning ones.",
+   "tags": [
+    "opening-trouble",
+    "fork",
+    "missed-tactic",
+    "time-trouble",
+    "threw-winning-position"
+   ]
+  },
+  "1fb3c8c1": {
+   "summary": "Zero mistakes (93.5%). Equal for 25 moves, then 26.Rf2? let 26...Nxh3+ 27.Kh1 Nxf2+, forking Kh1 and Qd1 and winning the exchange. Resigned next move.",
+   "key_moment": 52,
+   "lesson": "Model game: patient, no hanging stuff, then you punished the first loose piece with a knight fork.",
+   "tags": [
+    "good-tactic",
+    "fork",
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "6a87d027": {
+   "summary": "15...Qd6? allowed the pawn fork 16.e5 (queen and Nf6), -7. The opponent gave it back with 27.Re1+? and you were +4.5, but 29...Rxg2?? took a pawn the king defended (30.Kxg2) and you abandoned the game.",
+   "key_moment": 57,
+   "lesson": "Never put the queen and a knight on squares one pawn push can hit together (d6/f6 vs e5). And finish games: you'd just come back once.",
+   "tags": [
+    "fork",
+    "hung-piece",
+    "threw-winning-position",
+    "resigned-early"
+   ]
+  },
+  "52ff8320": {
+   "summary": "12.Ne4?? put the knight on the e-file with your king still on e1 and Black's rook on e8: pinned, and 12...d5 won it. Down a piece from move 12 against a 98%-accuracy opponent; mated on move 32.",
+   "key_moment": 22,
+   "lesson": "With the king uncastled and an enemy rook on your file, any piece you put on that file is pinned. Castle first (12.Kf1 was the engine fix).",
+   "tags": [
+    "pin",
+    "king-safety"
+   ]
+  },
+  "cd1036c2": {
+   "summary": "Fine (+1.4) until 17...Bxa2?, the poisoned pawn: 18.b3 trapped the bishop. At -5.8 on move 20 you let 6+ minutes run off the clock instead of playing on.",
+   "key_moment": 33,
+   "lesson": "Before grabbing an edge pawn with a bishop, check if b3 or a pawn push shuts the door. And play it out: you won 10 games this batch from -3 or worse.",
+   "tags": [
+    "hung-piece",
+    "resigned-early"
+   ]
+  },
+  "e7de7449": {
+   "summary": "1...h6/2...g5/3...f6 wrecked Black's kingside; 5.Qh5+ Kf8 and 9.dxe6 left f7 weak, and when Black grabbed the Ra1, 11.Qf7# with the Bc4.",
+   "key_moment": 20,
+   "lesson": "Easy one; you took the mate instead of protecting the rook. Good priorities.",
+   "tags": [
+    "good-tactic",
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "69d7c4b1": {
+   "summary": "Missed 8.Nxg5! (+7.5) but still got +6.7 by move 17. Slow moves (19.Bg5, 20.Rxg5) let it slip, 23.f3? and 28.Nf7?? (with 88s vs 386s) dropped material. Opponent blundered into a 0.00 pawn ending, but you had 0s and lost on time.",
+   "key_moment": 54,
+   "lesson": "You were 5 minutes behind on the clock in a winning position. When winning, simplify fast; you don't need the best move, just a safe one.",
+   "tags": [
+    "missed-tactic",
+    "threw-winning-position",
+    "time-trouble"
+   ]
+  },
+  "c1947c24": {
+   "summary": "Scotch: 6...Nh6? dropped c7 (7.Qxc7), 8...Qh4+? 9.g3 left both the queen and the Ng4 hit, and 9...Qg5?? put the queen on the c1-g5 diagonal: 10.Bxg5. Resigned on move 10.",
+   "key_moment": 15,
+   "lesson": "Early queen trips in the Scotch are getting punished. Develop (...Nf6, ...Bc5) instead of chasing with the queen.",
+   "tags": [
+    "opening-trouble",
+    "hung-piece"
+   ]
+  },
+  "4062a40d": {
+   "summary": "18...h6? didn't deal with 18.g4 hitting the Nh5 (20.gxh5, -4.8). Opponent gave it back with 21.Qd4? and 24.f4??, and 24...fxe5 / 25...Rxf4+ forced resignation.",
+   "key_moment": 46,
+   "lesson": "When a pawn attacks your piece, move the piece or make a bigger threat. ...h6 did neither.",
+   "tags": [
+    "missed-threat",
+    "comeback",
+    "opponent-blundered"
+   ]
+  },
+  "7292786e": {
+   "summary": "+7 attack after 12...d5? and 14.Rxh7, but 20.Rxg7+? (20.f4 kept everything) fizzled to 0.00, and 22.Nxd6?? left the Ng5 to 22...Qxg5+ with check. Resigned at -6 with 3 minutes left.",
+   "key_moment": 42,
+   "lesson": "When you're already winning, you don't need the sac. And a piece that can be taken with check is a piece that's hanging.",
+   "tags": [
+    "threw-winning-position",
+    "hung-piece",
+    "resigned-early"
+   ]
+  },
+  "37437303": {
+   "summary": "Same 5.Bd3? as 12e5013f (5...e5 was strong; this opponent missed it with 5...Qd7?). You missed 25.Nxb6+ axb6 26.Qxe6+, forking king and Nf5, but after 30...Qf4? you took over and they abandoned facing mate.",
+   "key_moment": 59,
+   "lesson": "Learn the ...Nc6/...Bg4/...f6 line properly: 5.Be2. And on a queen check, scan for a second target.",
+   "tags": [
+    "opening-trouble",
+    "missed-tactic",
+    "opponent-blundered",
+    "converted-well"
+   ]
+  },
+  "959fdfa4": {
+   "summary": "Englund: +4.5 by move 12 after ...Nxf3+, but drifted (15...e5?, 17...Bb4?) and then 28...Bb3? and 29...Bc4?? let the white king walk up and trap the bishop (30.Kc3, Kxc4). Mated on move 41 with 27s left.",
+   "key_moment": 57,
+   "lesson": "Bishops deep in enemy territory need an escape square. Check the enemy king too, it can attack pieces.",
+   "tags": [
+    "missed-threat",
+    "hung-piece",
+    "threw-winning-position",
+    "time-trouble"
+   ]
+  },
+  "88f532b8": {
+   "summary": "Beat a 1185 with an exchange sac: 21.Rxh5 gxh5 22.Rxh5, and after 22...f6? (opponent down to 1:42) 24.Rh8+ led to 25.Qh7#.",
+   "key_moment": 43,
+   "lesson": "Rook lifts on the h-file plus a queen on h7 is your London attacking plan; this is how to use it.",
+   "tags": [
+    "good-tactic",
+    "converted-well"
+   ]
+  },
+  "720066cb": {
+   "summary": "9...Bxa2 opened the queenside and the bishop stayed on a2 covering b1. After 14.g4? and 15.Qe3??, 15...Qa3# mated the king on c1.",
+   "key_moment": 28,
+   "lesson": "Good: you kept pieces aimed at the castled king instead of cashing in early.",
+   "tags": [
+    "good-tactic",
+    "opponent-blundered"
+   ]
+  }
+ },
+ "strength_games": [
+  "bdd8482b",
+  "b242b68a",
+  "88f532b8",
+  "4258bc45",
+  "1fb3c8c1",
+  "7fa9355f"
+ ],
+ "one_fix": "Before every move, ask two things: what does their last move attack, and what does my move leave hanging?"
+}

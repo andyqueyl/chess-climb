@@ -1,0 +1,859 @@
+{
+ "user": "xxrolypolyxx",
+ "updated": "2026-11-24T01:13+00:00",
+ "ratings": {
+  "rapid": {
+   "now": 1085,
+   "best": 1100
+  },
+  "bullet": {
+   "now": 579,
+   "best": 627
+  },
+  "blitz": {
+   "now": 373,
+   "best": 800
+  }
+ },
+ "by_class": {
+  "blitz": {
+   "all": {
+    "n": 16,
+    "w": 8,
+    "d": 1,
+    "l": 7,
+    "score": 53.1,
+    "acc": 83.6,
+    "bpg": 1.06
+   },
+   "white": {
+    "n": 6,
+    "w": 5,
+    "d": 0,
+    "l": 1,
+    "score": 83.3,
+    "acc": 87.4,
+    "bpg": 0.33
+   },
+   "black": {
+    "n": 10,
+    "w": 3,
+    "d": 1,
+    "l": 6,
+    "score": 35.0,
+    "acc": 81.3,
+    "bpg": 1.5
+   }
+  },
+  "bullet": {
+   "all": {
+    "n": 59,
+    "w": 34,
+    "d": 0,
+    "l": 25,
+    "score": 57.6,
+    "acc": 83.2,
+    "bpg": 1.68
+   },
+   "white": {
+    "n": 30,
+    "w": 19,
+    "d": 0,
+    "l": 11,
+    "score": 63.3,
+    "acc": 82.4,
+    "bpg": 1.9
+   },
+   "black": {
+    "n": 29,
+    "w": 15,
+    "d": 0,
+    "l": 14,
+    "score": 51.7,
+    "acc": 83.9,
+    "bpg": 1.45
+   }
+  },
+  "rapid": {
+   "all": {
+    "n": 72,
+    "w": 45,
+    "d": 4,
+    "l": 23,
+    "score": 65.3,
+    "acc": 86.6,
+    "bpg": 1.15
+   },
+   "white": {
+    "n": 36,
+    "w": 24,
+    "d": 1,
+    "l": 11,
+    "score": 68.1,
+    "acc": 86.9,
+    "bpg": 1.31
+   },
+   "black": {
+    "n": 36,
+    "w": 21,
+    "d": 3,
+    "l": 12,
+    "score": 62.5,
+    "acc": 86.2,
+    "bpg": 1.0
+   }
+  }
+ },
+ "openings": {
+  "blitz": [
+   {
+    "color": "white",
+    "family": "Queens Gambit",
+    "n": 3,
+    "w": 2,
+    "d": 0,
+    "l": 1,
+    "score": 66.7,
+    "acc": 86.5,
+    "bpg": 0.33
+   },
+   {
+    "color": "white",
+    "family": "Queens Pawn",
+    "n": 2,
+    "w": 2,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 89.2,
+    "bpg": 0.5
+   },
+   {
+    "color": "black",
+    "family": "Ruy Lopez",
+    "n": 2,
+    "w": 1,
+    "d": 0,
+    "l": 1,
+    "score": 50.0,
+    "acc": 82.5,
+    "bpg": 0.0
+   },
+   {
+    "color": "white",
+    "family": "Modern",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 86.3,
+    "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "Dutch",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 86.7,
+    "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "English",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 83.8,
+    "bpg": 2.0
+   },
+   {
+    "color": "black",
+    "family": "Englund Gambit",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 82.3,
+    "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "French",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 88.9,
+    "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "Four Knights",
+    "n": 1,
+    "w": 0,
+    "d": 1,
+    "l": 0,
+    "score": 50.0,
+    "acc": 77.1,
+    "bpg": 5.0
+   },
+   {
+    "color": "black",
+    "family": "Kings Gambit",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 73.3,
+    "bpg": 4.0
+   },
+   {
+    "color": "black",
+    "family": "Three Knights",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 70.5,
+    "bpg": 2.0
+   },
+   {
+    "color": "black",
+    "family": "Nimzo",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 85.7,
+    "bpg": 1.0
+   }
+  ],
+  "bullet": [
+   {
+    "color": "white",
+    "family": "Queens Pawn",
+    "n": 9,
+    "w": 5,
+    "d": 0,
+    "l": 4,
+    "score": 55.6,
+    "acc": 83.9,
+    "bpg": 1.11
+   },
+   {
+    "color": "black",
+    "family": "Englund Gambit",
+    "n": 6,
+    "w": 4,
+    "d": 0,
+    "l": 2,
+    "score": 66.7,
+    "acc": 84.9,
+    "bpg": 1.17
+   },
+   {
+    "color": "white",
+    "family": "Englund Gambit",
+    "n": 5,
+    "w": 3,
+    "d": 0,
+    "l": 2,
+    "score": 60.0,
+    "acc": 82.1,
+    "bpg": 1.2
+   },
+   {
+    "color": "white",
+    "family": "Nimzowitsch Larsen",
+    "n": 5,
+    "w": 4,
+    "d": 0,
+    "l": 1,
+    "score": 80.0,
+    "acc": 81.1,
+    "bpg": 2.0
+   },
+   {
+    "color": "white",
+    "family": "Birds",
+    "n": 4,
+    "w": 1,
+    "d": 0,
+    "l": 3,
+    "score": 25.0,
+    "acc": 82.7,
+    "bpg": 2.75
+   },
+   {
+    "color": "black",
+    "family": "Modern",
+    "n": 3,
+    "w": 1,
+    "d": 0,
+    "l": 2,
+    "score": 33.3,
+    "acc": 81.8,
+    "bpg": 1.33
+   },
+   {
+    "color": "black",
+    "family": "Giuoco Piano",
+    "n": 3,
+    "w": 2,
+    "d": 0,
+    "l": 1,
+    "score": 66.7,
+    "acc": 77.8,
+    "bpg": 2.33
+   },
+   {
+    "color": "black",
+    "family": "Scandinavian",
+    "n": 3,
+    "w": 3,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 84.7,
+    "bpg": 1.0
+   },
+   {
+    "color": "white",
+    "family": "London System",
+    "n": 3,
+    "w": 2,
+    "d": 0,
+    "l": 1,
+    "score": 66.7,
+    "acc": 79.7,
+    "bpg": 2.0
+   },
+   {
+    "color": "black",
+    "family": "Kings Fianchetto",
+    "n": 2,
+    "w": 0,
+    "d": 0,
+    "l": 2,
+    "score": 0.0,
+    "acc": 76.7,
+    "bpg": 1.5
+   },
+   {
+    "color": "black",
+    "family": "Italian",
+    "n": 2,
+    "w": 0,
+    "d": 0,
+    "l": 2,
+    "score": 0.0,
+    "acc": 91.9,
+    "bpg": 0.5
+   },
+   {
+    "color": "black",
+    "family": "Alekhine",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 90.8,
+    "bpg": 1.0
+   },
+   {
+    "color": "white",
+    "family": "Queens Gambit",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 85.7,
+    "bpg": 2.0
+   },
+   {
+    "color": "black",
+    "family": "Four Knights",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 88.1,
+    "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "Polish",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 86.3,
+    "bpg": 2.0
+   },
+   {
+    "color": "white",
+    "family": "Kings Pawn",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 79.5,
+    "bpg": 6.0
+   },
+   {
+    "color": "black",
+    "family": "Reti Opening",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 90.5,
+    "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "Sicilian",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 82.0,
+    "bpg": 2.0
+   },
+   {
+    "color": "white",
+    "family": "Modern",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 83.2,
+    "bpg": 2.0
+   },
+   {
+    "color": "black",
+    "family": "Caro Kann",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 82.6,
+    "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "Scotch",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 84.7,
+    "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "Van t Kruijs",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 86.1,
+    "bpg": 1.0
+   },
+   {
+    "color": "white",
+    "family": "Vienna",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 83.1,
+    "bpg": 4.0
+   },
+   {
+    "color": "black",
+    "family": "Indian Game",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 88.5,
+    "bpg": 3.0
+   },
+   {
+    "color": "black",
+    "family": "Pirc",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 75.1,
+    "bpg": 4.0
+   }
+  ],
+  "rapid": [
+   {
+    "color": "white",
+    "family": "Queens Pawn",
+    "n": 16,
+    "w": 12,
+    "d": 0,
+    "l": 4,
+    "score": 75.0,
+    "acc": 86.8,
+    "bpg": 1.44
+   },
+   {
+    "color": "white",
+    "family": "London System",
+    "n": 9,
+    "w": 5,
+    "d": 1,
+    "l": 3,
+    "score": 61.1,
+    "acc": 88.0,
+    "bpg": 1.22
+   },
+   {
+    "color": "black",
+    "family": "Giuoco Piano",
+    "n": 7,
+    "w": 6,
+    "d": 0,
+    "l": 1,
+    "score": 85.7,
+    "acc": 89.4,
+    "bpg": 0.86
+   },
+   {
+    "color": "black",
+    "family": "Englund Gambit",
+    "n": 5,
+    "w": 1,
+    "d": 1,
+    "l": 3,
+    "score": 30.0,
+    "acc": 88.3,
+    "bpg": 1.2
+   },
+   {
+    "color": "black",
+    "family": "Scotch",
+    "n": 4,
+    "w": 2,
+    "d": 0,
+    "l": 2,
+    "score": 50.0,
+    "acc": 82.5,
+    "bpg": 1.5
+   },
+   {
+    "color": "white",
+    "family": "Englund Gambit",
+    "n": 3,
+    "w": 2,
+    "d": 0,
+    "l": 1,
+    "score": 66.7,
+    "acc": 89.2,
+    "bpg": 1.0
+   },
+   {
+    "color": "white",
+    "family": "Modern",
+    "n": 3,
+    "w": 2,
+    "d": 0,
+    "l": 1,
+    "score": 66.7,
+    "acc": 81.4,
+    "bpg": 2.33
+   },
+   {
+    "color": "black",
+    "family": "Ruy Lopez",
+    "n": 3,
+    "w": 1,
+    "d": 1,
+    "l": 1,
+    "score": 50.0,
+    "acc": 88.8,
+    "bpg": 1.33
+   },
+   {
+    "color": "white",
+    "family": "Birds",
+    "n": 2,
+    "w": 2,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 86.8,
+    "bpg": 1.0
+   },
+   {
+    "color": "white",
+    "family": "Queens Gambit",
+    "n": 2,
+    "w": 0,
+    "d": 0,
+    "l": 2,
+    "score": 0.0,
+    "acc": 83.5,
+    "bpg": 0.5
+   },
+   {
+    "color": "black",
+    "family": "Queens Pawn",
+    "n": 2,
+    "w": 1,
+    "d": 1,
+    "l": 0,
+    "score": 75.0,
+    "acc": 82.6,
+    "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "Italian",
+    "n": 2,
+    "w": 0,
+    "d": 0,
+    "l": 2,
+    "score": 0.0,
+    "acc": 84.1,
+    "bpg": 1.5
+   },
+   {
+    "color": "black",
+    "family": "Van t Kruijs",
+    "n": 2,
+    "w": 1,
+    "d": 0,
+    "l": 1,
+    "score": 50.0,
+    "acc": 86.6,
+    "bpg": 0.5
+   },
+   {
+    "color": "black",
+    "family": "Ponziani",
+    "n": 2,
+    "w": 2,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 91.2,
+    "bpg": 0.5
+   },
+   {
+    "color": "black",
+    "family": "Van Geet",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 93.9,
+    "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "Kings Pawn",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 60.9,
+    "bpg": 2.0
+   },
+   {
+    "color": "black",
+    "family": "Caro Kann",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 92.0,
+    "bpg": 0.0
+   },
+   {
+    "color": "white",
+    "family": "Indian Game",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 96.4,
+    "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "Reti Opening",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 90.8,
+    "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "Undefined ",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 77.1,
+    "bpg": 4.0
+   },
+   {
+    "color": "black",
+    "family": "Bishops Opening",
+    "n": 1,
+    "w": 0,
+    "d": 0,
+    "l": 1,
+    "score": 0.0,
+    "acc": 85.4,
+    "bpg": 2.0
+   },
+   {
+    "color": "black",
+    "family": "Vienna",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 89.0,
+    "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "French",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 81.0,
+    "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "Three Knights",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 81.9,
+    "bpg": 0.0
+   }
+  ]
+ },
+ "blunder_why": {
+  "blitz": {
+   "tactic-allowed": 11,
+   "hung-piece": 4,
+   "missed-threat": 1,
+   "bad-trade": 1
+  },
+  "bullet": {
+   "allowed-mate": 4,
+   "tactic-allowed": 39,
+   "hung-piece": 44,
+   "bad-trade": 9,
+   "missed-threat": 3
+  },
+  "rapid": {
+   "hung-piece": 35,
+   "tactic-allowed": 33,
+   "bad-trade": 8,
+   "missed-threat": 6,
+   "allowed-mate": 1
+  }
+ },
+ "blunder_phase": {
+  "blitz": {
+   "opening": 1,
+   "middlegame": 11,
+   "endgame": 5
+  },
+  "bullet": {
+   "opening": 22,
+   "middlegame": 58,
+   "endgame": 19
+  },
+  "rapid": {
+   "opening": 21,
+   "middlegame": 55,
+   "endgame": 7
+  }
+ },
+ "losses_how": {
+  "blitz": {
+   "timeout": 2,
+   "resigned": 2,
+   "abandoned": 1,
+   "checkmated": 2
+  },
+  "bullet": {
+   "checkmated": 8,
+   "timeout": 12,
+   "resigned": 4,
+   "abandoned": 1
+  },
+  "rapid": {
+   "resigned": 9,
+   "abandoned": 3,
+   "timeout": 4,
+   "checkmated": 7
+  }
+ },
+ "time_trouble": {
+  "blitz": {
+   "blunders_low_clock": 8,
+   "blunders_total": 17
+  },
+  "bullet": {
+   "blunders_low_clock": 51,
+   "blunders_total": 99
+  },
+  "rapid": {
+   "blunders_low_clock": 6,
+   "blunders_total": 83
+  }
+ }
+}
