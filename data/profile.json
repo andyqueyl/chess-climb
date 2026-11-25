@@ -1,10 +1,10 @@
 {
  "user": "xxrolypolyxx",
- "updated": "2026-11-24T20:29+00:00",
+ "updated": "2026-11-25T19:43+00:00",
  "ratings": {
   "rapid": {
-   "now": 1117,
-   "best": 1117
+   "now": 1157,
+   "best": 1157
   },
   "bullet": {
    "now": 579,
@@ -76,31 +76,31 @@
   },
   "rapid": {
    "all": {
-    "n": 79,
-    "w": 50,
+    "n": 84,
+    "w": 55,
     "d": 5,
     "l": 24,
-    "score": 66.5,
-    "acc": 87.0,
-    "bpg": 1.08
+    "score": 68.5,
+    "acc": 87.2,
+    "bpg": 1.05
    },
    "white": {
-    "n": 39,
-    "w": 26,
+    "n": 42,
+    "w": 29,
     "d": 1,
     "l": 12,
-    "score": 67.9,
-    "acc": 87.3,
-    "bpg": 1.23
+    "score": 70.2,
+    "acc": 87.6,
+    "bpg": 1.21
    },
    "black": {
-    "n": 40,
-    "w": 24,
+    "n": 42,
+    "w": 26,
     "d": 4,
     "l": 12,
-    "score": 65.0,
-    "acc": 86.8,
-    "bpg": 0.93
+    "score": 66.7,
+    "acc": 86.9,
+    "bpg": 0.88
    }
   }
  },
@@ -586,13 +586,13 @@
    {
     "color": "white",
     "family": "London System",
-    "n": 9,
-    "w": 5,
+    "n": 10,
+    "w": 6,
     "d": 1,
     "l": 3,
-    "score": 61.1,
-    "acc": 88.0,
-    "bpg": 1.22
+    "score": 65.0,
+    "acc": 88.3,
+    "bpg": 1.1
    },
    {
     "color": "black",
@@ -630,12 +630,12 @@
    {
     "color": "white",
     "family": "Englund Gambit",
-    "n": 3,
-    "w": 2,
+    "n": 4,
+    "w": 3,
     "d": 0,
     "l": 1,
-    "score": 66.7,
-    "acc": 89.2,
+    "score": 75.0,
+    "acc": 90.6,
     "bpg": 1.0
    },
    {
@@ -670,6 +670,17 @@
     "score": 100.0,
     "acc": 86.8,
     "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "Van Geet",
+    "n": 2,
+    "w": 2,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 90.7,
+    "bpg": 0.0
    },
    {
     "color": "white",
@@ -716,6 +727,17 @@
     "bpg": 0.5
    },
    {
+    "color": "white",
+    "family": "Indian Game",
+    "n": 2,
+    "w": 2,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 92.9,
+    "bpg": 1.0
+   },
+   {
     "color": "black",
     "family": "Ponziani",
     "n": 2,
@@ -739,17 +761,6 @@
    },
    {
     "color": "black",
-    "family": "Van Geet",
-    "n": 1,
-    "w": 1,
-    "d": 0,
-    "l": 0,
-    "score": 100.0,
-    "acc": 93.9,
-    "bpg": 0.0
-   },
-   {
-    "color": "black",
     "family": "Kings Pawn",
     "n": 1,
     "w": 1,
@@ -768,17 +779,6 @@
     "l": 0,
     "score": 100.0,
     "acc": 92.0,
-    "bpg": 0.0
-   },
-   {
-    "color": "white",
-    "family": "Indian Game",
-    "n": 1,
-    "w": 1,
-    "d": 0,
-    "l": 0,
-    "score": 100.0,
-    "acc": 96.4,
     "bpg": 0.0
    },
    {
@@ -846,6 +846,17 @@
     "score": 100.0,
     "acc": 81.9,
     "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "Kings Fianchetto",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 91.1,
+    "bpg": 0.0
    }
   ]
  },
@@ -864,8 +875,8 @@
    "missed-threat": 3
   },
   "rapid": {
-   "hung-piece": 36,
-   "tactic-allowed": 33,
+   "hung-piece": 38,
+   "tactic-allowed": 34,
    "bad-trade": 9,
    "missed-threat": 6,
    "allowed-mate": 1
@@ -884,7 +895,7 @@
   },
   "rapid": {
    "opening": 22,
-   "middlegame": 56,
+   "middlegame": 59,
    "endgame": 7
   }
  },
@@ -919,7 +930,7 @@
   },
   "rapid": {
    "blunders_low_clock": 7,
-   "blunders_total": 85
+   "blunders_total": 88
   }
  }
 }
