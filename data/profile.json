@@ -1,28 +1,28 @@
 {
  "user": "xxrolypolyxx",
- "updated": "2026-11-25T19:43+00:00",
+ "updated": "2026-11-26T19:24+00:00",
  "ratings": {
   "rapid": {
-   "now": 1157,
-   "best": 1157
+   "now": 1189,
+   "best": 1189
   },
   "bullet": {
-   "now": 579,
+   "now": 585,
    "best": 627
   },
   "blitz": {
-   "now": 373,
+   "now": 413,
    "best": 800
   }
  },
  "by_class": {
   "blitz": {
    "all": {
-    "n": 16,
-    "w": 8,
+    "n": 17,
+    "w": 9,
     "d": 1,
     "l": 7,
-    "score": 53.1,
+    "score": 55.9,
     "acc": 83.6,
     "bpg": 1.06
    },
@@ -36,33 +36,33 @@
     "bpg": 0.33
    },
    "black": {
-    "n": 10,
-    "w": 3,
+    "n": 11,
+    "w": 4,
     "d": 1,
     "l": 6,
-    "score": 35.0,
-    "acc": 81.3,
-    "bpg": 1.5
+    "score": 40.9,
+    "acc": 81.6,
+    "bpg": 1.45
    }
   },
   "bullet": {
    "all": {
-    "n": 77,
-    "w": 41,
+    "n": 78,
+    "w": 42,
     "d": 2,
     "l": 34,
-    "score": 54.5,
-    "acc": 84.2,
-    "bpg": 1.47
+    "score": 55.1,
+    "acc": 84.4,
+    "bpg": 1.45
    },
    "white": {
-    "n": 39,
-    "w": 23,
+    "n": 40,
+    "w": 24,
     "d": 1,
     "l": 15,
-    "score": 60.3,
-    "acc": 83.8,
-    "bpg": 1.64
+    "score": 61.3,
+    "acc": 84.0,
+    "bpg": 1.6
    },
    "black": {
     "n": 38,
@@ -76,31 +76,31 @@
   },
   "rapid": {
    "all": {
-    "n": 84,
-    "w": 55,
+    "n": 88,
+    "w": 59,
     "d": 5,
     "l": 24,
-    "score": 68.5,
-    "acc": 87.2,
-    "bpg": 1.05
+    "score": 69.9,
+    "acc": 87.4,
+    "bpg": 1.02
    },
    "white": {
-    "n": 42,
-    "w": 29,
+    "n": 44,
+    "w": 31,
     "d": 1,
     "l": 12,
-    "score": 70.2,
-    "acc": 87.6,
-    "bpg": 1.21
+    "score": 71.6,
+    "acc": 87.9,
+    "bpg": 1.16
    },
    "black": {
-    "n": 42,
-    "w": 26,
+    "n": 44,
+    "w": 28,
     "d": 4,
     "l": 12,
-    "score": 66.7,
-    "acc": 86.9,
-    "bpg": 0.88
+    "score": 68.2,
+    "acc": 87.0,
+    "bpg": 0.89
    }
   }
  },
@@ -237,6 +237,17 @@
     "score": 0.0,
     "acc": 85.7,
     "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "Undefined ",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 84.2,
+    "bpg": 1.0
    }
   ],
   "bullet": [
@@ -362,6 +373,17 @@
     "bpg": 2.0
    },
    {
+    "color": "white",
+    "family": "Queens Gambit",
+    "n": 2,
+    "w": 2,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 89.2,
+    "bpg": 1.0
+   },
+   {
     "color": "black",
     "family": "Kings Fianchetto",
     "n": 2,
@@ -393,17 +415,6 @@
     "score": 100.0,
     "acc": 90.8,
     "bpg": 1.0
-   },
-   {
-    "color": "white",
-    "family": "Queens Gambit",
-    "n": 1,
-    "w": 1,
-    "d": 0,
-    "l": 0,
-    "score": 100.0,
-    "acc": 85.7,
-    "bpg": 2.0
    },
    {
     "color": "black",
@@ -575,13 +586,13 @@
    {
     "color": "white",
     "family": "Queens Pawn",
-    "n": 19,
-    "w": 14,
+    "n": 21,
+    "w": 16,
     "d": 0,
     "l": 5,
-    "score": 73.7,
-    "acc": 87.5,
-    "bpg": 1.26
+    "score": 76.2,
+    "acc": 88.2,
+    "bpg": 1.14
    },
    {
     "color": "white",
@@ -597,23 +608,23 @@
    {
     "color": "black",
     "family": "Giuoco Piano",
-    "n": 8,
-    "w": 7,
+    "n": 9,
+    "w": 8,
     "d": 0,
     "l": 1,
-    "score": 87.5,
+    "score": 88.9,
     "acc": 89.8,
-    "bpg": 0.75
+    "bpg": 0.78
    },
    {
     "color": "black",
     "family": "Englund Gambit",
-    "n": 6,
-    "w": 2,
+    "n": 7,
+    "w": 3,
     "d": 1,
     "l": 3,
-    "score": 41.7,
-    "acc": 87.9,
+    "score": 50.0,
+    "acc": 87.5,
     "bpg": 1.0
    },
    {
@@ -863,7 +874,7 @@
  "blunder_why": {
   "blitz": {
    "tactic-allowed": 11,
-   "hung-piece": 4,
+   "hung-piece": 5,
    "missed-threat": 1,
    "bad-trade": 1
   },
@@ -876,7 +887,7 @@
   },
   "rapid": {
    "hung-piece": 38,
-   "tactic-allowed": 34,
+   "tactic-allowed": 36,
    "bad-trade": 9,
    "missed-threat": 6,
    "allowed-mate": 1
@@ -885,7 +896,7 @@
  "blunder_phase": {
   "blitz": {
    "opening": 1,
-   "middlegame": 11,
+   "middlegame": 12,
    "endgame": 5
   },
   "bullet": {
@@ -895,7 +906,7 @@
   },
   "rapid": {
    "opening": 22,
-   "middlegame": 59,
+   "middlegame": 61,
    "endgame": 7
   }
  },
@@ -922,7 +933,7 @@
  "time_trouble": {
   "blitz": {
    "blunders_low_clock": 8,
-   "blunders_total": 17
+   "blunders_total": 18
   },
   "bullet": {
    "blunders_low_clock": 60,
@@ -930,7 +941,7 @@
   },
   "rapid": {
    "blunders_low_clock": 7,
-   "blunders_total": 88
+   "blunders_total": 90
   }
  }
 }
