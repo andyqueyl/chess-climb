@@ -286,3 +286,4 @@ ol.rv li .mono { font-weight: 600; color: var(--ink-3); }
 ol.rv li.me .mono { color: var(--good); }
 ol.rv li.on.me { border-left: 3px solid var(--good); }
 ol.rv li.on.opp { border-left: 3px solid var(--bad); }
+.stat .d .up { color: var(--good); font-weight: 600; } .stat .d .down { color: var(--bad); font-weight: 600; }

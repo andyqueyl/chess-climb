@@ -20,6 +20,7 @@ export function renderHome({ app, data, store }) {
   const trend = (cur, old, better) => (old == null || cur == null ? '' : cur === old ? 'same as the 20 before' :
     `${(better === 'up' ? cur > old : cur < old) ? '▲ better' : '▼ worse'} than the 20 before (${old})`);
 
+  const progress = progressCard(data);
   app.innerHTML = `
   <section class="hero">
     <div class="card">
@@ -32,14 +33,16 @@ export function renderHome({ app, data, store }) {
     <div class="card"><div class="spread"><div class="eyebrow">Rating, every rapid game</div><span class="eyebrow">${rapid.length} games</span></div><div id="rchart"></div></div>
   </section>
 
+  ${progress}
+
   ${todayCard(data, s)}
 
-  <section class="section grid g4">
+  ${progress ? '' : `<section class="section grid g4">
     ${tile(m.accuracy ?? '–', 'Accuracy, last 20 rapid', trend(m.accuracy, prev?.accuracy, 'up'))}
     ${tile(m.blunders_per_game ?? '–', 'Blunders per game', trend(m.blunders_per_game, prev?.blunders_per_game, 'down'))}
     ${tile(m.n ? `${m.wins}-${m.losses}${m.draws ? '-' + m.draws : ''}` : '–', 'W-L last 20 rapid', m.n ? `${m.score}% score` : '')}
     ${tile(m.puzzle_rating, 'Site puzzle rating', m.attempts ? `${m.puzzle_accuracy}% of last ${Math.min(100, m.attempts)} · ${m.puzzles_per_week} this week` : 'Solve some puzzles to start it')}
-  </section>
+  </section>`}
 
   ${review?.leaks?.length ? `<section class="section">
     <div class="spread"><h2>What your games <em>say</em></h2><a href="#/review">Full write-up with your games →</a></div>
@@ -111,9 +114,39 @@ function todayCard(data, s) {
         <span><b>${x.t}</b><span class="faint">${x.d}</span></span></a>`).join('')}</div>
       ${focus ? `<div class="focus"><span class="eyebrow" style="margin:0">This week's focus</span><div><b>${md(focus.title)}.</b> ${md(focus.fix)}</div></div>` : ''}
     </div>
-    <div class="card"><div class="spread"><div class="eyebrow">Last 12 weeks</div><div class="eyebrow">${(n => `${n} puzzle${n === 1 ? '' : 's'}`)(Object.values(perDay).reduce((a, b) => a + b, 0))}</div></div>
+    <div class="card"><div class="spread"><div class="eyebrow">Last 12 weeks</div><div class="eyebrow">${(n => `${n} puzzle${n === 1 ? '' : 's'}`)(Object.values(perDay).reduce((a, b) => a + b, 0))} · rating ${s.prating}</div></div>
       <div class="heat">${cells}</div>
       <div class="hm-key faint">less <i class="hm-0"></i><i class="hm-1"></i><i class="hm-2"></i><i class="hm-3"></i><i class="hm-4"></i> more</div></div>
+  </section>`;
+}
+
+/* ---------- progress since the written review (recomputed from games.json every load) ---------- */
+function progressCard(data) {
+  const { review, games } = data;
+  if (!review?.games) return '';
+  const base = Math.max(...Object.keys(review.games).map(id => data.gameById[id]?.end || 0));
+  const before = games.filter(g => g.end <= base), after = games.filter(g => g.end > base);
+  if (after.length < 3) return '';
+  const a = gameMetrics(after), b = gameMetrics(before);
+  const thrown = list => { const nw = list.filter(g => g.result !== 'win');
+    return [nw.filter(g => g.plies.some(p => (g.color === 'white' ? 1 : -1) * p.eval >= 300)).length, nw.length]; };
+  const [ta, tn] = thrown(after), [tb, tbn] = thrown(before);
+  const startR = before.at(-1)?.rating ?? after[0].rating, nowR = after.at(-1).rating;
+  const cmp = (x, y, better, unit = '') => {
+    const good = better === 'up' ? x > y : x < y;
+    return `<span class="${x === y ? 'faint' : good ? 'up' : 'down'}">${x === y ? '=' : good ? '▲' : '▼'}</span> was ${y}${unit}`;
+  };
+  const t = (v, l, d) => `<div class="card stat"><div class="v">${v}</div><div class="l">${l}</div><div class="d">${d}</div></div>`;
+  const when = new Date(base * 1000).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+  return `<section class="section">
+    <div class="spread"><h2>Since your <em>review</em></h2><span class="eyebrow">${after.length} rapid games since ${when}</span></div>
+    <div class="grid g4">
+      ${t(`${nowR - startR >= 0 ? '+' : ''}${nowR - startR}`, 'Rating', `${startR} → ${nowR}`)}
+      ${t(`${a.wins}-${a.losses}-${a.draws}`, 'Record (W-L-D)', `${a.score}% score, ${cmp(a.score, b.score, 'up', '%')}`)}
+      ${t(a.blunders_per_game, 'Blunders per game', cmp(a.blunders_per_game, b.blunders_per_game, 'down'))}
+      ${t(a.accuracy, 'Accuracy', cmp(a.accuracy, b.accuracy, 'up'))}
+    </div>
+    <p class="muted" style="margin-top:10px">Thrown-away wins: <b>${ta} of your ${tn} non-wins</b> since then had you at +3 or better (before: ${tb} of ${tbn}).</p>
   </section>`;
 }
 

@@ -1,6 +1,6 @@
 # Chess Climb: context for Claude
 
-Andy's personal chess-improvement site: chess.com **xxrolypolyxx**, rapid ~1085 (Nov 2026, started at 800 in Sept), goal **1600 rapid**. Wants: tactics focus, learn the **Jobava London** as White, track progress, know what to work on next. Static site (no build step), hosted on GitHub Pages at andyqueyl.github.io/chess-climb. **Rapid only**: app.js drops blitz/bullet games and puzzles at load (Andy's call, Nov 2026). Look matches Poker Solver Lab (Barlow Condensed / Barlow / IBM Plex Mono, slate + red accent).
+Andy's personal chess-improvement site: chess.com **xxrolypolyxx**, rapid 1206 on Nov 26 2026 (1085 at the Nov 23 review, 800 in Sept), goal **1600 rapid**. Wants: tactics focus, learn the **Jobava London** as White, track progress, know what to work on next. Static site (no build step), hosted on GitHub Pages at andyqueyl.github.io/chess-climb. **Rapid only**: app.js drops blitz/bullet games and puzzles at load (Andy's call, Nov 2026). Look matches Poker Solver Lab (Barlow Condensed / Barlow / IBM Plex Mono, slate + red accent).
 
 ## Layout
 - `index.html`, `css/style.css`, `js/` (ES modules, no bundler). Bump `?v=` on css/js links in index.html and `V` in `js/app.js` after code/data changes (Pages caches).
