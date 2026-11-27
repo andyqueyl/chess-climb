@@ -1,14 +1,14 @@
 {
  "user": "xxrolypolyxx",
- "updated": "2026-11-26T22:28+00:00",
+ "updated": "2026-11-27T19:19+00:00",
  "ratings": {
   "rapid": {
-   "now": 1206,
-   "best": 1206
+   "now": 1198,
+   "best": 1214
   },
   "bullet": {
-   "now": 607,
-   "best": 627
+   "now": 650,
+   "best": 658
   },
   "blitz": {
    "now": 413,
@@ -47,60 +47,60 @@
   },
   "bullet": {
    "all": {
-    "n": 83,
-    "w": 46,
+    "n": 102,
+    "w": 58,
     "d": 2,
-    "l": 35,
-    "score": 56.6,
-    "acc": 84.3,
-    "bpg": 1.46
+    "l": 42,
+    "score": 57.8,
+    "acc": 84.2,
+    "bpg": 1.41
    },
    "white": {
-    "n": 42,
-    "w": 26,
+    "n": 50,
+    "w": 30,
     "d": 1,
-    "l": 15,
-    "score": 63.1,
-    "acc": 83.7,
-    "bpg": 1.64
+    "l": 19,
+    "score": 61.0,
+    "acc": 83.5,
+    "bpg": 1.66
    },
    "black": {
-    "n": 41,
-    "w": 20,
+    "n": 52,
+    "w": 28,
     "d": 1,
-    "l": 20,
-    "score": 50.0,
-    "acc": 84.8,
-    "bpg": 1.27
+    "l": 23,
+    "score": 54.8,
+    "acc": 84.9,
+    "bpg": 1.17
    }
   },
   "rapid": {
    "all": {
-    "n": 92,
-    "w": 62,
-    "d": 5,
-    "l": 25,
-    "score": 70.1,
+    "n": 96,
+    "w": 63,
+    "d": 6,
+    "l": 27,
+    "score": 68.8,
     "acc": 87.5,
-    "bpg": 1.01
+    "bpg": 1.02
    },
    "white": {
-    "n": 47,
+    "n": 50,
     "w": 33,
-    "d": 1,
-    "l": 13,
-    "score": 71.3,
-    "acc": 88.0,
-    "bpg": 1.15
+    "d": 2,
+    "l": 15,
+    "score": 68.0,
+    "acc": 87.9,
+    "bpg": 1.18
    },
    "black": {
-    "n": 45,
-    "w": 29,
+    "n": 46,
+    "w": 30,
     "d": 4,
     "l": 12,
-    "score": 68.9,
+    "score": 69.6,
     "acc": 87.0,
-    "bpg": 0.87
+    "bpg": 0.85
    }
   }
  },
@@ -254,13 +254,24 @@
    {
     "color": "white",
     "family": "Queens Pawn",
-    "n": 9,
-    "w": 5,
+    "n": 13,
+    "w": 8,
     "d": 0,
-    "l": 4,
-    "score": 55.6,
-    "acc": 83.9,
-    "bpg": 1.11
+    "l": 5,
+    "score": 61.5,
+    "acc": 84.2,
+    "bpg": 1.23
+   },
+   {
+    "color": "black",
+    "family": "Englund Gambit",
+    "n": 8,
+    "w": 6,
+    "d": 0,
+    "l": 2,
+    "score": 75.0,
+    "acc": 83.3,
+    "bpg": 0.88
    },
    {
     "color": "black",
@@ -275,6 +286,28 @@
    },
    {
     "color": "white",
+    "family": "Nimzowitsch Larsen",
+    "n": 7,
+    "w": 5,
+    "d": 1,
+    "l": 1,
+    "score": 78.6,
+    "acc": 82.5,
+    "bpg": 1.57
+   },
+   {
+    "color": "black",
+    "family": "Modern",
+    "n": 6,
+    "w": 3,
+    "d": 0,
+    "l": 3,
+    "score": 50.0,
+    "acc": 81.5,
+    "bpg": 1.33
+   },
+   {
+    "color": "white",
     "family": "Englund Gambit",
     "n": 6,
     "w": 4,
@@ -285,48 +318,26 @@
     "bpg": 1.17
    },
    {
-    "color": "black",
-    "family": "Englund Gambit",
-    "n": 6,
-    "w": 4,
-    "d": 0,
-    "l": 2,
-    "score": 66.7,
-    "acc": 84.9,
-    "bpg": 1.17
-   },
-   {
-    "color": "white",
-    "family": "Nimzowitsch Larsen",
-    "n": 6,
-    "w": 4,
-    "d": 1,
-    "l": 1,
-    "score": 75.0,
-    "acc": 83.0,
-    "bpg": 1.67
-   },
-   {
-    "color": "black",
-    "family": "Modern",
-    "n": 5,
-    "w": 2,
-    "d": 0,
-    "l": 3,
-    "score": 40.0,
-    "acc": 82.1,
-    "bpg": 1.4
-   },
-   {
     "color": "white",
     "family": "Birds",
-    "n": 5,
+    "n": 6,
     "w": 2,
     "d": 0,
+    "l": 4,
+    "score": 33.3,
+    "acc": 83.5,
+    "bpg": 1.83
+   },
+   {
+    "color": "white",
+    "family": "London System",
+    "n": 6,
+    "w": 3,
+    "d": 0,
     "l": 3,
-    "score": 40.0,
-    "acc": 84.2,
-    "bpg": 2.2
+    "score": 50.0,
+    "acc": 77.8,
+    "bpg": 2.83
    },
    {
     "color": "white",
@@ -340,26 +351,15 @@
     "bpg": 1.0
    },
    {
-    "color": "white",
-    "family": "London System",
+    "color": "black",
+    "family": "Giuoco Piano",
     "n": 4,
     "w": 3,
     "d": 0,
     "l": 1,
     "score": 75.0,
-    "acc": 77.5,
-    "bpg": 2.5
-   },
-   {
-    "color": "black",
-    "family": "Giuoco Piano",
-    "n": 3,
-    "w": 2,
-    "d": 0,
-    "l": 1,
-    "score": 66.7,
-    "acc": 77.8,
-    "bpg": 2.33
+    "acc": 82.2,
+    "bpg": 1.75
    },
    {
     "color": "black",
@@ -385,6 +385,17 @@
    },
    {
     "color": "black",
+    "family": "Four Knights",
+    "n": 2,
+    "w": 1,
+    "d": 0,
+    "l": 1,
+    "score": 50.0,
+    "acc": 87.3,
+    "bpg": 1.0
+   },
+   {
+    "color": "black",
     "family": "Kings Fianchetto",
     "n": 2,
     "w": 0,
@@ -392,6 +403,17 @@
     "l": 2,
     "score": 0.0,
     "acc": 76.7,
+    "bpg": 1.5
+   },
+   {
+    "color": "black",
+    "family": "Reti Opening",
+    "n": 2,
+    "w": 1,
+    "d": 0,
+    "l": 1,
+    "score": 50.0,
+    "acc": 80.8,
     "bpg": 1.5
    },
    {
@@ -418,6 +440,17 @@
    },
    {
     "color": "black",
+    "family": "Three Knights",
+    "n": 2,
+    "w": 0,
+    "d": 0,
+    "l": 2,
+    "score": 0.0,
+    "acc": 87.4,
+    "bpg": 1.5
+   },
+   {
+    "color": "black",
     "family": "Alekhine",
     "n": 1,
     "w": 1,
@@ -425,17 +458,6 @@
     "l": 0,
     "score": 100.0,
     "acc": 90.8,
-    "bpg": 1.0
-   },
-   {
-    "color": "black",
-    "family": "Four Knights",
-    "n": 1,
-    "w": 0,
-    "d": 0,
-    "l": 1,
-    "score": 0.0,
-    "acc": 88.1,
     "bpg": 1.0
    },
    {
@@ -459,17 +481,6 @@
     "score": 100.0,
     "acc": 79.5,
     "bpg": 6.0
-   },
-   {
-    "color": "black",
-    "family": "Reti Opening",
-    "n": 1,
-    "w": 1,
-    "d": 0,
-    "l": 0,
-    "score": 100.0,
-    "acc": 90.5,
-    "bpg": 1.0
    },
    {
     "color": "black",
@@ -580,19 +591,52 @@
     "score": 0.0,
     "acc": 88.7,
     "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "Kings Indian",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 90.4,
+    "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "Bishops Opening",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 91.3,
+    "bpg": 1.0
+   },
+   {
+    "color": "black",
+    "family": "Kings Pawn",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 88.0,
+    "bpg": 0.0
    }
   ],
   "rapid": [
    {
     "color": "white",
     "family": "Queens Pawn",
-    "n": 22,
+    "n": 24,
     "w": 17,
     "d": 0,
-    "l": 5,
-    "score": 77.3,
-    "acc": 88.3,
-    "bpg": 1.09
+    "l": 7,
+    "score": 70.8,
+    "acc": 88.0,
+    "bpg": 1.08
    },
    {
     "color": "white",
@@ -630,13 +674,13 @@
    {
     "color": "white",
     "family": "Englund Gambit",
-    "n": 5,
+    "n": 6,
     "w": 3,
-    "d": 0,
+    "d": 1,
     "l": 2,
-    "score": 60.0,
-    "acc": 91.3,
-    "bpg": 1.2
+    "score": 58.3,
+    "acc": 90.8,
+    "bpg": 1.5
    },
    {
     "color": "black",
@@ -868,6 +912,17 @@
     "score": 100.0,
     "acc": 91.1,
     "bpg": 0.0
+   },
+   {
+    "color": "black",
+    "family": "Sicilian",
+    "n": 1,
+    "w": 1,
+    "d": 0,
+    "l": 0,
+    "score": 100.0,
+    "acc": 89.5,
+    "bpg": 0.0
    }
   ]
  },
@@ -879,18 +934,18 @@
    "bad-trade": 1
   },
   "bullet": {
-   "allowed-mate": 5,
-   "tactic-allowed": 49,
-   "hung-piece": 52,
-   "bad-trade": 11,
-   "missed-threat": 4
+   "allowed-mate": 6,
+   "tactic-allowed": 58,
+   "hung-piece": 60,
+   "bad-trade": 15,
+   "missed-threat": 5
   },
   "rapid": {
-   "hung-piece": 39,
-   "tactic-allowed": 37,
-   "bad-trade": 9,
+   "hung-piece": 41,
+   "tactic-allowed": 38,
+   "bad-trade": 10,
    "missed-threat": 7,
-   "allowed-mate": 1
+   "allowed-mate": 2
   }
  },
  "blunder_phase": {
@@ -900,14 +955,14 @@
    "endgame": 5
   },
   "bullet": {
-   "opening": 25,
-   "middlegame": 72,
-   "endgame": 24
+   "opening": 31,
+   "middlegame": 85,
+   "endgame": 28
   },
   "rapid": {
    "opening": 24,
-   "middlegame": 62,
-   "endgame": 7
+   "middlegame": 64,
+   "endgame": 10
   }
  },
  "losses_how": {
@@ -918,16 +973,16 @@
    "checkmated": 2
   },
   "bullet": {
-   "checkmated": 10,
-   "timeout": 15,
-   "resigned": 9,
+   "checkmated": 12,
+   "timeout": 16,
+   "resigned": 13,
    "abandoned": 1
   },
   "rapid": {
-   "resigned": 9,
+   "resigned": 10,
    "abandoned": 3,
    "timeout": 5,
-   "checkmated": 8
+   "checkmated": 9
   }
  },
  "time_trouble": {
@@ -936,12 +991,12 @@
    "blunders_total": 18
   },
   "bullet": {
-   "blunders_low_clock": 68,
-   "blunders_total": 121
+   "blunders_low_clock": 84,
+   "blunders_total": 144
   },
   "rapid": {
-   "blunders_low_clock": 7,
-   "blunders_total": 93
+   "blunders_low_clock": 9,
+   "blunders_total": 98
   }
  }
 }
